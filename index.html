@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reining Saddles — The Authority on NRHA Reining & Cow Horse Saddles</title>
+  <meta name="description" content="ReiningSaddles.com is your complete guide to reining saddles — history, parts, how they differ from cow horse saddles, plus new saddles from Andy Mashke's Superior Saddles and certified used saddles by David Solum.">
+  <meta name="keywords" content="reining saddles, NRHA saddles, reining saddle history, reined cow horse saddle, western performance saddles, buy reining saddle, Superior Saddles Andy Mashke, David Solum saddles">
+  <meta property="og:title" content="ReiningSaddles.com — NRHA Reining Saddle Authority">
+  <meta property="og:description" content="The internet's most complete resource for reining saddles. Learn, compare, and buy from trusted sponsors.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── HOME HERO ── */
+    .home-hero {
+      background: var(--dark-saddle);
+      background-image:
+        radial-gradient(ellipse at 30% 60%, rgba(139,69,19,.5) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 20%, rgba(184,134,11,.2) 0%, transparent 50%),
+        repeating-linear-gradient(45deg, transparent, transparent 6px, rgba(255,255,255,.015) 6px, rgba(255,255,255,.015) 7px);
+      min-height: 88vh;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 100px 0;
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 680px; }
+    .hero-eyebrow {
+      font-family: var(--font-label);
+      font-size: 11px; letter-spacing: .25em; text-transform: uppercase;
+      color: var(--gold-light); margin-bottom: 24px;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      color: var(--parchment);
+      line-height: 1.05;
+      margin-bottom: 28px;
+    }
+    .hero-title em { color: var(--gold-light); font-style: italic; display: block; }
+    .hero-body { font-size: 1.2rem; color: var(--tan); line-height: 1.75; margin-bottom: 40px; max-width: 560px; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-deco {
+      position: absolute; right: 0; top: 0; bottom: 0; width: 42%;
+      background: linear-gradient(135deg, rgba(139,69,19,.15) 0%, rgba(61,31,10,.6) 100%);
+      clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .hero-deco-text {
+      position: absolute; right: 5%; top: 50%; transform: translateY(-50%);
+      font-family: var(--font-display);
+      font-size: clamp(6rem, 12vw, 10rem);
+      color: rgba(200,169,125,.06);
+      line-height: 1; text-align: right;
+      pointer-events: none; user-select: none;
+    }
+    /* ── FEATURE STRIP ── */
+    .feature-strip {
+      background: var(--cognac);
+      padding: 28px 0;
+    }
+    .strip-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+    .strip-item {
+      text-align: center; padding: 16px 20px;
+      border-right: 1px solid rgba(255,255,255,.15);
+    }
+    .strip-item:last-child { border-right: none; }
+    .strip-num { font-family: var(--font-display); font-size: 2.2rem; color: var(--white); font-weight: 800; }
+    .strip-label { font-family: var(--font-label); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,253,248,.7); margin-top: 4px; }
+    /* ── INTRO ── */
+    .intro-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 64px; align-items: center; }
+    .intro-pull {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      color: var(--cognac);
+      font-style: italic;
+      border-left: 3px solid var(--gold);
+      padding-left: 24px;
+      margin: 28px 0;
+      line-height: 1.5;
+    }
+    .aside-box {
+      background: var(--dark-saddle);
+      padding: 32px 28px;
+      border-top: 4px solid var(--gold);
+    }
+    .aside-box h3 { font-family: var(--font-display); color: var(--parchment); margin-bottom: 16px; }
+    .aside-box ul { list-style: none; }
+    .aside-box li { border-bottom: 1px solid rgba(255,255,255,.08); padding: 10px 0; }
+    .aside-box a { color: var(--tan); font-size: .95rem; display: flex; align-items: center; gap: 8px; }
+    .aside-box a:hover { color: var(--gold-light); }
+    /* ── SPONSORS SECTION ── */
+    .sponsors-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    /* ── PAGES GRID ── */
+    .pages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .page-card {
+      background: var(--white);
+      border: 1px solid rgba(139,69,19,.12);
+      padding: 28px 24px 24px;
+      border-bottom: 4px solid var(--cognac);
+      transition: all .25s;
+    }
+    .page-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(61,31,10,.12); }
+    .page-card .icon { font-size: 1.8rem; margin-bottom: 12px; }
+    .page-card h3 { font-family: var(--font-display); font-size: 1.15rem; color: var(--dark-saddle); margin-bottom: 8px; }
+    .page-card p { font-size: .95rem; color: var(--warm-gray); line-height: 1.6; margin-bottom: 16px; }
+    .page-card a.link-arrow { font-family: var(--font-label); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--cognac); }
+    .page-card a.link-arrow::after { content: ' →'; }
+    @media (max-width: 768px) {
+      .intro-grid { grid-template-columns: 1fr; }
+      .strip-inner { grid-template-columns: 1fr 1fr; }
+      .strip-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.12); }
+      .sponsors-grid { grid-template-columns: 1fr; }
+      .hero-deco { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Reining<span>Saddles</span>.com</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="parts-of-the-saddle.html">Saddle Parts</a></li>
+      <li><a href="reining-vs-cow-horse.html">Reining vs. Cow Horse</a></li>
+      <li><a href="new-saddles.html">New Saddles</a></li>
+      <li><a href="used-saddles.html">Used Saddles</a></li>
+      <li><a href="buying-guide.html">Buying Guide</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="used-saddles.html" class="nav-cta">Shop Used Saddles</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="sponsor-bar">
+  <span class="sponsor-bar-label">Official Sponsors</span>
+  <a href="new-saddles.html" class="sponsor-name">🏆 Superior Saddles by Andy Mashke</a>
+  <span class="sponsor-pipe">|</span>
+  <a href="used-saddles.html" class="sponsor-name">🔖 Certified Used Saddles by David Solum</a>
+</div>
+
+<!-- HERO -->
+<section class="home-hero" aria-label="Hero">
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-eyebrow">The Authority on NRHA Competition Saddles</p>
+      <h1 class="hero-title">
+        The Art &amp; Science of the
+        <em>Reining Saddle</em>
+      </h1>
+      <p class="hero-body">From the hand-tooled origins of the western stock saddle to today's precision-engineered NRHA competition rigs — everything you need to know about reining saddles, where to buy them, and how to choose the right one.</p>
+      <div class="hero-actions">
+        <a href="buying-guide.html" class="btn btn-solid">Saddle Buying Guide</a>
+        <a href="history.html" class="btn">Explore the History</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-deco"></div>
+  <div class="hero-deco-text">Reining</div>
+</section>
+
+<!-- FEATURE STRIP -->
+<div class="feature-strip">
+  <div class="container">
+    <div class="strip-inner">
+      <div class="strip-item">
+        <div class="strip-num">150+</div>
+        <div class="strip-label">Years of History</div>
+      </div>
+      <div class="strip-item">
+        <div class="strip-num">8</div>
+        <div class="strip-label">In-Depth Guides</div>
+      </div>
+      <div class="strip-item">
+        <div class="strip-num">2</div>
+        <div class="strip-label">Trusted Sponsors</div>
+      </div>
+      <div class="strip-item">
+        <div class="strip-num">NRHA</div>
+        <div class="strip-label">Competition Focus</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="intro-grid">
+      <div>
+        <p class="section-label">What We Cover</p>
+        <h2 class="section-title">Your Complete Guide to Reining Saddles</h2>
+        <div class="divider"></div>
+        <p>The reining saddle is one of the most specialized pieces of tack in the western horse world. Designed specifically to allow a rider's seat to stay deep and quiet while a horse executes demanding maneuvers — sliding stops, 360° spins, rundowns, and rollbacks — these saddles represent the pinnacle of western saddle engineering.</p>
+        <blockquote class="intro-pull">"A great reining saddle disappears beneath the rider — it puts you in the horse, not on it."</blockquote>
+        <p>At ReiningSaddles.com, we've built the most comprehensive online resource dedicated to the reining saddle — from its roots in the California vaquero tradition to the modern cutting-edge designs used by NRHA futurity champions. Whether you're shopping for your first reining saddle or upgrading to a custom build, we've got you covered.</p>
+        <br>
+        <a href="buying-guide.html" class="btn btn-solid">Start With Our Buying Guide</a>
+      </div>
+      <div>
+        <div class="aside-box">
+          <h3>📚 Quick Navigation</h3>
+          <ul>
+            <li><a href="history.html">→ History of the Reining Saddle</a></li>
+            <li><a href="parts-of-the-saddle.html">→ All 18 Parts Explained</a></li>
+            <li><a href="reining-vs-cow-horse.html">→ Reining vs. Cow Horse Saddles</a></li>
+            <li><a href="new-saddles.html">→ New Saddles — Superior by Andy Mashke</a></li>
+            <li><a href="used-saddles.html">→ Certified Used — David Solum</a></li>
+            <li><a href="buying-guide.html">→ Complete Buying Guide</a></li>
+            <li><a href="faq.html">→ NRHA Saddle FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPONSORS SECTION -->
+<section class="section section-alt">
+  <div class="container">
+    <p class="section-label">Trusted Sponsors</p>
+    <h2 class="section-title">Shop From the Best in the Business</h2>
+    <div class="divider"></div>
+    <div class="sponsors-grid">
+      <div class="sponsor-block">
+        <div class="sponsor-badge">🏆</div>
+        <div>
+          <div class="sponsor-tag">Official Sponsor — New Saddles</div>
+          <h3>Superior Saddles by Andy Mashke</h3>
+          <p>Andy Mashke has been building world-class reining and cow horse saddles for elite competitors for over two decades. Superior Saddles are hand-crafted, competition-proven, and trusted by NRHA Open riders at the highest levels.</p>
+          <a href="new-saddles.html" class="btn btn-solid">View Superior Saddles →</a>
+        </div>
+      </div>
+      <div class="sponsor-block">
+        <div class="sponsor-badge">🔖</div>
+        <div>
+          <div class="sponsor-tag">Official Sponsor — Certified Used Saddles</div>
+          <h3>Certified Used Saddles by David Solum</h3>
+          <p>David Solum brings decades of saddle expertise and deep NRHA community connections to offer a curated marketplace of certified pre-owned reining saddles. Every saddle is personally inspected and stands behind a quality guarantee.</p>
+          <a href="used-saddles.html" class="btn">Browse Certified Used →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SITE PAGES -->
+<section class="section">
+  <div class="container">
+    <p class="section-label">Explore the Guide</p>
+    <h2 class="section-title">Everything You Need to Know</h2>
+    <div class="divider"></div>
+    <div class="pages-grid">
+      <div class="page-card">
+        <div class="icon">📜</div>
+        <h3>History of the Reining Saddle</h3>
+        <p>Trace the evolution from Spanish vaquero roots through ranch working saddles to today's lightweight competition rigs.</p>
+        <a href="history.html" class="link-arrow">Read the History</a>
+      </div>
+      <div class="page-card">
+        <div class="icon">🔍</div>
+        <h3>Parts of the Reining Saddle</h3>
+        <p>An illustrated breakdown of every component — tree, seat, skirts, rigging, cantle, swells, fenders, and more.</p>
+        <a href="parts-of-the-saddle.html" class="link-arrow">Explore Saddle Anatomy</a>
+      </div>
+      <div class="page-card">
+        <div class="icon">⚖️</div>
+        <h3>Reining vs. Reined Cow Horse</h3>
+        <p>These saddles look similar — but the differences matter. Learn why cow horse saddles are built differently.</p>
+        <a href="reining-vs-cow-horse.html" class="link-arrow">See the Differences</a>
+      </div>
+      <div class="page-card">
+        <div class="icon">✨</div>
+        <h3>New Reining Saddles</h3>
+        <p>Current models from Superior Saddles by Andy Mashke — custom builds, competition cuts, and full tooling options.</p>
+        <a href="new-saddles.html" class="link-arrow">Shop New Saddles</a>
+      </div>
+      <div class="page-card">
+        <div class="icon">🔖</div>
+        <h3>Certified Used Saddles</h3>
+        <p>David Solum's personally inspected inventory of pre-owned reining saddles — quality names at honest prices.</p>
+        <a href="used-saddles.html" class="link-arrow">Browse Used Saddles</a>
+      </div>
+      <div class="page-card">
+        <div class="icon">🎯</div>
+        <h3>Reining Saddle Buying Guide</h3>
+        <p>Tree width, seat size, rigging position, skirt shape — everything to evaluate before you spend your money.</p>
+        <a href="buying-guide.html" class="link-arrow">Read the Guide</a>
+      </div>
+      <div class="page-card">
+        <div class="icon">❓</div>
+        <h3>FAQ — NRHA Saddle Rules</h3>
+        <p>Can you use a cutting saddle in reining? What does NRHA allow? Common questions answered by the rules.</p>
+        <a href="faq.html" class="link-arrow">See All FAQs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Reining<span>Saddles</span>.com</div>
+        <p class="footer-tagline">The internet's premier authority on reining saddles — history, craftsmanship, NRHA competition gear, and trusted sources for new and certified pre-owned saddles.</p>
+        <p style="font-size:.85rem;color:rgba(138,121,104,.6);">Official sponsors: Superior Saddles (Andy Mashke) &amp; Certified Used Saddles (David Solum)</p>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="history.html">Saddle History</a></li>
+          <li><a href="parts-of-the-saddle.html">Parts of the Saddle</a></li>
+          <li><a href="reining-vs-cow-horse.html">Reining vs. Cow Horse</a></li>
+          <li><a href="buying-guide.html">Buying Guide</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="new-saddles.html">New Reining Saddles</a></li>
+          <li><a href="used-saddles.html">Certified Used Saddles</a></li>
+          <li><a href="new-saddles.html">Superior Saddles</a></li>
+          <li><a href="used-saddles.html">David Solum Saddles</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Disciplines</h4>
+        <ul>
+          <li><a href="reining-vs-cow-horse.html">NRHA Reining</a></li>
+          <li><a href="reining-vs-cow-horse.html">Reined Cow Horse</a></li>
+          <li><a href="reining-vs-cow-horse.html">NRCHA Events</a></li>
+          <li><a href="buying-guide.html">Fitting Your Horse</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 ReiningSaddles.com — All rights reserved.</p>
+      <p>Informational resource. Contact sponsors directly for purchases.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+</script>
+</body>
+</html>

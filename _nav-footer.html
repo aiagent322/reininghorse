@@ -1,0 +1,88 @@
+<!-- NAV (shared across all pages) -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Reining<span>Saddles</span>.com</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="parts-of-the-saddle.html">Saddle Parts</a></li>
+      <li><a href="reining-vs-cow-horse.html">Reining vs. Cow Horse</a></li>
+      <li><a href="new-saddles.html">New Saddles</a></li>
+      <li><a href="used-saddles.html">Used Saddles</a></li>
+      <li><a href="buying-guide.html">Buying Guide</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="used-saddles.html" class="nav-cta">Shop Used Saddles</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- SPONSOR BAR -->
+<div class="sponsor-bar">
+  <span class="sponsor-bar-label">Official Sponsors</span>
+  <a href="new-saddles.html" class="sponsor-name">🏆 Superior Saddles by Andy Mashke</a>
+  <span class="sponsor-pipe">|</span>
+  <a href="used-saddles.html" class="sponsor-name">🔖 Certified Used Saddles by David Solum</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Reining<span>Saddles</span>.com</div>
+        <p class="footer-tagline">The internet's premier authority on reining saddles — history, craftsmanship, NRHA competition gear, and trusted sources for new and certified pre-owned saddles.</p>
+        <p style="font-size:.85rem;color:rgba(138,121,104,.6);">Official sponsors: Superior Saddles (Andy Mashke) &amp; Certified Used Saddles (David Solum)</p>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="history.html">Saddle History</a></li>
+          <li><a href="parts-of-the-saddle.html">Parts of the Saddle</a></li>
+          <li><a href="reining-vs-cow-horse.html">Reining vs. Cow Horse</a></li>
+          <li><a href="buying-guide.html">Buying Guide</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="new-saddles.html">New Reining Saddles</a></li>
+          <li><a href="used-saddles.html">Certified Used Saddles</a></li>
+          <li><a href="new-saddles.html">Superior Saddles</a></li>
+          <li><a href="used-saddles.html">David Solum Saddles</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Disciplines</h4>
+        <ul>
+          <li><a href="reining-vs-cow-horse.html">NRHA Reining</a></li>
+          <li><a href="reining-vs-cow-horse.html">Reined Cow Horse</a></li>
+          <li><a href="reining-vs-cow-horse.html">NRCHA Events</a></li>
+          <li><a href="buying-guide.html">Fitting Your Horse</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 ReiningSaddles.com — All rights reserved.</p>
+      <p>For entertainment and informational purposes. Contact sponsors directly for purchases.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Shared nav toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  if (hamburger) {
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    hamburger.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') navLinks.classList.toggle('open'); });
+  }
+  // Active nav link
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    if (a.getAttribute('href') === currentPage) a.classList.add('active');
+  });
+</script>

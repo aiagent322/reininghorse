@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saddle Matchmaker | ReiningSaddles.com</title>
+<meta name="description" content="Answer 5 questions and get matched to the best new or certified used reining saddle. Scores every saddle in the inventory against your seat size,...">
+<link rel="canonical" href="https://www.reiningsaddles.com/saddle-matchmaker.html">
+<link rel="stylesheet" href="styles.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Saddle Matchmaker | ReiningSaddles.com">
+<meta property="og:description" content="Answer 5 questions and get matched to the best new or certified used reining saddle in our inventory.">
+<meta property="og:url" content="https://www.reiningsaddles.com/saddle-matchmaker.html">
+<meta property="og:image" content="https://www.reiningsaddles.com/images/certified-used-saddles-logo.jpg">
+<meta property="og:site_name" content="ReiningSaddles.com">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+.mm-wrap{max-width:720px;margin:0 auto;padding:0 16px 56px}
+@media(min-width:640px){.mm-wrap{padding:0 24px 72px}}
+.mm-bar{display:flex;gap:6px;margin:28px 0 24px}
+.mm-dot{flex:1;height:4px;border-radius:2px;background:rgba(61,31,10,.14);transition:background .3s}
+.mm-dot.done{background:var(--cognac)}
+.mm-dot.active{background:var(--gold)}
+.mm-slabel{font-family:var(--font-label);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.mm-h{font-family:var(--font-display);font-size:clamp(1.3rem,3.5vw,1.8rem);color:var(--dark-saddle);margin-bottom:8px;line-height:1.2}
+.mm-sub{font-size:.95rem;color:var(--warm-gray,#7A706A);line-height:1.7;margin-bottom:22px}
+.mm-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.mm-chip{font-family:var(--font-label);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:9px 16px;border:1px solid rgba(61,31,10,.25);color:var(--mid-brown,#6B4226);cursor:pointer;background:var(--white,#FFFDF8);transition:all .18s;user-select:none}
+.mm-chip:hover{border-color:var(--cognac);color:var(--cognac)}
+.mm-chip.sel{background:var(--cognac);color:var(--white,#FFFDF8);border-color:var(--cognac)}
+.mm-rlabel{font-family:var(--font-label);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid-brown,#6B4226);margin-bottom:8px}
+.mm-rrow{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.mm-rrow input[type=range]{flex:1;accent-color:var(--cognac);height:4px;cursor:pointer}
+.mm-rval{font-family:var(--font-display);font-size:1.1rem;color:var(--cognac);font-weight:700;min-width:72px;text-align:right}
+.mm-btns{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.mm-btn{font-family:var(--font-label);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:12px 24px;border:1px solid rgba(61,31,10,.3);color:var(--mid-brown,#6B4226);cursor:pointer;background:var(--white,#FFFDF8);transition:all .2s}
+.mm-btn:hover{border-color:var(--cognac);color:var(--cognac)}
+.mm-btn.pri{background:var(--cognac);color:var(--white,#FFFDF8);border-color:var(--cognac)}
+.mm-btn.pri:hover{background:var(--dark-saddle);border-color:var(--dark-saddle)}
+.mm-card{display:flex;background:var(--white,#FFFDF8);border:1px solid rgba(61,31,10,.14);margin-bottom:13px;overflow:hidden;transition:box-shadow .2s,transform .2s}
+.mm-card:hover{box-shadow:0 4px 18px rgba(61,31,10,.1);transform:translateY(-1px)}
+.mm-img{width:110px;flex-shrink:0;background:var(--parchment,#F5EDD8);display:flex;align-items:center;overflow:hidden}
+@media(min-width:480px){.mm-img{width:130px}}
+.mm-img img{width:100%;height:100%;object-fit:contain;padding:8px;display:block}
+.mm-body{flex:1;padding:13px 15px;min-width:0}
+.mm-badge{font-family:var(--font-label);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;display:block}
+.mm-best{background:var(--cognac);color:var(--white,#FFFDF8);display:inline-block;padding:2px 10px;margin-bottom:6px;font-family:var(--font-label);font-size:9px;letter-spacing:.12em;text-transform:uppercase}
+.mm-swrap{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.mm-sbg{flex:1;height:3px;background:rgba(61,31,10,.1);overflow:hidden}
+.mm-sbar{height:3px;background:var(--cognac);transition:width .6s ease}
+.mm-spct{font-family:var(--font-label);font-size:9px;letter-spacing:.08em;color:var(--cognac);white-space:nowrap}
+.mm-type{font-family:var(--font-label);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border:1px solid;margin-bottom:6px;display:inline-block}
+.mm-type.used{color:var(--cognac);border-color:var(--cognac)}
+.mm-type.new{color:var(--gold);border-color:var(--gold)}
+.mm-title{font-family:var(--font-display);font-size:clamp(.88rem,2.5vw,1.05rem);color:var(--dark-saddle);line-height:1.3;margin-bottom:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mm-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:7px}
+.mm-tag{font-family:var(--font-label);font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--mid-brown,#6B4226);border:1px solid rgba(61,31,10,.18);padding:2px 7px}
+.mm-prow{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.mm-price{font-family:var(--font-display);font-size:1.1rem;color:var(--cognac);font-weight:700}
+.mm-link{font-family:var(--font-label);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid-brown,#6B4226);text-decoration:none;border-bottom:1px solid rgba(61,31,10,.25);padding-bottom:1px;white-space:nowrap}
+.mm-link:hover{color:var(--cognac);border-color:var(--cognac)}
+.mm-reasons{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+.mm-reason{font-family:var(--font-label);font-size:9px;letter-spacing:.05em;text-transform:uppercase;background:var(--parchment,#F5EDD8);color:var(--mid-brown,#6B4226);padding:2px 7px}
+.mm-intro{font-size:.9rem;color:var(--mid-brown,#6B4226);line-height:1.75;margin-bottom:20px}
+.mm-none{text-align:center;padding:36px;font-family:var(--font-display);color:var(--warm-gray,#7A706A);font-size:1.05rem}
+.mm-cta{background:var(--dark-saddle);padding:28px 22px;text-align:center;margin-top:28px}
+.mm-cta h3{font-family:var(--font-display);font-size:1.3rem;color:var(--parchment,#F5EDD8);margin-bottom:10px}
+.mm-cta p{font-size:.9rem;color:var(--hay,#C9A96E);line-height:1.7;max-width:440px;margin:0 auto 20px}
+.mm-cta-btns{display:flex;flex-direction:column;gap:10px;align-items:center}
+</style>
+</head>
+<body>
+
+<nav class="site-nav" role="navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Reining<span>Saddles</span>.com</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="parts-of-the-saddle.html">Saddle Parts</a></li>
+      <li><a href="reining-vs-cow-horse.html">Reining vs. Cow Horse</a></li>
+      <li><a href="new-saddles.html">New Saddles</a></li>
+      <li><a href="used-saddles.html">Used Saddles</a></li>
+      <li><a href="buying-guide.html">Buying Guide</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="used-saddles.html" class="nav-cta">Shop Used Saddles</a></li>
+    <li><a href="saddle-matchmaker.html" class="active">Matchmaker</a></li></ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="sponsor-bar">
+  <span class="sponsor-bar-label">Official Sponsors</span>
+  <a href="new-saddles.html" class="sponsor-name">🏆 Superior Saddles by Andy Mashke</a>
+  <span class="sponsor-pipe">|</span>
+  <a href="used-saddles.html" class="sponsor-name">🔖 Certified Used Saddles by David Solum</a>
+</div>
+
+<section style="background:var(--dark-saddle);background-image:radial-gradient(ellipse at 25% 50%,rgba(139,69,19,.4) 0%,transparent 60%);padding:20px 0 16px;border-bottom:3px solid var(--cognac);">
+  <div class="container">
+    <p style="font-family:var(--font-label);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,253,248,.5);margin-bottom:8px;">New &amp; Certified Used</p>
+    <h1 style="font-family:var(--font-display);font-size:clamp(1.5rem,4vw,3rem);color:var(--parchment,#F5EDD8);line-height:1.15;margin-bottom:8px;">Reining Saddle Matchmaker</h1>
+    <p style="color:rgba(255,253,248,.8);font-size:.95rem;max-width:580px;line-height:1.75;">Answer 5 questions about your seat size, budget, and preferences. We score all 103 saddles in our new and used inventory against your criteria and rank your best matches.</p>
+  </div>
+</section>
+
+<div class="mm-wrap">
+  <div class="mm-bar" id="mmBar"></div>
+  <div id="mmApp"></div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Reining<span>Saddles</span>.com</div>
+        <p class="footer-tagline">The internet's premier authority on reining saddles — history, craftsmanship, NRHA competition gear, and trusted sources for new and certified pre-owned saddles.</p>
+        <p style="font-size:.85rem;color:rgba(138,121,104,.6);">Official sponsors: Superior Saddles (Andy Mashke) &amp; Certified Used Saddles (David Solum)</p>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="history.html">Saddle History</a></li>
+          <li><a href="parts-of-the-saddle.html">Parts of the Saddle</a></li>
+          <li><a href="reining-vs-cow-horse.html">Reining vs. Cow Horse</a></li>
+          <li><a href="buying-guide.html">Buying Guide</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="new-saddles.html">New Reining Saddles</a></li>
+          <li><a href="used-saddles.html">Certified Used Saddles</a></li>
+          <li><a href="new-saddles.html">Superior Saddles</a></li>
+          <li><a href="used-saddles.html">David Solum Saddles</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Disciplines</h4>
+        <ul>
+          <li><a href="reining-vs-cow-horse.html">NRHA Reining</a></li>
+          <li><a href="reining-vs-cow-horse.html">Reined Cow Horse</a></li>
+          <li><a href="reining-vs-cow-horse.html">NRCHA Events</a></li>
+          <li><a href="buying-guide.html">Fitting Your Horse</a></li>
+        </ul>
+      </div>
+      <div class="footer-col"><h4>Reining Network</h4><ul>
+        <li><a href="https://reininghorse.ai" target="_blank" rel="noopener">ReiningHorse.ai</a></li>
+        <li><a href="https://reininghorsevideos.com" target="_blank" rel="noopener">ReiningHorseVideos.com</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 ReiningSaddles.com — All rights reserved.</p>
+      <p>      <a href="tel:4177931403" style="color:var(--warm-gray);">&#128222; (417) 793-1403</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="mailto:davidsolumsales@gmail.com" style="color:var(--warm-gray);">davidsolumsales@gmail.com</a></p>
+      <p>Informational resource. Contact sponsors directly for purchases.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+var INVENTORY=[{"slug":"af-reiner-pinnacle-saddlery-16","title":"AF Reiner by Pinnacle Saddlery \u2014 16\" Elephant Seat, Full Silver","price":5995,"seat":16.0,"maker":"Pinnacle","silver":"full","img":"/images/used-saddles/af-reiner-pinnacle-saddlery-16-full-offside.jpg","cat":"Reining","type":"used","url":"used-saddles/af-reiner-pinnacle-saddlery-16.html","external":false},{"slug":"andrea-maschke-reiner-15-5","title":"Andrea Maschke Reiner \u2014 15\u00bd\" Seat \u2014 Original 2004 Build","price":2495,"seat":15.5,"maker":"Andrea Maschke","silver":"minimal","img":"","cat":"Reining","type":"used","url":"used-saddles/andrea-maschke-reiner-15-5.html","external":false},{"slug":"bob-avila-bobs-custom-16-b","title":"Bob Avila by Bob's Custom Saddle \u2014 16\" B17-120M","price":5995,"seat":16.0,"maker":"Bob's Custom","silver":"full","img":"","cat":"Reining","type":"used","url":"used-saddles/bob-avila-bobs-custom-16-b.html","external":false},{"slug":"bob-avila-bobs-custom-16-c","title":"Bob Avila by Bob's Custom Saddle \u2014 16\" Silver Swell Cap & Full Silver Package","price":5995,"seat":16.0,"maker":"Bob's Custom","silver":"full","img":"","cat":"Reining","type":"used","url":"used-saddles/bob-avila-bobs-custom-16-c.html","external":false},{"slug":"bob-avila-bobs-custom-16-d","title":"Bob Avila by Bob's Custom \u2014 16\" B99-472, Full Silver Package","price":1995,"seat":16.0,"maker":"Bob's Custom","silver":"full","img":"/images/used-saddles/bob-avila-bobs-custom-16-d-full-offside.jpg","cat":"Reining","type":"used","url":"used-saddles/bob-avila-bobs-custom-16-d.html","external":false},{"slug":"bob-avila-bobs-custom-16","title":"Bob Avila by Bob's Custom Saddle \u2014 16\" Seat","price":5995,"seat":16.0,"maker":"Bob's Custom","silver":"full","img":"","cat":"Reining","type":"used","url":"used-saddles/bob-avila-bobs-custom-16.html","external":false},{"slug":"bob-avila-bobs-custom-17","title":"Bob Avila by Bob's Custom \u2014 17\" S-Scroll, Sterling Silver Conchos","price":2995,"seat":17.0,"maker":"Bob's Custom","silver":"full","img":"/images/used-saddles/bob-avila-bobs-custom-17-full-offside.jpg","cat":"Reining","type":"used","url":"used-saddles/bob-avila-bobs-custom-17.html","external":false},{"slug":"bobs-custom-16-b16-1455m","title":"Bob's Custom Saddle \u2014 16\" Model B16-1455M","price":2495,"seat":16.0,"maker":"Bob's Custom","silver":"minimal","img":"/images/used-saddles/bobs-custom-16-b16-1455m-full-offside.jpg","cat":"Reining","type":"used","url":"used-saddles/bobs-custom-16-b16-1455m.html","external":false},{"slug":"bobs-custom-16-basketweave-silver","title":"Bob's Custom Saddle \u2014 16\" Seat \u2014 Basketweave & Floral","price":5995,"seat":16.0,"maker":"Bob's Custom","silver":"full","img":"","cat":"Reining","type":"used","url":"used-saddles/bobs-custom-16-basketweave-silver.html","external":false},{"slug":"bobs-custom-16-tan-sterling-silver","title":"Bob's Custom Saddle \u2014 16\" Seat \u2014 Tan Leather, Sterling Silver","price":5995,"seat":16.0,"maker":"Bob's Custom","silver":"full","img":"","cat":"Reining","type":"used","url":"used-saddles/bobs-custom-16-tan-sterling-silver.html","external":false},{"slug":"bobs-custom-kr-lady-reiner-15-5","title":"Bob's Custom KR Lady Reiner \u2014 15\u00bd\" Bison Seat","price":4995,"seat":15.5,"maker":"Bob's Custom","silver":"partial","img":"","cat":"Reining","type":"used","url":"used-saddles/bobs-custom-kr-lady-reiner-15-5.html","external":false},{"slug":"bobs-custom-saddle-15-b14-867m","title":"Bob's Custom Saddle \u2014 15\" Seat \u2014 Model B14-867M","price":1795,"seat":15.0,"maker":"Bob's Custom","silver":"minimal","img":"","cat":"Reining","type":"used","url":"used-saddles/bobs-custom-saddle-15-b14-867m.html","external":false},{"slug":"calvin-allen-ranch-cutter-15-5","title":"Ranch Cutter by Calvin Allen Saddlery \u2014 15\u00bd\" Seat","price":1995,"seat":15.5,"maker":"Calvin Allen","silver":"minimal","img":"/images/used-saddles/calvin-allen-ranch-cutter-15-5-full-offside.jpg","cat":"Cutting","type":"used","url":"used-saddles/calvin-allen-ranch-cutter-15-5.html","external":false},{"slug":"casey-deary-reiner-superior-16","title":"Casey Deary Reiner \u2014 16\" Seat","price":5995,"seat":16.0,"maker":"Superior","silver":"full","img":"","cat":"Reining","type":"used","url":"used-saddles/casey-deary-reiner-superior-16.html","external":false},{"slug":"craig-schmersal-reiner-superior-16","title":"Craig Schmersal Reiner by Superior Saddlery \u2014 16\" Seat","price":4995,"seat":16.0,"maker":"Superior","silver":"partial","img":"","cat":"Reining","type":"used","url":"used-saddles/craig-schmersal-reiner-superior-16.html","external":false},{"slug":"donn-leson-reinmaker-16","title":"Donn Leson Reinmaker \u2014 16\" Seat","price":7995,"seat":16.0,"maker":"Donn Leson","silver":"full","img":"/images/used-saddles/donn-leson-reinmaker-16-full-offside.jpg","cat":"Reining","type":"used","url":"used-saddles/donn-leson-reinmaker-16.html","external":false},{"slug":"donn-leson-tvb-386-16","title":"Donn Leson TVB #386 \u2014 16\" Seat","price":6495,"seat":16.0,"maker":"Donn Leson","silver":"full","img":"","cat":"Reining","type":"used","url":"used-saddles/donn-leson-tvb-386-16.html","external":false},{"slug":"equine-oasis-tim-bauer-17","title":"Equine Oasis by Tim Bauer \u2014 17\" Seat","price":2995,"seat":17.0,"maker":"Equine Oasis","silver":"minimal","img":"","cat":"Reining","type":"used","url":"used-saddles/equine-oasis-tim-bauer-17.html","external":false},{"slug":"jason-vanlandingham-reiner-superior-16","title":"Jason Vanlandingham Reiner by Superior Saddlery \u2014 16\" Bison Seat","price":2995,"seat":16.0,"maker":"Superior","silver":"minimal","img":"","cat":"Reining","type":"used","url":"used-saddles/jason-vanlandingham-reiner-superior-16.html","external":false},{"slug":"kyle-tack-reiner-15-5","title":"Kyle Tack Reiner \u2014 15\u00bd\" Seat","price":3995,"seat":15.5,"maker":"Kyle Tack","silver":"partial","img":"","cat":"Reining","type":"used","url":"used-saddles/kyle-tack-reiner-15-5.html","external":false},{"slug":"kyle-tack-reiner-16-like-new","title":"Kyle Tack Reiner \u2014 16\" Seat \u2014 Like New","price":3995,"seat":16.0,"maker":"Kyle Tack","silver":"partial","img":"","cat":"Reining","type":"used","url":"used-saddles/kyle-tack-reiner-16-like-new.html","external":false},{"slug":"kyle-tack-reiner-16-mint","title":"Kyle Tack Reiner \u2014 16\" Seat","price":3995,"seat":16.0,"maker":"Kyle Tack","silver":"partial","img":"","cat":"Reining","type":"used","url":"used-saddles/kyle-tack-reiner-16-mint.html","external":false},{"slug":"kyle-tack-reiner-16-silver-conchos","title":"Kyle Tack Reiner \u2014 16\" Seat","price":3995,"seat":16.0,"maker":"Kyle Tack","silver":"partial","img":"","cat":"Reining","type":"used","url":"used-saddles/kyle-tack-reiner-16-silver-conchos.html","external":false},{"slug":"kyle-tack-reiner-16","title":"Kyle Tack Reiner \u2014 16\" Seat","price":3995,"seat":16.0,"maker":"Kyle Tack","silver":"partial","img":"","cat":"Reining","type":"used","url":"used-saddles/kyle-tack-reiner-16.html","external":false},{"slug":"lady-cowhorse-bobs-custom-15-5-b","title":"Lady Cowhorse by Bob's Custom \u2014 15\u00bd\" Star Tooling, Brand New","price":4995,"seat":15.5,"maker":"Bob's Custom","silver":"partial","img":"/images/used-saddles/lady-cowhorse-bobs-custom-15-5-b-full-offside.jpg","cat":"Cow Horse","type":"used","url":"used-saddles/lady-cowhorse-bobs-custom-15-5-b.html","external":false},{"slug":"lady-cowhorse-bobs-custom-15-5","title":"Lady Cowhorse by Bob's Custom Saddle \u2014 15\u00bd\" Seat \u2014 Brand New","price":4995,"seat":15.5,"maker":"Bob's Custom","silver":"partial","img":"","cat":"Cow Horse","type":"used","url":"used-saddles/lady-cowhorse-bobs-custom-15-5.html","external":false},{"slug":"mandy-mccutcheon-reiner-superior-16","title":"Mandy McCutcheon Reiner \u2014 16\" Seat","price":2995,"seat":16.0,"maker":"Superior","silver":"minimal","img":"","cat":"Reining","type":"used","url":"used-saddles/mandy-mccutcheon-reiner-superior-16.html","external":false},{"slug":"mr-reiner-superior-15-5","title":"MR Reiner by Superior Saddlery \u2014 15\u00bd\" Seat","price":6495,"seat":15.5,"maker":"Superior","silver":"full","img":"","cat":"Reining","type":"used","url":"used-saddles/mr-reiner-superior-15-5.html","external":false},{"slug":"reiner-basket-floral-silver-conchos","title":"Reiner \u2014 Basket & Floral Tooling, Silver Conchos","price":0,"seat":16.0,"maker":"Other","silver":"partial","img":"","cat":"Reining","type":"used","url":"used-saddles/reiner-basket-floral-silver-conchos.html","external":false},{"slug":"rios-bros-roper-15-5","title":"Rios Bros. Roper \u2014 15\u00bd\" Seat","price":495,"seat":15.5,"maker":"Rios Bros.","silver":"minimal","img":"/images/used-saddles/rios-bros-roper-15-5-full-offside.jpg","cat":"Reining","type":"used","url":"used-saddles/rios-bros-roper-15-5.html","external":false},{"slug":"roohide-reiner-17","title":"Roohide Reiner \u2014 17\" Seat","price":2995,"seat":17.0,"maker":"Roohide","silver":"minimal","img":"/images/used-saddles/roohide-reiner-17-full-offside.jpg","cat":"Reining","type":"used","url":"used-saddles/roohide-reiner-17.html","external":false},{"slug":"roughout-reiner-two-tone-black","title":"Roughout Reiner \u2014 Two-Tone Black & Tan Tooling","price":0,"seat":16.0,"maker":"Other","silver":"minimal","img":"","cat":"Reining","type":"used","url":"used-saddles/roughout-reiner-two-tone-black.html","external":false},{"slug":"srs-ranch-saddle-16","title":"SRS Ranch Saddle \u2014 16\" Seat","price":1495,"seat":16.0,"maker":"SRS","silver":"minimal","img":"","cat":"Ranch","type":"used","url":"used-saddles/srs-ranch-saddle-16.html","external":false},{"slug":"superior-ranch-rider-16-5-nevada","title":"Superior Saddlery \u2014 16\u00bd\" Elephant Seat, #1 Flower & Nevada Border","price":5495,"seat":16.5,"maker":"Superior","silver":"full","img":"/images/used-saddles/superior-ranch-rider-16-5-nevada-full-offside.jpg","cat":"Ranch","type":"used","url":"used-saddles/superior-ranch-rider-16-5-nevada.html","external":false},{"slug":"superior-ranch-rider-deluxe-16-5","title":"Ranch Rider Deluxe by Superior Saddlery \u2014 16\u00bd\" Elephant Seat","price":5495,"seat":16.5,"maker":"Superior","silver":"full","img":"/images/used-saddles/superior-ranch-rider-deluxe-16-5-full-offside.jpg","cat":"Ranch","type":"used","url":"used-saddles/superior-ranch-rider-deluxe-16-5.html","external":false},{"slug":"superior-reiner-black-seat-silver-corners","title":"Superior Saddlery Reiner \u2014 Black Seat, Silver Corner Plates","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"","cat":"Reining","type":"used","url":"used-saddles/superior-reiner-black-seat-silver-corners.html","external":false},{"slug":"superior-reiner-floral-4995","title":"Superior Saddlery Reiner \u2014 Full Floral Tooling","price":4995,"seat":16.0,"maker":"Superior","silver":"partial","img":"","cat":"Reining","type":"used","url":"used-saddles/superior-reiner-floral-4995.html","external":false},{"slug":"teddy-johnson-cutter-16-full","title":"Teddy Johnson Cutter \u2014 16\" Seat","price":1195,"seat":16.0,"maker":"Teddy Johnson","silver":"minimal","img":"","cat":"Cutting","type":"used","url":"used-saddles/teddy-johnson-cutter-16-full.html","external":false},{"slug":"teddy-johnson-cutter-16","title":"Teddy Johnson Cutter \u2014 16\" Seat","price":1195,"seat":16.0,"maker":"Teddy Johnson","silver":"minimal","img":"","cat":"Cutting","type":"used","url":"used-saddles/teddy-johnson-cutter-16.html","external":false},{"slug":"trevor-dare-martin-saddlery-15-5","title":"Trevor Dare Reiner by Martin Saddlery \u2014 15\u00bd\" Full Silver","price":4995,"seat":15.5,"maker":"Martin","silver":"full","img":"/images/used-saddles/trevor-dare-martin-saddlery-15-5-full-offside.jpg","cat":"Reining","type":"used","url":"used-saddles/trevor-dare-martin-saddlery-15-5.html","external":false},{"slug":"new-af-lady-reiner","title":"AF Lady Reiner \u2014 Superior Saddlery (New)","price":0,"seat":15.5,"maker":"Superior","silver":"partial","img":"/images/saddles/GS18.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/af-lady-reiner/","external":true},{"slug":"new-af-reiner","title":"AF Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Harper-Conner.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/af-reiner/","external":true},{"slug":"new-af-reiner","title":"AF Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/F15-3QFL-Hardseat.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/af-reiner-2/","external":true},{"slug":"new-af-reiner","title":"AF Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/F15-Hardseat.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/af-reiner-3/","external":true},{"slug":"new-af-reiner","title":"AF Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/F15-dyed-BG-edges-2.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/235039/","external":true},{"slug":"new-af-reining-saddle","title":"AF-Reining Saddle \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Morris-Kulmer.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/reiner/","external":true},{"slug":"new-billy-williams-reiner","title":"Billy Williams Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/SS-Ranch-Cutter-Full-Tooled-b.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/billy-williams-reiner/","external":true},{"slug":"new-cade-mccutcheon-reiner","title":"Cade McCutcheon Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Cade-McCutcheon-2-1.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/cade-mccutcheon-reiner/","external":true},{"slug":"new-cade-mccutcheon-reiner","title":"Cade McCutcheon Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Cade-McCutcheon-2.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/cade-mccutcheon-reiner-2/","external":true},{"slug":"new-cade-mccutcheon-show","title":"Cade McCutcheon Show \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"full","img":"/images/saddles/Cade-McCutcheon-2022.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/cade-mccutcheon-show/","external":true},{"slug":"new-carlee-mccutcheon-reiner","title":"Carlee McCutcheon Reiner \u2014 Superior Saddlery (New)","price":0,"seat":15.5,"maker":"Superior","silver":"partial","img":"/images/saddles/Carlee-McCutcheon.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/carlee-mccutcheon-reiner/","external":true},{"slug":"new-casey-deary-reiner","title":"Casey Deary Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/CD-dyed-BG-edges-1.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/casey-deary-reiner/","external":true},{"slug":"new-casey-deary-reiner","title":"Casey Deary Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/CD-halbreed-tooled-antiqued-1.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/casey-deary-reiner-2/","external":true},{"slug":"new-casey-deary-reining-saddle","title":"Casey Deary Reining Saddle \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Casey-Deary-Specl-modif.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/234799/","external":true},{"slug":"new-casey-deary-workhorse","title":"Casey Deary Workhorse \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Deary.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/casey-deary-workhorse/","external":true},{"slug":"new-ch-am-reiner","title":"CH / AM-Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/KT13046T3.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/ch-am-reiner/","external":true},{"slug":"new-ch-am-reiner","title":"CH / AM-Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/TMC-Linda-Jacobs-a.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/ch-am-reiner-2/","external":true},{"slug":"new-ch-am-reiner","title":"CH / AM-Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/AM-small-leaf-Border.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/ch-am-reiner-3/","external":true},{"slug":"new-ch-reiner","title":"CH-Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/9O4A1140.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/234937/","external":true},{"slug":"new-ch-am-reining-saddle","title":"CH/AM-Reining Saddle \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/CH-A1-Skirts.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/reining-saddle-4/","external":true},{"slug":"new-cira-baeck-maturity-reiner","title":"Cira Baeck Maturity Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/86-8-Reiner.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/cira-baeck-maturity-reiner/","external":true},{"slug":"new-cira-baeck-reiner","title":"Cira Baeck Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Cira-Beack-2.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/cira-baeck-reiner/","external":true},{"slug":"new-cmn-reiner","title":"CMN -Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Crystal-McNutt-2012.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/cmn-reiner/","external":true},{"slug":"new-craig-schmersal-allround-saddle","title":"Craig Schmersal Allround Saddle \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/9O4A7795.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/craig-schmersal-work-saddle/","external":true},{"slug":"new-craig-schmersal-lady-reiner","title":"Craig Schmersal Lady Reiner \u2014 Superior Saddlery (New)","price":0,"seat":15.5,"maker":"Superior","silver":"partial","img":"/images/saddles/Allison-Thorson-2-d.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/custom-made-for-a-thorson/","external":true},{"slug":"new-craig-schmersal-lady-reiner","title":"Craig Schmersal Lady Reiner \u2014 Superior Saddlery (New)","price":0,"seat":15.5,"maker":"Superior","silver":"partial","img":"/images/saddles/Allison-Thorson.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/craig-schmersal-lady-reiner/","external":true},{"slug":"new-craig-schmersal-reiner","title":"Craig Schmersal Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/AF-3QCAl-BE.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/craig-schmersal-reiner/","external":true},{"slug":"new-craig-schmersal-reiner","title":"Craig Schmersal Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/AF-Work-3.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/craig-schmersal-reiner-2/","external":true},{"slug":"new-craig-schmersal-reiner","title":"Craig Schmersal Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Fappani-Hardseat.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/craig-schmersal-reiner-3/","external":true},{"slug":"new-craig-schmersal-show-reiner","title":"Craig Schmersal Show Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"full","img":"/images/saddles/Schmersal-2025.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/craig-schmersal-show/","external":true},{"slug":"new-cs-work-horse","title":"CS Work Horse \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/AF.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/234767/","external":true},{"slug":"new-gina-schumacher-bethke","title":"Gina (Schumacher) Bethke \u2014 Superior Saddlery (New)","price":0,"seat":15.5,"maker":"Superior","silver":"partial","img":"/images/saddles/Gina-Schumacher-1.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/gina-bethke-show/","external":true},{"slug":"new-j-n-custom-schmersal-reiner","title":"J.N. Custom Schmersal Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Jennifer-Neudorf.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/j-n-custom-schmersal-reiner/","external":true},{"slug":"new-jason-vanlandingham-reiner","title":"Jason Vanlandingham Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/BL-Reiner.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/jason-vanlandingham-reiner/","external":true},{"slug":"new-jason-vanlandingham-reiner","title":"Jason Vanlandingham Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/JV19.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/jason-vanlandingham-reiner-2/","external":true},{"slug":"new-jason-vanlandingham-show-reiner","title":"Jason Vanlandingham Show Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"full","img":"/images/saddles/Jason-Vanlandingham-2020.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/jason-vanlandingham-show-reiner/","external":true},{"slug":"new-jason-vanlandingham-show-saddle","title":"Jason Vanlandingham Show Saddle \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"full","img":"/images/saddles/Jason-Valandingham-2016.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/jason-vanlandingham-show-saddle/","external":true},{"slug":"new-jason-vanlandingham-show-saddle","title":"Jason Vanlandingham Show Saddle \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"full","img":"/images/saddles/Jason-Vanlandingham.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/jason-vanlandingham-show-saddle-2/","external":true},{"slug":"new-jason-vanlandingham-workhorse","title":"Jason Vanlandingham Workhorse \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Vanlandingham.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/jason-vanlandingham-workhorse/","external":true},{"slug":"new-jk-cowhorse-reiner","title":"JK-Cowhorse/Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Jade-Keller.png","cat":"Cow Horse","type":"new","url":"https://superior-saddlery.com/product/jk-cowhorse-reiner/","external":true},{"slug":"new-josh-tishman-reiner","title":"Josh Tishman Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Josh-Tishman.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/josh-tishman-reiner/","external":true},{"slug":"new-linde-von-koeding-reiner","title":"Linde Von Koeding Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/LVK-1.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/linde-von-koeding-reiner/","external":true},{"slug":"new-m1-reiner","title":"M1-Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/New-AM-Tree-w-M1-Patterns.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/m1-reiner/","external":true},{"slug":"new-m1-reining-saddle","title":"M1-Reining Saddle \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Superior-1.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/reining-saddle-6/","external":true},{"slug":"new-mandy-mccutcheon-reiner","title":"Mandy McCutcheon Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/MMC.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/mandy-mccutcheon-reiner/","external":true},{"slug":"new-mirjam-stillo-reiner","title":"Mirjam Stillo Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Mirjam-Stillo-1.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/mirjam-stillo-reiner/","external":true},{"slug":"new-nathan-piper","title":"Nathan Piper \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Nathan-Piper.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/nathan-piper/","external":true},{"slug":"new-nicole-hutchings-reiner","title":"Nicole Hutchings Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Nicile-Hutchings-1.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/nicole-hutchings-reiner/","external":true},{"slug":"new-nrha-50th-anniversary-saddle","title":"NRHA 50th Anniversary Saddle \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/NRHA-Anniversary-Saddle-2016.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/reining-saddle/","external":true},{"slug":"new-r22-square-skirt-reiner","title":"R22 Square Skirt Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/R22.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/r22-square-skirt-reiner/","external":true},{"slug":"new-reining-saddle","title":"Reining Saddle \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Vitale-2-1.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/reining-saddle-3/","external":true},{"slug":"new-reining-saddle","title":"Reining Saddle \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/F15-Show-Full-Tooled.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/reining-saddle-2/","external":true},{"slug":"new-shawn-flarida-reiner","title":"Shawn Flarida Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/SF19-a.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/shawn-flarida-reiner/","external":true},{"slug":"new-todd-sommers-reiner","title":"Todd Sommers Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Todd-Sommers.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/todd-sommers-reiner/","external":true},{"slug":"new-todd-sommers-workhorse","title":"Todd Sommers Workhorse \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Sommers.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/todd-sommers-workhorse/","external":true},{"slug":"new-tom-mccutcheon-reiner","title":"Tom McCutcheon Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/CH-FL-w-Scroll-Border.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/tom-mccutcheon-reiner/","external":true},{"slug":"new-x-tra-wide-reiner","title":"x-Tra Wide Reiner \u2014 Superior Saddlery (New)","price":0,"seat":17.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Arab-Saddle-TwoTone-2.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/x-tra-wide-reiner/","external":true},{"slug":"new-ba-ranch-riding","title":"BA Ranch Riding \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/9O4A1732-1-300x365.png","cat":"Ranch","type":"new","url":"https://superior-saddlery.com/product/ba-ranch-riding/","external":true},{"slug":"new-bl-ranch-riding-el","title":"BL Ranch Riding EL \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/RR-Entry-1-300x396.png","cat":"Ranch","type":"new","url":"https://superior-saddlery.com/product/bl-ranch-riding-el/","external":true},{"slug":"new-bl-ranch-riding-pro","title":"BL Ranch Riding Pro \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/RR-Pro-1-300x396.png","cat":"Ranch","type":"new","url":"https://superior-saddlery.com/product/bl-ranch-riding-pro/","external":true},{"slug":"new-cowhorse-ranch-riding","title":"Cowhorse / Ranch Riding \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/SS-Ranch-Pleasure-Saddle-1-300x387.png","cat":"Ranch","type":"new","url":"https://superior-saddlery.com/product/cowhorse-ranch-riding/","external":true},{"slug":"new-craig-schmersal-allround","title":"Craig Schmersal Allround \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/9O4A7795-300x351.png","cat":"Reining","type":"new","url":"https://superior-saddlery.com/product/craig-schmersal-allround-saddle/","external":true},{"slug":"new-jk-cowhorse-reiner","title":"JK Cowhorse/Reiner \u2014 Superior Saddlery (New)","price":0,"seat":16.0,"maker":"Superior","silver":"partial","img":"/images/saddles/Jade-Keller-300x381.png","cat":"Cow Horse","type":"new","url":"https://superior-saddlery.com/product/jk-cowhorse-reiner/","external":true}];
+
+var STEPS=['Discipline','Seat size','Budget','Silver','Makers'];
+var CATS=['Reining','Cutting','Cow Horse','Ranch'];
+var SLABELS=["15\"", "15\u00bd\"", "16\"", "16\u00bd\"", "17\""];var SVALS=[15, 15.5, 16, 16.5, 17];
+var SILVER=[["any","No preference"],["minimal","Minimal / none"],["partial","Some silver"],["full","Full silver package"]];
+var ALL_MAKERS=["Andrea Maschke", "Bob's Custom", "Calvin Allen", "Donn Leson", "Equine Oasis", "Kyle Tack", "Martin", "Pinnacle", "Rios Bros.", "Roohide", "SRS", "Superior", "Teddy Johnson"];
+
+var st={disc:[],seat:null,bMin:0,bMax:8500,silver:'any',makers:[]};
+var step=0,results=null;
+
+function score(s){
+  var pts=0,max=0,why=[];
+  max+=40;
+  if(!st.disc.length||st.disc.indexOf(s.cat)>-1){pts+=40;why.push('Discipline');}
+  max+=30;
+  if(st.seat!==null){
+    var d=Math.abs(s.seat-st.seat);
+    if(d===0){pts+=30;why.push('Exact seat');}
+    else if(d===0.5){pts+=20;why.push('Close seat');}
+    else if(d===1){pts+=10;}
+  }else{pts+=20;}
+  max+=20;
+  var p=s.price||0;
+  if(s.type==='new'){pts+=15;}
+  else if(p>=st.bMin&&p<=st.bMax){pts+=20;why.push('Within budget');}
+  else if(p>0&&Math.abs(p-st.bMin)<500){pts+=10;}
+  else if(p>0&&Math.abs(p-st.bMax)<500){pts+=8;}
+  max+=5;
+  if(st.silver==='any'){pts+=5;}
+  else if(st.silver===s.silver){pts+=5;why.push('Silver match');}
+  else if((st.silver==='partial'&&s.silver==='full')||(st.silver==='full'&&s.silver==='partial')){pts+=2;}
+  max+=5;
+  if(!st.makers.length){pts+=5;}
+  else if(st.makers.indexOf(s.maker)>-1){pts+=5;why.push('Preferred maker');}
+  return{pct:Math.round(pts/max*100),why:why};
+}
+
+function compute(){
+  return INVENTORY.map(function(s){
+    var sc=score(s);
+    return Object.assign({},s,{pct:sc.pct,why:sc.why});
+  }).filter(function(s){return s.pct>=35;})
+    .sort(function(a,b){return b.pct-a.pct;})
+    .slice(0,10);
+}
+
+function fmt(n,type){
+  if(type==='new') return 'New &#8212; Contact for Price';
+  return n>0?'$'+n.toLocaleString():'Contact for Price';
+}
+
+function chip(label,sel,fn){
+  return '<span class="mm-chip'+(sel?' sel':'')+'" onclick="'+fn+'">'+label+'</span>';
+}
+function toggleArr(arr,v){
+  var i=arr.indexOf(v);
+  if(i>-1)arr.splice(i,1);else arr.push(v);
+}
+
+function goBack(){step--;results=null;render();}
+function goNext(){
+  if(step<STEPS.length-1){step++;render();}
+  else{results=compute();step=5;render();}
+}
+function restart(){
+  st={disc:[],seat:null,bMin:0,bMax:8500,silver:'any',makers:[]};
+  step=0;results=null;render();
+}
+
+function renderBar(){
+  var h='';
+  for(var i=0;i<STEPS.length;i++)
+    h+='<div class="mm-dot'+(i<step?' done':i===step?' active':'')+'"></div>';
+  document.getElementById('mmBar').innerHTML=h;
+}
+
+function renderStep(){
+  var h='<p class="mm-slabel">Step '+(step+1)+' of '+STEPS.length+'</p>';
+  if(step===0){
+    h+='<h2 class="mm-h">What discipline do you ride?</h2>';
+    h+='<p class="mm-sub">Select all that apply. Skip to see all disciplines.</p>';
+    h+='<div class="mm-chips">';
+    CATS.forEach(function(c){h+=chip(c,st.disc.indexOf(c)>-1,'toggleDisc("'+c+'")');});
+    h+='</div>';
+  }
+  if(step===1){
+    h+='<h2 class="mm-h">What seat size do you ride?</h2>';
+    h+='<p class="mm-sub">Exact match scores highest. Adjacent sizes score partial credit.</p>';
+    h+='<div class="mm-chips">';
+    h+=chip('Any size',st.seat===null,'setSeat(null)');
+    SLABELS.forEach(function(l,i){h+=chip(l,st.seat===SVALS[i],'setSeat('+SVALS[i]+')');});
+    h+='</div>';
+  }
+  if(step===2){
+    h+='<h2 class="mm-h">What\u2019s your budget?</h2>';
+    h+='<p class="mm-sub">New Superior Saddlery saddles are contact-priced and score independently. Set your range for certified used.</p>';
+    h+='<div class="mm-rlabel">Minimum</div>';
+    h+='<div class="mm-rrow"><input type="range" min="0" max="7500" step="250" value="'+st.bMin+'" oninput="st.bMin=+this.value;document.getElementById(\'bmin\').textContent=\'$\'+Number(this.value).toLocaleString()"><span class="mm-rval" id="bmin">$'+st.bMin.toLocaleString()+'</span></div>';
+    h+='<div class="mm-rlabel">Maximum</div>';
+    h+='<div class="mm-rrow"><input type="range" min="500" max="8500" step="250" value="'+st.bMax+'" oninput="st.bMax=+this.value;document.getElementById(\'bmax\').textContent=\'$\'+Number(this.value).toLocaleString()"><span class="mm-rval" id="bmax">$'+st.bMax.toLocaleString()+'</span></div>';
+  }
+  if(step===3){
+    h+='<h2 class="mm-h">Silver preference?</h2>';
+    h+='<p class="mm-sub">How much does silver hardware matter to you?</p>';
+    h+='<div class="mm-chips">';
+    SILVER.forEach(function(o){h+=chip(o[1],st.silver===o[0],'setSilver("'+o[0]+'")');});
+    h+='</div>';
+  }
+  if(step===4){
+    h+='<h2 class="mm-h">Any preferred makers?</h2>';
+    h+='<p class="mm-sub">Select any to prioritize &#8212; or skip to see all equally. Superior Saddlery covers all new inventory.</p>';
+    h+='<div class="mm-chips">';
+    ALL_MAKERS.forEach(function(m){
+      h+=chip(m,st.makers.indexOf(m)>-1,'toggleMaker("'+m.replace(/'/g,"\'")+'")');
+    });
+    h+='</div>';
+  }
+  var lbl=step===STEPS.length-1?'Find My Matches &#8594;':'Continue &#8594;';
+  h+='<div class="mm-btns">';
+  if(step>0)h+='<button class="mm-btn" onclick="goBack()">&#8592; Back</button>';
+  h+='<button class="mm-btn pri" onclick="goNext()">'+lbl+'</button>';
+  h+='</div>';
+  return h;
+}
+
+function renderResults(){
+  var h='<p class="mm-slabel">Your matches</p>';
+  h+='<h2 class="mm-h">'+results.length+' saddles matched your preferences</h2>';
+  h+='<p class="mm-intro">Scored against 103 new and certified used saddles. New Superior Saddlery models link directly to the product page. Certified used saddles include full gallery and specs.</p>';
+  if(!results.length){
+    h+='<div class="mm-none">No saddles scored above 35% on your criteria.<br>Try broadening your budget or seat size.</div>';
+  }
+  results.forEach(function(s,i){
+    var badge = i===0?'<span class="mm-best">Best match</span>':'<span class="mm-badge">#'+(i+1)+' match</span>';
+    var typeTag = s.type==='new'?'<span class="mm-type new">New &#8212; Superior</span>':'<span class="mm-type used">Certified Used</span>';
+    var why = s.why.map(function(r){return '<span class="mm-reason">&#10003; '+r+'</span>';}).join('');
+    var linkHref = s.external ? s.url : s.url;
+    var linkTarget = s.external ? ' target="_blank" rel="noopener"' : '';
+    var linkLabel = s.external ? 'View on Superior-Saddlery.com &#8599;' : 'View full listing &#8594;';
+    h+='<div class="mm-card">';
+    h+='<div class="mm-img"><img src="'+s.img+'" alt="'+s.title+'" loading="lazy" onerror="this.parentElement.style.display=\'none\'"></div>';
+    h+='<div class="mm-body">';
+    h+=badge;
+    h+=typeTag;
+    h+='<div class="mm-swrap"><div class="mm-sbg"><div class="mm-sbar" style="width:'+s.pct+'%"></div></div><span class="mm-spct">'+s.pct+'% match</span></div>';
+    h+='<div class="mm-title">'+s.title+'</div>';
+    h+='<div class="mm-tags"><span class="mm-tag">'+s.cat+'</span><span class="mm-tag">'+s.seat+'"</span><span class="mm-tag">'+s.maker+'</span></div>';
+    h+='<div class="mm-prow"><span class="mm-price">'+fmt(s.price,s.type)+'</span><a class="mm-link" href="'+linkHref+'"'+linkTarget+'>'+linkLabel+'</a></div>';
+    if(s.why.length)h+='<div class="mm-reasons">'+why+'</div>';
+    h+='</div></div>';
+  });
+  h+='<div class="mm-cta"><h3>Want a Personal Recommendation?</h3>';
+  h+='<p>Call David Solum on certified used saddles. For new Superior Saddlery models, visit superior-saddlery.com or call Andy Mashke directly.</p>';
+  h+='<div class="mm-cta-btns">';
+  h+='<a href="tel:4177931403" style="display:flex;align-items:center;gap:12px;background:var(--cognac);color:var(--parchment,#F5EDD8);padding:14px 28px;text-decoration:none;font-family:var(--font-label);font-size:13px;letter-spacing:.06em;justify-content:center;width:100%;max-width:300px;">&#128222; (417) 793-1403 &#8212; David Solum</a>';
+  h+='<a href="https://superior-saddlery.com" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;border:2px solid var(--gold);color:var(--gold);padding:13px 28px;text-decoration:none;font-family:var(--font-label);font-size:11px;letter-spacing:.05em;justify-content:center;width:100%;max-width:300px;">Visit Superior-Saddlery.com &#8599;</a>';
+  h+='</div></div>';
+  h+='<div class="mm-btns" style="margin-top:20px;"><button class="mm-btn" onclick="restart()">&#8592; Start over</button></div>';
+  return h;
+}
+
+function render(){
+  renderBar();
+  document.getElementById('mmApp').innerHTML = step===5 ? renderResults() : renderStep();
+}
+
+window.toggleDisc=function(v){toggleArr(st.disc,v);render();};
+window.setSeat=function(v){st.seat=v;render();};
+window.setSilver=function(v){st.silver=v;render();};
+window.toggleMaker=function(v){toggleArr(st.makers,v);render();};
+
+var hb=document.getElementById('hamburger');
+var nl=document.getElementById('navLinks');
+if(hb)hb.addEventListener('click',function(){nl.classList.toggle('open');});
+
+render();
+</script>
+</body>
+</html>

@@ -338,7 +338,7 @@ a:hover { color: var(--gold); }
   margin-bottom: 32px;
 }
 @media (min-width: 640px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
-@media (min-width: 1024px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; } }
+@media (min-width: 1024px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 48px; } }
 
 .footer-brand { font-family: var(--font-display); font-size: 1.25rem; color: var(--parchment); margin-bottom: 10px; }
 .footer-brand span { color: var(--gold-light); }

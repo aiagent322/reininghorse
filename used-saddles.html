@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Certified Used Reining Saddles by David Solum | ReiningSaddles.com</title>
-  <meta name="description" content="Browse certified pre-owned reining saddles from David Solum — personally inspected, quality-guaranteed used saddles from top makers. Great reining saddles at honest prices.">
-  <meta name="keywords" content="used reining saddles, certified used saddles David Solum, pre-owned reining saddle, buy used reining saddle, second hand reining saddle, NRHA used saddle">
+  <title>Certified Used Reining Saddles — David Solum | ReiningSaddles.com</title>
+  <meta name="description" content="Shop David Solum's certified pre-owned reining saddle inventory — Kyle Tack, Bob's Custom, Superior Saddlery, Bob Avila, and more. Every saddle personally inspected. Prices from $1,195.">
+  <meta name="keywords" content="used reining saddles for sale, certified used reining saddle, David Solum saddles, Kyle Tack reiner, Bob's Custom Saddle used, Superior Saddlery used saddle, buy used reining saddle">
   <link rel="stylesheet" href="styles.css">
   <style>
     .used-hero {
@@ -21,42 +21,95 @@
     .used-hero h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 5vw, 3.5rem); color: var(--white); line-height: 1.15; margin-bottom: 16px; }
     .used-hero h1 em { color: var(--parchment); font-style: italic; display: block; }
     .used-hero p { color: rgba(255,253,248,.85); font-size: .95rem; line-height: 1.75; margin-bottom: 20px; }
-    @media (min-width: 640px) { .used-hero p { font-size: 1.1rem; } }
+    @media (min-width: 640px) { .used-hero p { font-size: 1.05rem; } }
     .cert-box { background: rgba(0,0,0,.2); border: 2px solid rgba(255,253,248,.25); padding: 28px 20px; text-align: center; }
-    @media (min-width: 640px) { .cert-box { padding: 40px 32px; } }
     .cert-icon { font-size: 2.8rem; margin-bottom: 12px; }
-    @media (min-width: 640px) { .cert-icon { font-size: 3.5rem; } }
     .cert-box h3 { font-family: var(--font-display); font-size: 1.2rem; color: var(--white); margin-bottom: 8px; }
-    @media (min-width: 640px) { .cert-box h3 { font-size: 1.4rem; } }
     .cert-box p { color: rgba(255,253,248,.75); font-size: .9rem; margin-bottom: 18px; }
-    .why-card { background: var(--white); border: 1px solid rgba(139,69,19,.12); border-left: 4px solid var(--cognac); padding: 20px 18px; }
-    @media (min-width: 640px) { .why-card { padding: 24px 22px; } }
-    .why-card h3 { font-family: var(--font-display); font-size: 1rem; color: var(--dark-saddle); margin-bottom: 7px; }
-    @media (min-width: 640px) { .why-card h3 { font-size: 1.1rem; } }
-    .why-card p { font-size: .9rem; color: var(--warm-gray); line-height: 1.7; }
-    .cert-process { background: var(--dark-saddle); padding: 28px 20px; margin: 32px 0; }
-    @media (min-width: 640px) { .cert-process { padding: 40px 36px; margin: 48px 0; } }
-    .cert-process h3 { font-family: var(--font-display); color: var(--parchment); font-size: 1.3rem; margin-bottom: 6px; }
-    @media (min-width: 640px) { .cert-process h3 { font-size: 1.5rem; } }
-    .cert-process .sub { font-family: var(--font-label); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+
+    /* INVENTORY GRID */
+    .inventory-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 480px) { .inventory-grid { grid-template-columns: 1fr 1fr; gap: 20px; } }
+    @media (min-width: 768px) { .inventory-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
+    @media (min-width: 1024px) { .inventory-grid { grid-template-columns: repeat(4, 1fr); gap: 24px; } }
+
+    .listing-card {
+      background: var(--white);
+      border: 1px solid rgba(139,69,19,.15);
+      border-top: 3px solid var(--cognac);
+      display: flex; flex-direction: column;
+      transition: all .22s;
+      overflow: hidden;
+      position: relative;
+    }
+    .listing-card:hover { box-shadow: 0 6px 28px rgba(61,31,10,.12); transform: translateY(-3px); }
+
+    .listing-img-wrap {
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: var(--parchment);
+    }
+    .listing-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform .3s;
+    }
+    .listing-card:hover .listing-img-wrap img { transform: scale(1.04); }
+
+    .listing-body { padding: 14px 14px 16px; flex: 1; display: flex; flex-direction: column; }
+    .listing-maker { font-family: var(--font-label); font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+    .listing-name { font-family: var(--font-display); font-size: .95rem; color: var(--dark-saddle); margin-bottom: 8px; line-height: 1.3; flex: 1; }
+    @media (min-width: 640px) { .listing-name { font-size: 1rem; } }
+    .listing-specs { display: flex; flex-direction: column; gap: 2px; margin-bottom: 10px; }
+    .spec-chip { font-family: var(--font-label); font-size: .72rem; letter-spacing: .04em; color: var(--warm-gray); }
+    .listing-price {
+      font-family: var(--font-display);
+      font-size: 1.3rem; color: var(--cognac); font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .price-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--white);
+      font-family: var(--font-label);
+      font-size: 8px; letter-spacing: .12em; text-transform: uppercase;
+      padding: 2px 7px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .price-badge.new { background: #2e7d32; }
+    .price-badge.sale { background: var(--cognac); }
+    .inquire-btn {
+      display: block; width: 100%; text-align: center;
+      font-family: var(--font-label); font-size: 10px;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: 10px 12px;
+      background: var(--dark-saddle); color: var(--parchment);
+      border: none; cursor: pointer;
+      transition: background .2s;
+      text-decoration: none;
+    }
+    .inquire-btn:hover { background: var(--cognac); color: var(--white); }
+
+    /* CERT PROCESS */
     .cert-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    @media (min-width: 640px) { .cert-steps { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
-    @media (min-width: 1024px) { .cert-steps { grid-template-columns: repeat(5, 1fr); gap: 20px; } }
+    @media (min-width: 640px) { .cert-steps { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1024px) { .cert-steps { grid-template-columns: repeat(5, 1fr); } }
     .cert-step { text-align: center; padding: 18px 12px; border: 1px solid rgba(255,255,255,.08); }
     .cert-step .step-icon { font-size: 1.6rem; margin-bottom: 8px; }
-    @media (min-width: 640px) { .cert-step .step-icon { font-size: 2rem; margin-bottom: 12px; } }
     .cert-step h4 { font-family: var(--font-label); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--tan); margin-bottom: 6px; }
     .cert-step p { font-size: .8rem; color: rgba(138,121,104,.8); line-height: 1.55; }
-    .listing-card { background: var(--white); border: 1px solid rgba(139,69,19,.15); border-top: 3px solid var(--cognac); padding: 20px 18px; transition: all .25s; position: relative; }
-    @media (min-width: 640px) { .listing-card { padding: 26px 24px; } }
-    .listing-card:hover { box-shadow: 0 5px 24px rgba(61,31,10,.09); transform: translateY(-2px); }
-    .listing-badge { position: absolute; top: 14px; right: 14px; background: var(--gold); color: var(--white); font-family: var(--font-label); font-size: 8px; letter-spacing: .12em; text-transform: uppercase; padding: 3px 8px; }
-    .listing-maker { font-family: var(--font-label); font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
-    .listing-name { font-family: var(--font-display); font-size: 1.1rem; color: var(--dark-saddle); margin-bottom: 8px; }
-    @media (min-width: 640px) { .listing-name { font-size: 1.2rem; } }
-    .listing-detail { font-size: .85rem; color: var(--warm-gray); margin-bottom: 14px; line-height: 1.65; }
-    .listing-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
-    .meta-chip { background: var(--parchment); font-size: .75rem; color: var(--mid-brown); padding: 3px 8px; font-family: var(--font-label); letter-spacing: .04em; }
+
+    /* WANT LIST */
+    .want-box { background: var(--parchment); border-left: 4px solid var(--gold); padding: 24px 20px; }
+    @media (min-width: 640px) { .want-box { padding: 28px 32px; } }
+    .want-box h3 { font-family: var(--font-display); font-size: 1.2rem; color: var(--dark-saddle); margin-bottom: 10px; }
+    .want-box p { font-size: .95rem; color: var(--mid-brown); line-height: 1.75; margin-bottom: 14px; }
   </style>
 </head>
 <body>
@@ -84,15 +137,16 @@
   <a href="used-saddles.html" class="sponsor-name">🔖 Certified Used Saddles by David Solum</a>
 </div>
 
+<!-- HERO -->
 <div class="used-hero">
   <div class="container">
     <div class="used-hero-grid">
       <div>
-        <p style="font-family:var(--font-label);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,253,248,.6);margin-bottom:16px;">Official Sponsor — Certified Used</p>
+        <p style="font-family:var(--font-label);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,253,248,.6);margin-bottom:14px;">Official Sponsor — Certified Used</p>
         <h1>Certified Used Saddles<br><em>by David Solum</em></h1>
-        <p>David Solum brings decades of saddle expertise and deep roots in the NRHA community to a curated marketplace of pre-owned reining saddles. Every saddle David offers has been personally inspected — no guesswork, no surprises.</p>
-        <p>Whether you're buying your first reining saddle or adding a proven maker's work to your collection, David's certified used inventory is the smart place to start.</p>
-        <a href="#inventory" class="btn btn-solid">View Current Inventory</a>
+        <p>David Solum brings decades of saddle expertise and deep NRHA community connections to a curated marketplace of pre-owned reining saddles. Every saddle is personally inspected — no guesswork, no surprises.</p>
+        <p>Premium makers. Honest prices. David's guarantee behind every listing.</p>
+        <a href="#inventory" class="btn btn-solid" style="margin-top:8px;">View Current Inventory ↓</a>
       </div>
       <div>
         <div class="cert-box">
@@ -106,134 +160,344 @@
   </div>
 </div>
 
-<!-- WHY BUY USED -->
-<section class="section">
-  <div class="container">
-    <p class="section-label">The Smart Buy</p>
-    <h2 class="section-title">Why Certified Used Makes Sense</h2>
-    <div class="divider"></div>
-
-    <div class="card-grid">
-      <div class="why-card">
-        <h3>💰 Real Value, Premium Quality</h3>
-        <p>A custom reining saddle from a top maker holds its value extraordinarily well. A certified used saddle from a reputable source often gives you $4,000–$7,000 worth of quality for $1,500–$3,000 — fully inspected and guaranteed.</p>
-      </div>
-      <div class="why-card">
-        <h3>🔍 Leather That's Already Broken In</h3>
-        <p>A quality saddle that's been properly used and conditioned is often better than a brand-new one — the leather is pliable, the tree has settled, and the seat has shaped to the natural riding position. Broken-in leather is a feature, not a drawback.</p>
-      </div>
-      <div class="why-card">
-        <h3>🏆 Access to Top Makers</h3>
-        <p>Custom saddles from premier makers often have wait lists of 6–18 months. The used market lets you ride a Bob's Custom Saddle, Circle Y show saddle, or other premium maker's work immediately — without the wait.</p>
-      </div>
-      <div class="why-card">
-        <h3>✅ David's Guarantee</h3>
-        <p>Every saddle in David Solum's certified inventory is personally inspected for tree integrity, rigging soundness, leather condition, and hardware function. David stands behind what he sells — period.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CERTIFICATION PROCESS -->
-<div class="container">
-  <div class="cert-process">
-    <div class="sub">The Certification Standard</div>
-    <h3>What "David Solum Certified" Means</h3>
-    <div class="cert-steps">
-      <div class="cert-step">
-        <div class="step-icon">🌳</div>
-        <h4>Tree Check</h4>
-        <p>Tree integrity verified — no twists, breaks, or structural issues. Flex test performed.</p>
-      </div>
-      <div class="cert-step">
-        <div class="step-icon">🔩</div>
-        <h4>Rigging Inspection</h4>
-        <p>All rigging hardware checked for cracks, wear, and proper function. Replaced if needed.</p>
-      </div>
-      <div class="cert-step">
-        <div class="step-icon">🛠️</div>
-        <h4>Leather Condition</h4>
-        <p>All leather surfaces assessed and documented. Cracking, stretching, and repairs noted.</p>
-      </div>
-      <div class="cert-step">
-        <div class="step-icon">📏</div>
-        <h4>Measurements</h4>
-        <p>Seat size, gullet width, skirt length, and tree width measured and verified accurate.</p>
-      </div>
-      <div class="cert-step">
-        <div class="step-icon">📋</div>
-        <h4>Full Report</h4>
-        <p>Complete condition report provided with every certified saddle — no hidden surprises.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- SAMPLE INVENTORY -->
+<!-- INVENTORY -->
 <section class="section section-alt" id="inventory">
   <div class="container">
-    <p class="section-label">Current Inventory</p>
-    <h2 class="section-title">Featured Certified Saddles</h2>
+    <p class="section-label">Current Inventory — 16 Saddles</p>
+    <h2 class="section-title">Certified Used Saddles</h2>
     <div class="divider"></div>
-    <p class="section-intro">Inventory changes frequently. Contact David directly for the most current listings and pricing. Sample listings below represent the type of quality available through this program.</p>
+    <p class="section-intro">All saddles personally inspected and certified by David Solum. Inventory moves quickly — contact David to hold a saddle or arrange viewing. Prices listed are sale prices.</p>
 
-    <div class="card-grid">
+    <div class="inventory-grid">
+
+      <!-- 1: MR Reiner Superior — TOP LISTING $6,495 -->
       <div class="listing-card">
-        <div class="listing-badge">Available</div>
-        <div class="listing-maker">Bob's Custom Saddles</div>
-        <div class="listing-name">Reining Competition Model</div>
-        <p class="listing-detail">16" seat, full QH bars, in-skirt rigging at 7/8. Roughout seat, round skirts with basket-weave tooling. Light oil finish. Excellent tree, minimal wear. Includes back cinch and latigo.</p>
-        <div class="listing-meta">
-          <span class="meta-chip">16" Seat</span>
-          <span class="meta-chip">Full QH Bars</span>
-          <span class="meta-chip">Roughout</span>
-          <span class="meta-chip">David Certified ✓</span>
+        <div class="listing-img-wrap">
+          <img src="images/used-saddles/mr-reiner-superior-15.5.jpg" alt="MR Reiner by Superior Saddlery — 15.5 Chocolate Seat — $6,495" loading="lazy">
         </div>
-        <a href="#contact" class="btn btn-solid">Inquire About This Saddle</a>
+        <div class="listing-body">
+          <div class="listing-maker">Superior Saddlery</div>
+          <div class="listing-name">MR Reiner — Handtooled Basketweave &amp; Flowers</div>
+          <div class="listing-specs">
+            <span class="spec-chip">📐 15½" Chocolate Seat</span>
+            <span class="spec-chip">✦ Sterling Silver Corner Plates</span>
+            <span class="spec-chip">✦ Rear Dee Rings, Concho &amp; Tips</span>
+            <span class="spec-chip">✦ 2½" Don Orrell Wood Stirrups</span>
+          </div>
+          <div class="listing-price">$6,495 <span class="price-badge sale">Sale</span></div>
+          <a href="#contact" class="inquire-btn">Inquire About This Saddle</a>
+        </div>
       </div>
 
+      <!-- 2: Bob Avila by Bob's Custom $5,995 -->
       <div class="listing-card">
-        <div class="listing-badge">Available</div>
-        <div class="listing-maker">Circle Y</div>
-        <div class="listing-name">Park & Trail Reiner — Show Model</div>
-        <p class="listing-detail">15.5" seat, semi-QH bars, floral tooling with dark oil. Smooth leather seat, round skirts. Silver conchos and saddle strings. Excellent condition throughout — very lightly used at the amateur level.</p>
-        <div class="listing-meta">
-          <span class="meta-chip">15.5" Seat</span>
-          <span class="meta-chip">Semi-QH Bars</span>
-          <span class="meta-chip">Silver Package</span>
-          <span class="meta-chip">David Certified ✓</span>
+        <div class="listing-img-wrap">
+          <img src="images/used-saddles/bob-avila-bobs-custom-16.jpg" alt="Bob Avila by Bob's Custom Saddle — 16 Seat — $5,995" loading="lazy">
         </div>
-        <a href="#contact" class="btn btn-solid">Inquire About This Saddle</a>
+        <div class="listing-body">
+          <div class="listing-maker">Bob's Custom Saddle</div>
+          <div class="listing-name">Bob Avila Show Saddle</div>
+          <div class="listing-specs">
+            <span class="spec-chip">📐 16" Seat · 16½" Fenders</span>
+            <span class="spec-chip">✦ Model B17-120M</span>
+            <span class="spec-chip">✦ Full Silver Package</span>
+          </div>
+          <div class="listing-price">$5,995 <span class="price-badge sale">Sale</span></div>
+          <a href="#contact" class="inquire-btn">Inquire About This Saddle</a>
+        </div>
       </div>
 
+      <!-- 3: Craig Schmersal Reiner Superior $4,995 -->
       <div class="listing-card">
-        <div class="listing-badge">Available</div>
-        <div class="listing-maker">Custom Build — Maker on File</div>
-        <div class="listing-name">NRHA Open Competitor's Saddle</div>
-        <p class="listing-detail">16.5" seat, full QH tree, composite construction. Ultra-flat ground seat, in-skirt rigging, narrow fenders. Ridden at NRHA Futurity by Open competitor. Well-conditioned, excellent shape. Contact for full maker details.</p>
-        <div class="listing-meta">
-          <span class="meta-chip">16.5" Seat</span>
-          <span class="meta-chip">Composite Tree</span>
-          <span class="meta-chip">Competition Proven</span>
-          <span class="meta-chip">David Certified ✓</span>
+        <div class="listing-img-wrap">
+          <img src="images/used-saddles/craig-schmersal-reiner-superior-16.jpg" alt="Craig Schmersal Reiner by Superior Saddlery — 16 Seat — $4,995" loading="lazy">
         </div>
-        <a href="#contact" class="btn btn-solid">Inquire About This Saddle</a>
+        <div class="listing-body">
+          <div class="listing-maker">Superior Saddlery</div>
+          <div class="listing-name">Craig Schmersal Reiner</div>
+          <div class="listing-specs">
+            <span class="spec-chip">📐 16" Seat</span>
+            <span class="spec-chip">✦ Sterling Silver Conchos w/ 24kt Gold</span>
+            <span class="spec-chip">✦ Rear Dees</span>
+          </div>
+          <div class="listing-price">$4,995 <span class="price-badge sale">Sale</span></div>
+          <a href="#contact" class="inquire-btn">Inquire About This Saddle</a>
+        </div>
       </div>
+
+      <!-- 4: Superior Reiner w/ $4,995 tag (FB image 3) -->
+      <div class="listing-card">
+        <div class="listing-img-wrap">
+          <img src="images/used-saddles/superior-reiner-4995-tag.jpg" alt="Superior Saddlery Reiner — $4,995" loading="lazy">
+        </div>
+        <div class="listing-body">
+          <div class="listing-maker">Superior Saddlery</div>
+          <div class="listing-name">Superior Reiner — Full Floral Tooling</div>
+          <div class="listing-specs">
+            <span class="spec-chip">✦ Silver Conchos &amp; Rear Dees</span>
+            <span class="spec-chip">✦ Dark Chocolate Leather</span>
+            <span class="spec-chip">✦ Contact David for Full Specs</span>
+          </div>
+          <div class="listing-price">$4,995</div>
+          <a href="#contact" class="inquire-btn">Inquire About This Saddle</a>
+        </div>
+      </div>
+
+      <!-- 5: Lady Cowhorse Bob's Custom Brand New $4,995 -->
+      <div class="listing-card">
+        <div class="listing-img-wrap">
+          <img src="images/used-saddles/lady-cowhorse-bobs-custom-15.5.jpg" alt="Lady Cowhorse by Bob's Custom Saddle — 15.5 Seat — Brand New $4,995" loading="lazy">
+        </div>
+        <div class="listing-body">
+          <div class="listing-maker">Bob's Custom Saddle</div>
+          <div class="listing-name">Lady Cowhorse</div>
+          <div class="listing-specs">
+            <span class="spec-chip">📐 15½" Seat</span>
+            <span class="spec-chip">✦ Brand New</span>
+            <span class="spec-chip">✦ Full Floral Tooling</span>
+          </div>
+          <div class="listing-price">$4,995 <span class="price-badge new">Brand New</span></div>
+          <a href="#contact" class="inquire-btn">Inquire About This Saddle</a>
+        </div>
+      </div>
+
+      <!-- 6: Kyle Tack 16" Like New $3,995 -->
+      <div class="listing-card">
+        <div class="listing-img-wrap">
+          <img src="images/used-saddles/kyle-tack-reiner-16-like-new.jpg" alt="Kyle Tack Reiner — 16 Seat — Like New — $3,995" loading="lazy">
+        </div>
+        <div class="listing-body">
+          <div class="listing-maker">Kyle Tack</div>
+          <div class="listing-name">Reiner — Like New</div>
+          <div class="listing-specs">
+            <span class="spec-chip">📐 16" Seat</span>
+            <span class="spec-chip">✦ Sterling Silver Conchos &amp; Rear Dees</span>
+            <span class="spec-chip">✦ Black Seat, Star Tooling</span>
+          </div>
+          <div class="listing-price">$3,995 <span class="price-badge">Like New</span></div>
+          <a href="#contact" class="inquire-btn">Inquire About This Saddle</a>
+        </div>
+      </div>
+
+      <!-- 7: Kyle Tack 16" $3,995 -->
+      <div class="listing-card">
+        <div class="listing-img-wrap">
+          <img src="images/used-saddles/kyle-tack-reiner-16.jpg" alt="Kyle Tack Reiner — 16 Seat — $3,995" loading="lazy">
+        </div>
+        <div class="listing-body">
+          <div class="listing-maker">Kyle Tack</div>
+          <div class="listing-name">Reiner</div>
+          <div class="listing-specs">
+            <span class="spec-chip">📐 16" Seat</span>
+            <span class="spec-chip">✦ Sterling Silver Conchos &amp; Rear Dees</span>
+            <span class="spec-chip">✦ Full Floral Tooling, Dark Oil</span>
+          </div>
+          <div class="listing-price">$3,995 <span class="price-badge sale">Sale</span></div>
+          <a href="#contact" class="inquire-btn">Inquire About This Saddle</a>
+        </div>
+      </div>
+
+      <!-- 8: Kyle Tack 15.5" $3,995 -->
+      <div class="listing-card">
+        <div class="listing-img-wrap">
+          <img src="images/used-saddles/kyle-tack-reiner-15.5.jpg" alt="Kyle Tack Reiner — 15.5 Seat — $3,995" loading="lazy">
+        </div>
+        <div class="listing-body">
+          <div class="listing-maker">Kyle Tack</div>
+          <div class="listing-name">Reiner — Lady Size</div>
+          <div class="listing-specs">
+            <span class="spec-chip">📐 15½" Seat</span>
+            <span class="spec-chip">✦ Sterling Silver Conchos &amp; Rear Dees</span>
+            <span class="spec-chip">✦ Dark Chocolate, Full Floral</span>
+          </div>
+          <div class="listing-price">$3,995 <span class="price-badge sale">Sale</span></div>
+          <a href="#contact" class="inquire-btn">Inquire About This Saddle</a>
+        </div>
+      </div>
+
+      <!-- 9: Superior Schmersal black seat silver corners (FB 2) -->
+      <div class="listing-card">
+        <div class="listing-img-wrap">
+          <img src="images/used-saddles/superior-schmersal-black-seat-silver.jpg" alt="Superior Saddlery Reiner — Black Seat — Silver Corner Plates" loading="lazy">
+        </div>
+        <div class="listing-body">
+          <div class="listing-maker">Superior Saddlery</div>
+          <div class="listing-name">Reiner — Black Seat, Silver Corner Plates</div>
+          <div class="listing-specs">
+            <span class="spec-chip">✦ Dark Seat · Silver Square Corner Plates</span>
+            <span class="spec-chip">✦ Basket &amp; Floral Tooling</span>
+            <span class="spec-chip">✦ Contact David for Full Specs</span>
+          </div>
+          <div class="listing-price">Call for Price</div>
+          <a href="#contact" class="inquire-btn">Inquire About This Saddle</a>
+        </div>
+      </div>
+
+      <!-- 10: Equine Oasis Tim Bauer 17" $2,995 -->
+      <div class="listing-card">
+        <div class="listing-img-wrap">
+          <img src="images/used-saddles/equine-oasis-tim-bauer-17.jpg" alt="Equine Oasis by Tim Bauer — 17 Seat — $2,995" loading="lazy">
+        </div>
+        <div class="listing-body">
+          <div class="listing-maker">Equine Oasis — Tim Bauer</div>
+          <div class="listing-name">Reiner</div>
+          <div class="listing-specs">
+            <span class="spec-chip">📐 17" Seat</span>
+            <span class="spec-chip">✦ Dark Chocolate Leather</span>
+            <span class="spec-chip">✦ Silver Conchos &amp; Rear Dees</span>
+          </div>
+          <div class="listing-price">$2,995</div>
+          <a href="#contact" class="inquire-btn">Inquire About This Saddle</a>
+        </div>
+      </div>
+
+      <!-- 11: Mandy McCutcheon Reiner Superior $2,995 -->
+      <div class="listing-card">
+        <div class="listing-img-wrap">
+          <img src="images/used-saddles/mandy-mccutcheon-reiner-superior-16.jpg" alt="Mandy McCutcheon Reiner by Superior Saddlery — 16 Chocolate Seat — $2,995" loading="lazy">
+        </div>
+        <div class="listing-body">
+          <div class="listing-maker">Superior Saddlery</div>
+          <div class="listing-name">Mandy McCutcheon Reiner</div>
+          <div class="listing-specs">
+            <span class="spec-chip">📐 16" Chocolate Seat</span>
+            <span class="spec-chip">✦ Nettles Wood Stirrups</span>
+            <span class="spec-chip">✦ Rich Walnut Finish</span>
+          </div>
+          <div class="listing-price">$2,995</div>
+          <a href="#contact" class="inquire-btn">Inquire About This Saddle</a>
+        </div>
+      </div>
+
+      <!-- 12: Andrea Maschke Reiner 15.5" $2,495 -->
+      <div class="listing-card">
+        <div class="listing-img-wrap">
+          <img src="images/used-saddles/andrea-maschke-reiner-15.5.jpg" alt="Andrea Maschke Reiner — 15.5 Seat — Built 2004 — $2,495" loading="lazy">
+        </div>
+        <div class="listing-body">
+          <div class="listing-maker">A. Maschke / Superior Saddlery</div>
+          <div class="listing-name">Reiner — Original 2004 Build</div>
+          <div class="listing-specs">
+            <span class="spec-chip">📐 15½" Seat</span>
+            <span class="spec-chip">✦ Sterling Silver Overlay Trim</span>
+            <span class="spec-chip">✦ Great Condition — Built c. 2004</span>
+          </div>
+          <div class="listing-price">$2,495 <span class="price-badge sale">Priced to Sell</span></div>
+          <a href="#contact" class="inquire-btn">Inquire About This Saddle</a>
+        </div>
+      </div>
+
+      <!-- 13: Brown Reiner Silver Conchos (FB 4) -->
+      <div class="listing-card">
+        <div class="listing-img-wrap">
+          <img src="images/used-saddles/brown-reiner-silver-conchos-dees.jpg" alt="Reiner — Silver Conchos and Dee Rings" loading="lazy">
+        </div>
+        <div class="listing-body">
+          <div class="listing-maker">Contact for Maker Details</div>
+          <div class="listing-name">Reiner — Basket &amp; Floral Tooling</div>
+          <div class="listing-specs">
+            <span class="spec-chip">✦ Silver Conchos &amp; Rear Dees</span>
+            <span class="spec-chip">✦ Rich Brown Leather</span>
+            <span class="spec-chip">✦ Contact David for Full Specs</span>
+          </div>
+          <div class="listing-price">Call for Price</div>
+          <a href="#contact" class="inquire-btn">Inquire About This Saddle</a>
+        </div>
+      </div>
+
+      <!-- 14: Bob's Custom 15" B14-867M $1,795 -->
+      <div class="listing-card">
+        <div class="listing-img-wrap">
+          <img src="images/used-saddles/bobs-custom-15-b14-867m.jpg" alt="Bob's Custom Saddle — 15 Seat — B14-867M — $1,795" loading="lazy">
+        </div>
+        <div class="listing-body">
+          <div class="listing-maker">Bob's Custom Saddle</div>
+          <div class="listing-name">Reiner — Model B14-867M</div>
+          <div class="listing-specs">
+            <span class="spec-chip">📐 15" Seat</span>
+            <span class="spec-chip">✦ Model B14-867M</span>
+            <span class="spec-chip">✦ Star Pattern Tooling</span>
+          </div>
+          <div class="listing-price">$1,795 <span class="price-badge sale">Sale</span></div>
+          <a href="#contact" class="inquire-btn">Inquire About This Saddle</a>
+        </div>
+      </div>
+
+      <!-- 15: Roughout Reiner Two-Tone Black (FB 1) -->
+      <div class="listing-card">
+        <div class="listing-img-wrap">
+          <img src="images/used-saddles/roughout-reiner-two-tone-black.jpg" alt="Roughout Reiner — Two-Tone Black and Tan Tooling" loading="lazy">
+        </div>
+        <div class="listing-body">
+          <div class="listing-maker">Contact for Maker Details</div>
+          <div class="listing-name">Roughout Reiner — Two-Tone Black &amp; Tan</div>
+          <div class="listing-specs">
+            <span class="spec-chip">✦ Roughout Seat &amp; Fenders</span>
+            <span class="spec-chip">✦ Black &amp; Tan Two-Tone Tooling</span>
+            <span class="spec-chip">✦ Buck-Stitch Trim · Silver Conchos</span>
+          </div>
+          <div class="listing-price">Call for Price</div>
+          <a href="#contact" class="inquire-btn">Inquire About This Saddle</a>
+        </div>
+      </div>
+
+      <!-- 16: Teddy Johnson Cutter 16" $1,195 -->
+      <div class="listing-card">
+        <div class="listing-img-wrap">
+          <img src="images/used-saddles/teddy-johnson-cutter-16.jpg" alt="Teddy Johnson Cutter — 16 Seat — $1,195" loading="lazy">
+        </div>
+        <div class="listing-body">
+          <div class="listing-maker">Teddy Johnson</div>
+          <div class="listing-name">Cutter</div>
+          <div class="listing-specs">
+            <span class="spec-chip">📐 16" Seat</span>
+            <span class="spec-chip">✦ Classic Cutting Saddle Design</span>
+          </div>
+          <div class="listing-price">$1,195</div>
+          <a href="#contact" class="inquire-btn">Inquire About This Saddle</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- CONTACT DAVID -->
-<section class="section section-dark" id="contact">
-  <div class="container" style="text-align: center; max-width: 640px;">
-    <p class="section-label" style="text-align:center;">Get in Touch</p>
-    <h2 class="section-title">Contact David Solum</h2>
-    <div class="divider" style="margin: 24px auto 36px;"></div>
-    <p style="color: var(--tan); margin-bottom: 16px; font-size: 1.1rem;">Looking for a specific seat size, tree width, or maker? David maintains a want-list and will contact you when a matching saddle comes through. Inventory moves quickly — don't wait.</p>
-    <p style="color: rgba(138,121,104,.7); font-size: .95rem; margin-bottom: 36px;">David also accepts quality reining saddles on consignment. If you have a saddle to sell, reach out for an evaluation.</p>
-    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-      <a href="mailto:info@certifiedreiningsdaddles.com" class="btn btn-gold">Email David Solum</a>
-      <a href="new-saddles.html" class="btn">Also See New Saddles →</a>
+<!-- CERT PROCESS -->
+<section class="section section-dark">
+  <div class="container">
+    <p class="section-label" style="text-align:center;">The Standard</p>
+    <h2 class="section-title" style="color:var(--parchment);text-align:center;">What "David Solum Certified" Means</h2>
+    <div class="divider" style="margin:20px auto 36px;"></div>
+    <div class="cert-steps">
+      <div class="cert-step"><div class="step-icon">🌳</div><h4>Tree Check</h4><p>Tree integrity verified — no twists, breaks, or structural issues. Flex test performed.</p></div>
+      <div class="cert-step"><div class="step-icon">🔩</div><h4>Rigging</h4><p>All rigging hardware checked for cracks, wear, and proper function.</p></div>
+      <div class="cert-step"><div class="step-icon">🛠️</div><h4>Leather</h4><p>All leather surfaces assessed and documented. Cracking and repairs noted.</p></div>
+      <div class="cert-step"><div class="step-icon">📏</div><h4>Measurements</h4><p>Seat size, gullet width, and tree width measured and verified accurate.</p></div>
+      <div class="cert-step"><div class="step-icon">📋</div><h4>Full Report</h4><p>Complete condition report provided with every certified saddle.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WANT LIST + CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr;gap:24px;">
+      <div class="want-box">
+        <h3>🎯 Don't See What You're Looking For?</h3>
+        <p>David maintains an active want-list. Tell him exactly what you need — maker, seat size, tree width, price range — and he'll contact you when a matching saddle comes through. Inventory moves quickly.</p>
+        <p>David also accepts quality reining saddles on <strong>consignment</strong>. If you have a saddle to sell, reach out for a no-obligation evaluation.</p>
+      </div>
+    </div>
+
+    <div style="background:var(--dark-saddle);padding:40px 28px;text-align:center;margin-top:28px;" id="contact-form">
+      <p class="section-label" style="text-align:center;justify-content:center;display:flex;">Get in Touch</p>
+      <h2 class="section-title" style="color:var(--parchment);text-align:center;">Contact David Solum</h2>
+      <div class="divider" style="margin:20px auto 28px;"></div>
+      <p style="color:var(--tan);margin-bottom:32px;font-size:1rem;max-width:520px;margin-left:auto;margin-right:auto;">Ready to inquire about a saddle, join the want-list, or discuss consignment? Reach out to David directly — he responds fast.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="mailto:david@certifiedreiningsaddles.com" class="btn btn-gold">Email David Solum</a>
+        <a href="new-saddles.html" class="btn" style="border-color:var(--tan);color:var(--tan);">Also See New Saddles →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -252,9 +516,13 @@
         <li><a href="new-saddles.html">New Reining Saddles</a></li>
         <li><a href="used-saddles.html">Certified Used Saddles</a></li>
       </ul></div>
-      <div class="footer-col"><h4>More</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="index.html">Home</a></li></ul></div>
+      <div class="footer-col"><h4>More</h4><ul>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="endorsers/index.html">Endorsers</a></li>
+        <li><a href="index.html">Home</a></li>
+      </ul></div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2025 ReiningSaddles.com</p><p>Informational resource. Contact sponsors for purchases.</p></div>
+    <div class="footer-bottom"><p>&copy; 2025 ReiningSaddles.com</p><p>Informational resource. Contact David Solum directly for purchases.</p></div>
   </div>
 </footer>
 <script>document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));</script>

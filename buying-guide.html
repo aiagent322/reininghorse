@@ -9,51 +9,37 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     .guide-body { max-width: 840px; }
-    .guide-section { margin-bottom: 56px; }
-    .guide-section h2 { font-family: var(--font-display); font-size: 1.7rem; color: var(--dark-saddle); margin-bottom: 8px; }
-    .guide-section .guide-label { font-family: var(--font-label); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
-    .guide-section p { font-size: 1.05rem; color: var(--charcoal); line-height: 1.85; margin-bottom: 1.2em; }
-    .guide-section ul, .guide-section ol { padding-left: 24px; margin-bottom: 1.2em; }
-    .guide-section li { font-size: 1rem; color: var(--warm-gray); line-height: 1.75; margin-bottom: 6px; }
+    .guide-section { margin-bottom: 44px; }
+    .guide-section h2 { font-family: var(--font-display); font-size: 1.4rem; color: var(--dark-saddle); margin-bottom: 8px; }
+    @media (min-width: 640px) { .guide-section h2 { font-size: 1.7rem; } }
+    .guide-section .guide-label { font-family: var(--font-label); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .guide-section p { font-size: .95rem; color: var(--charcoal); line-height: 1.85; margin-bottom: 1.1em; }
+    @media (min-width: 640px) { .guide-section p { font-size: 1.05rem; } }
+    .guide-section ul, .guide-section ol { padding-left: 20px; margin-bottom: 1.1em; }
+    .guide-section li { font-size: .9rem; color: var(--warm-gray); line-height: 1.75; margin-bottom: 5px; }
+    @media (min-width: 640px) { .guide-section li { font-size: 1rem; } }
     .tip-box {
       background: rgba(184,134,11,.08);
       border-left: 4px solid var(--gold);
       border-right: 1px solid rgba(184,134,11,.2);
       border-top: 1px solid rgba(184,134,11,.2);
       border-bottom: 1px solid rgba(184,134,11,.2);
-      padding: 24px 28px;
-      margin: 28px 0;
+      padding: 18px 20px; margin: 22px 0;
     }
-    .tip-box strong { font-family: var(--font-label); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 8px; }
-    .tip-box p { font-size: 1rem; color: var(--mid-brown); margin-bottom: 0; }
-    .warning-box {
-      background: rgba(229,57,53,.05);
-      border-left: 4px solid #E53935;
-      padding: 20px 24px;
-      margin: 24px 0;
-    }
-    .warning-box p { font-size: 1rem; color: var(--charcoal); margin-bottom: 0; }
+    @media (min-width: 640px) { .tip-box { padding: 24px 28px; margin: 28px 0; } }
+    .tip-box strong { font-family: var(--font-label); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 7px; }
+    .tip-box p { font-size: .9rem; color: var(--mid-brown); margin-bottom: 0; }
+    .warning-box { background: rgba(229,57,53,.05); border-left: 4px solid #E53935; padding: 16px 20px; margin: 20px 0; }
+    .warning-box p { font-size: .9rem; color: var(--charcoal); margin-bottom: 0; }
     .checklist { list-style: none; padding: 0; }
-    .checklist li {
-      padding: 10px 0 10px 32px;
-      border-bottom: 1px solid rgba(139,69,19,.08);
-      position: relative;
-      font-size: 1rem;
-      color: var(--charcoal);
-    }
-    .checklist li::before { content: '☐'; position: absolute; left: 0; color: var(--cognac); font-size: 1.1rem; }
-    .size-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 24px 0; }
-    .size-chip {
-      background: var(--parchment);
-      border: 1px solid rgba(139,69,19,.15);
-      padding: 16px;
-      text-align: center;
-    }
-    .size-chip .sz { font-family: var(--font-display); font-size: 1.5rem; color: var(--cognac); font-weight: 700; }
-    .size-chip .sz-label { font-family: var(--font-label); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--warm-gray); }
-    @media (max-width: 640px) {
-      .size-grid { grid-template-columns: 1fr 1fr; }
-    }
+    .checklist li { padding: 9px 0 9px 28px; border-bottom: 1px solid rgba(139,69,19,.08); position: relative; font-size: .9rem; color: var(--charcoal); }
+    @media (min-width: 640px) { .checklist li { font-size: 1rem; padding-left: 32px; } }
+    .checklist li::before { content: '☐'; position: absolute; left: 0; color: var(--cognac); font-size: 1rem; }
+    .size-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
+    @media (min-width: 640px) { .size-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; } }
+    .size-chip { background: var(--parchment); border: 1px solid rgba(139,69,19,.15); padding: 14px 10px; text-align: center; }
+    .size-chip .sz { font-family: var(--font-display); font-size: 1.3rem; color: var(--cognac); font-weight: 700; }
+    .size-chip .sz-label { font-family: var(--font-label); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: var(--warm-gray); }
   </style>
 </head>
 <body>

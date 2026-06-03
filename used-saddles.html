@@ -12,68 +12,51 @@
       background: var(--cognac);
       background-image: radial-gradient(ellipse at 70% 40%, rgba(61,31,10,.5) 0%, transparent 60%),
         repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(0,0,0,.04) 5px, rgba(0,0,0,.04) 6px);
-      padding: 80px 0;
+      padding: 52px 0 44px;
     }
-    .used-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-    .used-hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); color: var(--white); line-height: 1.15; margin-bottom: 20px; }
+    @media (min-width: 640px) { .used-hero { padding: 64px 0 56px; } }
+    @media (min-width: 1024px) { .used-hero { padding: 80px 0; } }
+    .used-hero-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
+    @media (min-width: 1024px) { .used-hero-grid { grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; } }
+    .used-hero h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 5vw, 3.5rem); color: var(--white); line-height: 1.15; margin-bottom: 16px; }
     .used-hero h1 em { color: var(--parchment); font-style: italic; display: block; }
-    .used-hero p { color: rgba(255,253,248,.85); font-size: 1.1rem; line-height: 1.75; margin-bottom: 24px; }
-    .cert-box {
-      background: rgba(0,0,0,.2);
-      border: 2px solid rgba(255,253,248,.25);
-      padding: 40px 32px;
-      text-align: center;
-    }
-    .cert-icon { font-size: 3.5rem; margin-bottom: 16px; }
-    .cert-box h3 { font-family: var(--font-display); font-size: 1.4rem; color: var(--white); margin-bottom: 8px; }
-    .cert-box p { color: rgba(255,253,248,.75); font-size: .95rem; margin-bottom: 20px; }
-    .why-card {
-      background: var(--white);
-      border: 1px solid rgba(139,69,19,.12);
-      border-left: 4px solid var(--cognac);
-      padding: 28px 24px;
-    }
-    .why-card h3 { font-family: var(--font-display); font-size: 1.1rem; color: var(--dark-saddle); margin-bottom: 8px; }
-    .why-card p { font-size: .95rem; color: var(--warm-gray); line-height: 1.7; }
-    .cert-process {
-      background: var(--dark-saddle);
-      padding: 48px 40px;
-      margin: 48px 0;
-    }
-    .cert-process h3 { font-family: var(--font-display); color: var(--parchment); font-size: 1.5rem; margin-bottom: 8px; }
-    .cert-process .sub { font-family: var(--font-label); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
-    .cert-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; }
-    .cert-step { text-align: center; padding: 24px 16px; border: 1px solid rgba(255,255,255,.08); }
-    .cert-step .step-icon { font-size: 2rem; margin-bottom: 12px; }
-    .cert-step h4 { font-family: var(--font-label); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--tan); margin-bottom: 8px; }
-    .cert-step p { font-size: .9rem; color: rgba(138,121,104,.8); line-height: 1.6; }
-    .listing-card {
-      background: var(--white);
-      border: 1px solid rgba(139,69,19,.15);
-      border-top: 3px solid var(--cognac);
-      padding: 28px;
-      transition: all .25s;
-      position: relative;
-    }
-    .listing-card:hover { box-shadow: 0 6px 28px rgba(61,31,10,.1); transform: translateY(-2px); }
-    .listing-badge {
-      position: absolute; top: 16px; right: 16px;
-      background: var(--gold);
-      color: var(--white);
-      font-family: var(--font-label);
-      font-size: 9px;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-    }
-    .listing-maker { font-family: var(--font-label); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
-    .listing-name { font-family: var(--font-display); font-size: 1.2rem; color: var(--dark-saddle); margin-bottom: 8px; }
-    .listing-detail { font-size: .9rem; color: var(--warm-gray); margin-bottom: 16px; line-height: 1.65; }
-    .listing-meta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
-    .meta-chip { background: var(--parchment); font-size: .8rem; color: var(--mid-brown); padding: 4px 10px; font-family: var(--font-label); letter-spacing: .05em; }
-    @media (max-width: 768px) {
-      .used-hero-grid { grid-template-columns: 1fr; }
-    }
+    .used-hero p { color: rgba(255,253,248,.85); font-size: .95rem; line-height: 1.75; margin-bottom: 20px; }
+    @media (min-width: 640px) { .used-hero p { font-size: 1.1rem; } }
+    .cert-box { background: rgba(0,0,0,.2); border: 2px solid rgba(255,253,248,.25); padding: 28px 20px; text-align: center; }
+    @media (min-width: 640px) { .cert-box { padding: 40px 32px; } }
+    .cert-icon { font-size: 2.8rem; margin-bottom: 12px; }
+    @media (min-width: 640px) { .cert-icon { font-size: 3.5rem; } }
+    .cert-box h3 { font-family: var(--font-display); font-size: 1.2rem; color: var(--white); margin-bottom: 8px; }
+    @media (min-width: 640px) { .cert-box h3 { font-size: 1.4rem; } }
+    .cert-box p { color: rgba(255,253,248,.75); font-size: .9rem; margin-bottom: 18px; }
+    .why-card { background: var(--white); border: 1px solid rgba(139,69,19,.12); border-left: 4px solid var(--cognac); padding: 20px 18px; }
+    @media (min-width: 640px) { .why-card { padding: 24px 22px; } }
+    .why-card h3 { font-family: var(--font-display); font-size: 1rem; color: var(--dark-saddle); margin-bottom: 7px; }
+    @media (min-width: 640px) { .why-card h3 { font-size: 1.1rem; } }
+    .why-card p { font-size: .9rem; color: var(--warm-gray); line-height: 1.7; }
+    .cert-process { background: var(--dark-saddle); padding: 28px 20px; margin: 32px 0; }
+    @media (min-width: 640px) { .cert-process { padding: 40px 36px; margin: 48px 0; } }
+    .cert-process h3 { font-family: var(--font-display); color: var(--parchment); font-size: 1.3rem; margin-bottom: 6px; }
+    @media (min-width: 640px) { .cert-process h3 { font-size: 1.5rem; } }
+    .cert-process .sub { font-family: var(--font-label); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .cert-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (min-width: 640px) { .cert-steps { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+    @media (min-width: 1024px) { .cert-steps { grid-template-columns: repeat(5, 1fr); gap: 20px; } }
+    .cert-step { text-align: center; padding: 18px 12px; border: 1px solid rgba(255,255,255,.08); }
+    .cert-step .step-icon { font-size: 1.6rem; margin-bottom: 8px; }
+    @media (min-width: 640px) { .cert-step .step-icon { font-size: 2rem; margin-bottom: 12px; } }
+    .cert-step h4 { font-family: var(--font-label); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--tan); margin-bottom: 6px; }
+    .cert-step p { font-size: .8rem; color: rgba(138,121,104,.8); line-height: 1.55; }
+    .listing-card { background: var(--white); border: 1px solid rgba(139,69,19,.15); border-top: 3px solid var(--cognac); padding: 20px 18px; transition: all .25s; position: relative; }
+    @media (min-width: 640px) { .listing-card { padding: 26px 24px; } }
+    .listing-card:hover { box-shadow: 0 5px 24px rgba(61,31,10,.09); transform: translateY(-2px); }
+    .listing-badge { position: absolute; top: 14px; right: 14px; background: var(--gold); color: var(--white); font-family: var(--font-label); font-size: 8px; letter-spacing: .12em; text-transform: uppercase; padding: 3px 8px; }
+    .listing-maker { font-family: var(--font-label); font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
+    .listing-name { font-family: var(--font-display); font-size: 1.1rem; color: var(--dark-saddle); margin-bottom: 8px; }
+    @media (min-width: 640px) { .listing-name { font-size: 1.2rem; } }
+    .listing-detail { font-size: .85rem; color: var(--warm-gray); margin-bottom: 14px; line-height: 1.65; }
+    .listing-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+    .meta-chip { background: var(--parchment); font-size: .75rem; color: var(--mid-brown); padding: 3px 8px; font-family: var(--font-label); letter-spacing: .04em; }
   </style>
 </head>
 <body>

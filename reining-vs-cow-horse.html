@@ -8,32 +8,24 @@
   <meta name="keywords" content="reining saddle vs cow horse saddle, NRCHA saddle, reined cow horse saddle, reining vs cutting saddle differences, NRHA vs NRCHA tack">
   <link rel="stylesheet" href="styles.css">
   <style>
-    .vs-hero-split {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-      margin: 56px 0;
-    }
-    .vs-col {
-      padding: 48px 40px;
-    }
+    .vs-hero-split { display: grid; grid-template-columns: 1fr; gap: 0; margin: 36px 0; }
+    @media (min-width: 640px) { .vs-hero-split { grid-template-columns: 1fr 1fr; margin: 56px 0; } }
+    .vs-col { padding: 28px 20px; }
+    @media (min-width: 640px) { .vs-col { padding: 40px 32px; } }
     .vs-col.reining { background: var(--dark-saddle); }
     .vs-col.cowhorse { background: var(--cognac); }
-    .vs-col h2 { font-family: var(--font-display); font-size: 1.8rem; color: var(--parchment); margin-bottom: 8px; }
-    .vs-col .sub { font-family: var(--font-label); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,253,248,.5); margin-bottom: 20px; }
+    .vs-col h2 { font-family: var(--font-display); font-size: 1.4rem; color: var(--parchment); margin-bottom: 6px; }
+    @media (min-width: 640px) { .vs-col h2 { font-size: 1.8rem; } }
+    .vs-col .sub { font-family: var(--font-label); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,253,248,.5); margin-bottom: 16px; }
     .vs-col ul { list-style: none; }
-    .vs-col ul li { color: var(--tan); font-size: 1rem; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,.1); display: flex; gap: 10px; align-items: flex-start; }
-    .vs-col ul li::before { content: '✦'; color: var(--gold-light); flex-shrink: 0; font-size: .8rem; margin-top: 4px; }
-    .compare-wrap { overflow-x: auto; margin: 40px 0; }
-    .insight-box {
-      background: var(--parchment);
-      border-left: 4px solid var(--cognac);
-      padding: 28px 32px;
-      margin: 48px 0;
-    }
-    .insight-box h3 { font-family: var(--font-display); font-size: 1.2rem; color: var(--dark-saddle); margin-bottom: 10px; }
-    .insight-box p { font-size: 1rem; color: var(--warm-gray); line-height: 1.75; }
-    @media (max-width: 640px) {
-      .vs-hero-split { grid-template-columns: 1fr; }
-    }
+    .vs-col ul li { color: var(--tan); font-size: .9rem; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,.1); display: flex; gap: 8px; align-items: flex-start; }
+    @media (min-width: 640px) { .vs-col ul li { font-size: 1rem; } }
+    .vs-col ul li::before { content: '✦'; color: var(--gold-light); flex-shrink: 0; font-size: .75rem; margin-top: 4px; }
+    .compare-wrap { overflow-x: auto; margin: 32px 0; -webkit-overflow-scrolling: touch; }
+    .insight-box { background: var(--parchment); border-left: 4px solid var(--cognac); padding: 20px 20px; margin: 32px 0; }
+    @media (min-width: 640px) { .insight-box { padding: 28px 32px; margin: 48px 0; } }
+    .insight-box h3 { font-family: var(--font-display); font-size: 1.1rem; color: var(--dark-saddle); margin-bottom: 8px; }
+    .insight-box p { font-size: .95rem; color: var(--warm-gray); line-height: 1.75; }
   </style>
 </head>
 <body>

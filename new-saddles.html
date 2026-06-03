@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New Reining Saddles — Superior Saddles by Andy Mashke | ReiningSaddles.com</title>
-  <meta name="description" content="Shop new reining saddles from Superior Saddles by Andy Mashke — hand-crafted, competition-proven saddles trusted by NRHA Open and Non Pro competitors at the highest levels.">
-  <meta name="keywords" content="Superior Saddles Andy Mashke, new reining saddles, custom reining saddle, NRHA competition saddle, handmade reining saddle, buy reining saddle">
+  <title>New Reining Saddles — Superior Saddlery by Andy Mashke | ReiningSaddles.com</title>
+  <meta name="description" content="Shop new reining and cow horse saddles from Superior Saddlery by Andy Mashke — hand-crafted SYMMETREES™, competition-proven designs trusted by NRHA champions Shawn Flarida, Craig Schmersal, Casey Deary, and more.">
+  <meta name="keywords" content="Superior Saddlery Andy Mashke, new reining saddles, custom reining saddle, NRHA competition saddle, SYMMETREES saddle tree, Shawn Flarida saddle, Craig Schmersal saddle">
   <link rel="stylesheet" href="styles.css">
   <style>
+    /* ── SPONSOR HERO ── */
     .sponsor-hero {
       background: var(--dark-saddle);
       background-image: radial-gradient(ellipse at 30% 50%, rgba(184,134,11,.25) 0%, transparent 60%),
@@ -16,42 +17,127 @@
     }
     @media (min-width: 640px) { .sponsor-hero { padding: 64px 0 56px; } }
     @media (min-width: 1024px) { .sponsor-hero { padding: 80px 0; } }
-    .sponsor-hero-grid { display: grid; grid-template-columns: 1fr; gap: 36px; }
-    @media (min-width: 1024px) { .sponsor-hero-grid { grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; } }
+    .sponsor-hero-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
+    @media (min-width: 1024px) { .sponsor-hero-grid { grid-template-columns: 3fr 2fr; gap: 64px; align-items: center; } }
     .sponsor-hero h1 { font-family: var(--font-display); font-size: clamp(1.8rem, 5vw, 3.5rem); color: var(--parchment); line-height: 1.15; margin-bottom: 16px; }
     .sponsor-hero h1 em { color: var(--gold-light); font-style: italic; }
-    .sponsor-hero p { color: var(--tan); font-size: .95rem; line-height: 1.75; margin-bottom: 20px; }
-    @media (min-width: 640px) { .sponsor-hero p { font-size: 1.1rem; } }
-    .sponsor-badge-large { background: rgba(184,134,11,.12); border: 2px solid var(--gold); padding: 32px 24px; text-align: center; }
-    @media (min-width: 640px) { .sponsor-badge-large { padding: 48px 40px; } }
-    .sponsor-badge-large .trophy { font-size: 3rem; margin-bottom: 14px; }
-    @media (min-width: 640px) { .sponsor-badge-large .trophy { font-size: 4rem; } }
-    .sponsor-badge-large h3 { font-family: var(--font-display); color: var(--parchment); font-size: 1.25rem; margin-bottom: 8px; }
-    @media (min-width: 640px) { .sponsor-badge-large h3 { font-size: 1.5rem; } }
-    .sponsor-badge-large .tag { font-family: var(--font-label); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-    .sponsor-badge-large p { color: var(--tan); font-size: .9rem; margin-bottom: 20px; }
-    .model-card { background: var(--white); border: 1px solid rgba(139,69,19,.15); border-top: 4px solid var(--gold); padding: 24px 20px; transition: all .25s; }
-    @media (min-width: 640px) { .model-card { padding: 32px 26px; } }
-    .model-card:hover { box-shadow: 0 6px 28px rgba(61,31,10,.1); transform: translateY(-2px); }
-    .model-tag { font-family: var(--font-label); font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-    .model-name { font-family: var(--font-display); font-size: 1.2rem; color: var(--dark-saddle); margin-bottom: 10px; }
-    @media (min-width: 640px) { .model-name { font-size: 1.35rem; } }
-    .model-desc { font-size: .9rem; color: var(--warm-gray); line-height: 1.7; margin-bottom: 16px; }
-    .model-specs { list-style: none; margin-bottom: 20px; }
-    .model-specs li { font-size: .85rem; color: var(--mid-brown); padding: 5px 0; border-bottom: 1px solid rgba(139,69,19,.08); display: flex; gap: 7px; }
-    .model-specs li::before { content: '◆'; color: var(--gold); font-size: .55rem; margin-top: 5px; flex-shrink: 0; }
-    .testimony { background: var(--parchment); border-left: 4px solid var(--gold); padding: 20px 20px; margin: 14px 0; }
-    @media (min-width: 640px) { .testimony { padding: 28px 32px; } }
-    .testimony blockquote { font-family: var(--font-display); font-style: italic; font-size: 1rem; color: var(--dark-saddle); margin-bottom: 8px; line-height: 1.6; }
-    @media (min-width: 640px) { .testimony blockquote { font-size: 1.1rem; } }
-    .testimony cite { font-family: var(--font-label); font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); }
-    .process-step { display: flex; gap: 16px; align-items: flex-start; padding: 22px 0; border-bottom: 1px solid rgba(139,69,19,.1); }
-    @media (min-width: 640px) { .process-step { gap: 24px; padding: 28px 0; } }
-    .step-num { font-family: var(--font-display); font-size: 2rem; color: rgba(139,69,19,.18); font-weight: 800; min-width: 48px; line-height: 1; }
-    @media (min-width: 640px) { .step-num { font-size: 2.5rem; min-width: 60px; } }
-    .step-body h3 { font-family: var(--font-display); font-size: 1.05rem; color: var(--dark-saddle); margin-bottom: 5px; }
-    .step-body p { font-size: .9rem; color: var(--warm-gray); line-height: 1.7; }
-    @media (min-width: 640px) { .step-body p { font-size: 1rem; } }
+    .sponsor-hero p { color: var(--tan); font-size: .95rem; line-height: 1.75; margin-bottom: 18px; }
+    @media (min-width: 640px) { .sponsor-hero p { font-size: 1.05rem; } }
+    .sponsor-logo-box { background: rgba(184,134,11,.1); border: 2px solid rgba(184,134,11,.4); padding: 28px 20px; text-align: center; }
+    .sponsor-logo-box img { max-width: 220px; margin: 0 auto 16px; }
+    .sponsor-logo-box p { color: var(--tan); font-size: .9rem; margin-bottom: 20px; }
+    /* ── SYMMETREES BLOCK ── */
+    .symmetrees-block {
+      background: var(--parchment);
+      border-left: 5px solid var(--gold);
+      padding: 28px 20px;
+      margin: 32px 0;
+    }
+    @media (min-width: 640px) { .symmetrees-block { padding: 36px 32px; } }
+    .symmetrees-block h3 { font-family: var(--font-display); font-size: 1.3rem; color: var(--dark-saddle); margin-bottom: 10px; }
+    @media (min-width: 640px) { .symmetrees-block h3 { font-size: 1.5rem; } }
+    .symmetrees-block p { font-size: .95rem; color: var(--mid-brown); line-height: 1.8; margin-bottom: 10px; }
+    .warranty-badge {
+      display: inline-block;
+      background: var(--dark-saddle);
+      color: var(--gold-light);
+      font-family: var(--font-label);
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      margin-top: 8px;
+    }
+    /* ── SADDLE GRID ── */
+    .saddle-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (min-width: 640px) { .saddle-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
+    @media (min-width: 1024px) { .saddle-grid { grid-template-columns: repeat(4, 1fr); gap: 22px; } }
+    .saddle-card {
+      background: var(--white);
+      border: 1px solid rgba(139,69,19,.12);
+      border-top: 3px solid var(--cognac);
+      display: flex; flex-direction: column;
+      transition: all .2s;
+      overflow: hidden;
+    }
+    .saddle-card:hover { box-shadow: 0 6px 24px rgba(61,31,10,.12); transform: translateY(-2px); }
+    .saddle-img-wrap {
+      background: var(--parchment);
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .saddle-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: contain;
+      padding: 8px;
+      transition: transform .3s;
+    }
+    .saddle-card:hover .saddle-img-wrap img { transform: scale(1.04); }
+    .saddle-card-body { padding: 12px 12px 14px; flex: 1; display: flex; flex-direction: column; }
+    @media (min-width: 640px) { .saddle-card-body { padding: 14px 14px 16px; } }
+    .saddle-name {
+      font-family: var(--font-display);
+      font-size: .9rem; color: var(--dark-saddle);
+      margin-bottom: 8px; line-height: 1.3;
+      flex: 1;
+    }
+    @media (min-width: 640px) { .saddle-name { font-size: 1rem; } }
+    .saddle-specs { margin-bottom: 10px; display: flex; flex-direction: column; gap: 3px; }
+    .spec-item {
+      font-size: .72rem; color: var(--warm-gray);
+      font-family: var(--font-label);
+      letter-spacing: .04em;
+      line-height: 1.4;
+    }
+    @media (min-width: 640px) { .spec-item { font-size: .78rem; } }
+    .saddle-btn {
+      font-size: 10px !important;
+      padding: 9px 12px !important;
+      letter-spacing: .08em !important;
+      width: 100%;
+      text-align: center;
+    }
+    @media (min-width: 640px) { .saddle-btn { font-size: 11px !important; padding: 11px 14px !important; } }
+    /* ── FILTER TABS ── */
+    .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .filter-btn {
+      font-family: var(--font-label);
+      font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+      padding: 8px 14px; border: 1px solid rgba(139,69,19,.3);
+      background: transparent; color: var(--mid-brown);
+      cursor: pointer; transition: all .2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--cognac); color: var(--white); border-color: var(--cognac);
+    }
+    /* ── ENDORSERS ── */
+    .endorser-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+    }
+    @media (min-width: 480px) { .endorser-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 768px) { .endorser-grid { grid-template-columns: repeat(5, 1fr); gap: 20px; } }
+    .endorser-card { text-align: center; }
+    .endorser-card img {
+      width: 100%; max-width: 140px; margin: 0 auto 8px;
+      border-radius: 4px;
+      filter: grayscale(20%);
+      transition: filter .2s;
+    }
+    .endorser-card:hover img { filter: grayscale(0%); }
+    .endorser-name {
+      font-family: var(--font-label); font-size: 10px;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--mid-brown);
+    }
+    @media (min-width: 640px) { .endorser-name { font-size: 11px; } }
+    /* ── CONTACT DARK ── */
+    .contact-dark { text-align: center; max-width: 640px; margin: 0 auto; padding: 0 16px; }
+    @media (min-width: 640px) { .contact-dark { padding: 0 24px; } }
   </style>
 </head>
 <body>
@@ -84,161 +170,757 @@
   <div class="container">
     <div class="sponsor-hero-grid">
       <div>
-        <p style="font-family:var(--font-label);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Official Sponsor — New Saddles</p>
-        <h1>Superior Saddles<br><em>by Andy Mashke</em></h1>
-        <p>Andy Mashke has spent more than two decades at the intersection of world-class horsemanship and master saddle craft. His Superior Saddles are trusted by NRHA Open and Non Pro competitors who demand the best — saddles that ride as beautifully as they look.</p>
-        <p>Every Superior Saddle is a conversation between maker and rider. Andy works directly with each customer to dial in tree width, seat shape, rigging position, skirt style, tooling pattern, and hardware — building a saddle that fits both the horse and the horseman.</p>
-        <a href="#contact" class="btn btn-gold">Request a Custom Consultation</a>
+        <p style="font-family:var(--font-label);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Official Sponsor — New Saddles</p>
+        <h1>Superior Saddlery<br><em>by Andy Mashke</em></h1>
+        <p>Andy Mashke has spent more than two decades perfecting the science and art of the performance saddle. His Superior Saddlery saddles are ridden by NRHA's elite — Shawn Flarida, Craig Schmersal, Casey Deary, Jason Vanlandingham, and more — and are built on his proprietary SYMMETREES™ technology for unmatched fit and consistency.</p>
+        <p>Every Superior saddle is hand-crafted in the USA with glass-encased wood trees, sterling overlay trim, and H/O skirting leather. Browse the full lineup below, then contact Superior Saddlery directly to order.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;">
+          <a href="#reining-saddles" class="btn btn-gold">Browse Reining Saddles ↓</a>
+          <a href="#contact" class="btn" style="border-color:var(--tan);color:var(--tan);">Contact Andy →</a>
+        </div>
       </div>
       <div>
-        <div class="sponsor-badge-large">
-          <div class="trophy">🏆</div>
-          <div class="tag">Official Sponsor</div>
-          <h3>Superior Saddles</h3>
-          <p>Hand-crafted reining and cow horse saddles for NRHA and NRCHA competition. Built to compete. Built to last.</p>
-          <a href="#models" class="btn btn-gold">See the Lineup</a>
+        <div class="sponsor-logo-box">
+          <img src="https://superior-saddlery.com/wp-content/uploads/2018/10/Superior-Logo-2018-small-1.png" alt="Superior Saddlery LLC — Andy Mashke">
+          <p>Best US-Made Custom Performance Saddles. Trusted by NRHA champions worldwide.</p>
+          <a href="https://superior-saddlery.com" target="_blank" rel="noopener" class="btn btn-gold">Visit Superior-Saddlery.com →</a>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- SADDLE MODELS -->
-<section class="section" id="models">
-  <div class="container">
-    <p class="section-label">The Lineup</p>
-    <h2 class="section-title">Superior Saddle Models</h2>
-    <div class="divider"></div>
-    <p class="section-intro">Each model in the Superior Saddles line is built on a competition-proven platform. All are available in full custom configuration — contact Andy for pricing and lead times.</p>
-
-    <div class="card-grid">
-      <div class="model-card">
-        <div class="model-tag">Flagship Model</div>
-        <div class="model-name">The Futurity Cut</div>
-        <p class="model-desc">Andy's premier reining saddle — built for the horse show pen. The Futurity Cut features an ultra-flat ground seat, narrow in-skirt rigging, and a slim horn profile that keeps the rider deep and connected through every maneuver.</p>
-        <ul class="model-specs">
-          <li>Composite tree — Full QH or Semi-QH bars</li>
-          <li>Roughout or smooth leather seat</li>
-          <li>7/8 in-skirt rigging</li>
-          <li>Round skirts — hand-tooled</li>
-          <li>Rubber-wrapped horn</li>
-          <li>Seat sizes: 15" to 17"</li>
-        </ul>
-        <a href="#contact" class="btn btn-solid">Inquire About This Model</a>
-      </div>
-
-      <div class="model-card">
-        <div class="model-tag">Cow Horse</div>
-        <div class="model-name">The Fence Work</div>
-        <p class="model-desc">Designed for the demanding tri-event format of NRCHA competition. The Fence Work saddle carries a more substantial horn, slightly longer skirts, and a seat geometry that keeps you centered whether you're spinning or chasing a cow at the fence.</p>
-        <ul class="model-specs">
-          <li>Rawhide-covered wood or composite tree</li>
-          <li>Semi-round skirts — full coverage</li>
-          <li>7/8 to full rigging — customer choice</li>
-          <li>Horn built for dallying contact</li>
-          <li>Premium Hermann Oak leather</li>
-          <li>Seat sizes: 15" to 17.5"</li>
-        </ul>
-        <a href="#contact" class="btn btn-solid">Inquire About This Model</a>
-      </div>
-
-      <div class="model-card">
-        <div class="model-tag">Non Pro Favorite</div>
-        <div class="model-name">The Trainer's Choice</div>
-        <p class="model-desc">A versatile mid-tier build favored by trainers and serious Non Pro competitors. The Trainer's Choice delivers Futurity-quality tree and seat in a slightly more traditional aesthetic — classic tooling, standard conchos, and excellent value.</p>
-        <ul class="model-specs">
-          <li>Full QH bars — traditional wood tree</li>
-          <li>Deep roughout seat — extra grip</li>
-          <li>In-skirt rigging</li>
-          <li>Traditional floral tooling</li>
-          <li>Available in light, medium, or dark oil</li>
-          <li>Seat sizes: 14.5" to 17"</li>
-        </ul>
-        <a href="#contact" class="btn btn-solid">Inquire About This Model</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
+<!-- SYMMETREES SECTION -->
 <section class="section section-alt">
   <div class="container">
-    <p class="section-label">From the Competitors</p>
-    <h2 class="section-title">What Riders Say</h2>
+    <p class="section-label">The Foundation</p>
+    <h2 class="section-title">SYMMETREES™ — Built Different</h2>
     <div class="divider"></div>
-
-    <div class="testimony">
-      <blockquote>"I've ridden a lot of saddles at a lot of Futurities, and nothing puts me in my horse like a Superior Saddle. Andy builds the seat around how you actually ride — not how a catalog thinks you should."</blockquote>
-      <cite>— NRHA Open Competitor, Weatherford, TX</cite>
-    </div>
-    <div class="testimony">
-      <blockquote>"My Trainer's Choice has 400 show miles on it and still fits perfectly. Andy's trees don't break down. That's the difference between a custom saddle and something off a rack."</blockquote>
-      <cite>— Non Pro Reiner, Scottsdale, AZ</cite>
-    </div>
-    <div class="testimony">
-      <blockquote>"I use the Fence Work model for NRCHA events — it handles the reining patterns beautifully and doesn't get in my way when I'm tracking a cow at the fence. Andy built exactly what I described."</blockquote>
-      <cite>— NRCHA Competitor, Temecula, CA</cite>
+    <div class="symmetrees-block">
+      <h3>The Most Precise, Symmetrical Saddle Tree You'll Find</h3>
+      <p>The very base of every Superior saddle — the saddle tree — is made in-house and is the result of A. Maschke's decade-long research, testing, designing, and constant improvement of new saddle tree concepts. SYMMETREES™ are precise, consistent, and reproducible: even after many years, Superior can deliver a replacement tree with the same fit and profile as the original.</p>
+      <p>The breeding goals of disciplines such as reining, cutting, and western pleasure have become increasingly specialized over the last 20 years. In close cooperation with some of the most successful trainers in the world, Maschke developed a variety of saddle trees that not only cover today's performance horses, but have been shown to improve performance of horse and rider in show rings worldwide.</p>
+      <p>Superior has been manufacturing its own saddle trees since 2003, placing special emphasis on symmetry and contemporary fit. Highest customer satisfaction is guaranteed with:</p>
+      <div class="warranty-badge">25-Year Tree Warranty</div>
     </div>
   </div>
 </section>
 
-<!-- THE PROCESS -->
+<!-- ENDORSERS -->
 <section class="section">
   <div class="container">
-    <p class="section-label">Custom Build Process</p>
-    <h2 class="section-title">How a Superior Saddle Is Built</h2>
+    <p class="section-label">Brand Ambassadors</p>
+    <h2 class="section-title">Trusted by NRHA's Elite</h2>
     <div class="divider"></div>
+    <div class="endorser-grid">
+      
+    <div class="endorser-card">
+      <img src="https://superior-saddlery.com/wp-content/uploads/2021/09/Shawn-Flarida.png" alt="Shawn Flarida — Superior Saddlery Endorser" loading="lazy">
+      <div class="endorser-name">Shawn Flarida</div>
+    </div>
+    <div class="endorser-card">
+      <img src="https://superior-saddlery.com/wp-content/uploads/2021/09/Craig-Schmersal.png" alt="Craig Schmersal — Superior Saddlery Endorser" loading="lazy">
+      <div class="endorser-name">Craig Schmersal</div>
+    </div>
+    <div class="endorser-card">
+      <img src="https://superior-saddlery.com/wp-content/uploads/2021/09/Casey-Deary.png" alt="Casey Deary — Superior Saddlery Endorser" loading="lazy">
+      <div class="endorser-name">Casey Deary</div>
+    </div>
+    <div class="endorser-card">
+      <img src="https://superior-saddlery.com/wp-content/uploads/2021/09/Jason-Vanlandingham.png" alt="Jason Vanlandingham — Superior Saddlery Endorser" loading="lazy">
+      <div class="endorser-name">Jason Vanlandingham</div>
+    </div>
+    <div class="endorser-card">
+      <img src="https://superior-saddlery.com/wp-content/uploads/2021/09/Tom-McCutcheon.png" alt="Tom McCutcheon — Superior Saddlery Endorser" loading="lazy">
+      <div class="endorser-name">Tom McCutcheon</div>
+    </div>
+    <div class="endorser-card">
+      <img src="https://superior-saddlery.com/wp-content/uploads/2021/09/Todd-Sommers.png" alt="Todd Sommers — Superior Saddlery Endorser" loading="lazy">
+      <div class="endorser-name">Todd Sommers</div>
+    </div>
+    <div class="endorser-card">
+      <img src="https://superior-saddlery.com/wp-content/uploads/2023/07/Nathan-Piper-785x1024.jpg" alt="Nathan Piper — Superior Saddlery Endorser" loading="lazy">
+      <div class="endorser-name">Nathan Piper</div>
+    </div>
+    <div class="endorser-card">
+      <img src="https://superior-saddlery.com/wp-content/uploads/2021/09/Cade-McCutcheon.png" alt="Cade McCutcheon — Superior Saddlery Endorser" loading="lazy">
+      <div class="endorser-name">Cade McCutcheon</div>
+    </div>
+    <div class="endorser-card">
+      <img src="https://superior-saddlery.com/wp-content/uploads/2021/09/Matt-Mills.png" alt="Matt Mills — Superior Saddlery Endorser" loading="lazy">
+      <div class="endorser-name">Matt Mills</div>
+    </div>
+    <div class="endorser-card">
+      <img src="https://superior-saddlery.com/wp-content/uploads/2021/01/CIRA18M1208.png" alt="Cira Baeck — Superior Saddlery Endorser" loading="lazy">
+      <div class="endorser-name">Cira Baeck</div>
+    </div>
+    </div>
+  </div>
+</section>
 
-    <div style="max-width: 760px;">
-      <div class="process-step">
-        <div class="step-num">01</div>
-        <div class="step-body">
-          <h3>Consultation</h3>
-          <p>Andy starts every build with a direct conversation — your riding style, your horse's back, your competitive goals, and your aesthetic preferences. This isn't a form or a questionnaire; it's a real dialogue between maker and rider.</p>
-        </div>
+<!-- REINING SADDLES -->
+<section class="section section-alt" id="reining-saddles">
+  <div class="container">
+    <p class="section-label">Full Product Lineup — 57 Models</p>
+    <h2 class="section-title">Reining Saddles</h2>
+    <div class="divider"></div>
+    <p class="section-intro">Every reining saddle in the Superior Saddlery lineup — featuring glass-encased wood trees, sterling overlay trim, and H/O skirting leather. Click any saddle to view full details and ordering information on Superior-Saddlery.com.</p>
+    <div class="saddle-grid">
+      
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/GS18.png" alt="AF Lady Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
       </div>
-      <div class="process-step">
-        <div class="step-num">02</div>
-        <div class="step-body">
-          <h3>Tree Selection & Fitting</h3>
-          <p>The right tree is selected based on your horse's measurements. Andy works with a network of trusted tree makers and can order custom bar angles for horses that don't fit standard templates. If possible, he recommends a wither tracing and back-width measurement at the 15th and 18th vertebrae.</p>
-        </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">AF Lady Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Custom Build Available</span></div>
+        <a href="https://superior-saddlery.com/product/af-lady-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
       </div>
-      <div class="process-step">
-        <div class="step-num">03</div>
-        <div class="step-body">
-          <h3>Leather Selection & Tooling</h3>
-          <p>Hermann Oak leather is the standard at Superior Saddles — consistent quality, proper temper, and proven durability. You'll choose your tooling pattern, finish (light, medium, or dark oil), and hardware from a full options catalog.</p>
-        </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/Harper-Conner.png" alt="AF Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
       </div>
-      <div class="process-step">
-        <div class="step-num">04</div>
-        <div class="step-body">
-          <h3>Build & Quality Check</h3>
-          <p>Andy builds each saddle by hand, inspecting every stitch and every rivet. Build times typically run 8–14 weeks depending on tooling complexity and current order volume.</p>
-        </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">AF Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Custom Build Available</span></div>
+        <a href="https://superior-saddlery.com/product/af-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
       </div>
-      <div class="process-step" style="border-bottom: none;">
-        <div class="step-num">05</div>
-        <div class="step-body">
-          <h3>Delivery & Follow-Up</h3>
-          <p>Your saddle ships fully assembled and ready to ride. Andy follows up after the first 30 days to ensure fit and comfort — and he stands behind his work if any adjustments are needed.</p>
-        </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/F15-3QFL-Hardseat.png" alt="AF Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
       </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">AF Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">F15 Rigging</span><span class="spec-item">Sterling Overlay Silver Trim</span><span class="spec-item">H/O Skirting Leather, Golden Finish</span></div>
+        <a href="https://superior-saddlery.com/product/af-reiner-2/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/F15-Hardseat.png" alt="AF Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">AF Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">F15 Rigging</span><span class="spec-item">Sterling Overlay Silver Trim</span><span class="spec-item">H/O Skirting Leather, Golden Finish</span></div>
+        <a href="https://superior-saddlery.com/product/af-reiner-3/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/F15-dyed-BG-edges-2.png" alt="AF Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">AF Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Walnut</span></div>
+        <a href="https://superior-saddlery.com/product/235039/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/Morris-Kulmer.png" alt="AF-Reining Saddle — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">AF-Reining Saddle</div>
+        <div class="saddle-specs"><span class="spec-item">Custom Build Available</span></div>
+        <a href="https://superior-saddlery.com/product/reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/SS-Ranch-Cutter-Full-Tooled-b.png" alt="Billy Williams Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Billy Williams Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Golden</span></div>
+        <a href="https://superior-saddlery.com/product/billy-williams-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/Cade-McCutcheon-2-1.png" alt="Cade McCutcheon Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Cade McCutcheon Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15”-16.5”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Russet</span></div>
+        <a href="https://superior-saddlery.com/product/cade-mccutcheon-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/Cade-McCutcheon-2.png" alt="Cade McCutcheon Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Cade McCutcheon Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15”-16.5”</span><span class="spec-item">F15 Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Golden</span></div>
+        <a href="https://superior-saddlery.com/product/cade-mccutcheon-reiner-2/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2024/10/Cade-McCutcheon-2022.png" alt="Cade McCutcheon Show — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Cade McCutcheon Show</div>
+        <div class="saddle-specs"><span class="spec-item">Custom Build Available</span></div>
+        <a href="https://superior-saddlery.com/product/cade-mccutcheon-show/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2024/10/Carlee-McCutcheon.png" alt="Carlee McCutcheon Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Carlee McCutcheon Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Custom Build Available</span></div>
+        <a href="https://superior-saddlery.com/product/carlee-mccutcheon-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/CD-dyed-BG-edges-1.png" alt="Casey Deary Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Casey Deary Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15”-16.5”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Golden</span></div>
+        <a href="https://superior-saddlery.com/product/casey-deary-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/CD-halbreed-tooled-antiqued-1.png" alt="Casey Deary Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Casey Deary Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15”-16.5”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Golden</span></div>
+        <a href="https://superior-saddlery.com/product/casey-deary-reiner-2/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/Casey-Deary-Specl-modif.png" alt="Casey Deary Reining Saddle — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Casey Deary Reining Saddle</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-16.5”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Silver Trim</span><span class="spec-item">H/O Skirting Leather, Golden antiqued</span></div>
+        <a href="https://superior-saddlery.com/product/234799/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/08/Deary.png" alt="Casey Deary Workhorse — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Casey Deary Workhorse</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15”-17.5”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Conchos</span><span class="spec-item">H/O Skirting Leather, light Golden</span></div>
+        <a href="https://superior-saddlery.com/product/casey-deary-workhorse/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/KT13046T3.png" alt="CH / AM-Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">CH / AM-Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15”-16.5”</span><span class="spec-item">In-Skirt Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Brown</span></div>
+        <a href="https://superior-saddlery.com/product/ch-am-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/TMC-Linda-Jacobs-a.png" alt="CH / AM-Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">CH / AM-Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Golden</span></div>
+        <a href="https://superior-saddlery.com/product/ch-am-reiner-2/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/AM-small-leaf-Border.png" alt="CH / AM-Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">CH / AM-Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15”-16.5”</span><span class="spec-item">In-Skirt Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Brown</span></div>
+        <a href="https://superior-saddlery.com/product/ch-am-reiner-3/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/9O4A1140.png" alt="CH-Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">CH-Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Golden</span></div>
+        <a href="https://superior-saddlery.com/product/234937/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/CH-A1-Skirts.png" alt="CH/AM-Reining Saddle — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">CH/AM-Reining Saddle</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Silver Trim</span><span class="spec-item">H/O Skirting Leather, Golden finished</span></div>
+        <a href="https://superior-saddlery.com/product/reining-saddle-4/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/86-8-Reiner.png" alt="Cira Baeck Maturity Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Cira Baeck Maturity Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">In-Skirt Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Golden</span></div>
+        <a href="https://superior-saddlery.com/product/cira-baeck-maturity-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/Cira-Beack-2.png" alt="Cira Baeck Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Cira Baeck Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Custom Build Available</span></div>
+        <a href="https://superior-saddlery.com/product/cira-baeck-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/Crystal-McNutt-2012.png" alt="CMN -Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">CMN -Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">Conv. On The Skirt-D Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Walnut</span></div>
+        <a href="https://superior-saddlery.com/product/cmn-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/9O4A7795.png" alt="Craig Schmersal Allround Saddle — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Craig Schmersal Allround Saddle</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Walnut</span></div>
+        <a href="https://superior-saddlery.com/product/craig-schmersal-work-saddle/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/Allison-Thorson-2-d.png" alt="Craig Schmersal Lady Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Craig Schmersal Lady Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Custom Build Available</span></div>
+        <a href="https://superior-saddlery.com/product/custom-made-for-a-thorson/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/Allison-Thorson.png" alt="Craig Schmersal Lady Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Craig Schmersal Lady Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Golden</span></div>
+        <a href="https://superior-saddlery.com/product/craig-schmersal-lady-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/AF-3QCAl-BE.png" alt="Craig Schmersal Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Craig Schmersal Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">F15-D Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Golden</span></div>
+        <a href="https://superior-saddlery.com/product/craig-schmersal-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/AF-Work-3.png" alt="Craig Schmersal Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Craig Schmersal Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">F15 Rigging</span><span class="spec-item">Sterling Overlay Silver Trim</span><span class="spec-item">H/O Skirting Leather, Golden Finish</span></div>
+        <a href="https://superior-saddlery.com/product/craig-schmersal-reiner-2/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/Fappani-Hardseat.png" alt="Craig Schmersal Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Craig Schmersal Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">F15 Rigging</span><span class="spec-item">Sterling Overlay Silver Trim</span><span class="spec-item">H/O Skirting Leather, Walnut Finish</span></div>
+        <a href="https://superior-saddlery.com/product/craig-schmersal-reiner-3/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2024/10/Schmersal-2025.png" alt="Craig Schmersal Show Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Craig Schmersal Show Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Custom Build Available</span></div>
+        <a href="https://superior-saddlery.com/product/craig-schmersal-show/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2019/04/AF.png" alt="CS Work Horse — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">CS Work Horse</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">F15 Rigging</span><span class="spec-item">Sterling Overlay Conchos</span><span class="spec-item">H/O Skirting Leather, light Golden</span></div>
+        <a href="https://superior-saddlery.com/product/234767/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2024/10/Gina-Schumacher-1.png" alt="Gina (Schumacher) Bethke — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Gina (Schumacher) Bethke</div>
+        <div class="saddle-specs"><span class="spec-item">Custom Build Available</span></div>
+        <a href="https://superior-saddlery.com/product/gina-bethke-show/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/08/Jennifer-Neudorf.png" alt="J.N. Custom Schmersal Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">J.N. Custom Schmersal Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Golden</span></div>
+        <a href="https://superior-saddlery.com/product/j-n-custom-schmersal-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/BL-Reiner.png" alt="Jason Vanlandingham Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Jason Vanlandingham Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15”-16.5”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Walnut</span></div>
+        <a href="https://superior-saddlery.com/product/jason-vanlandingham-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/JV19.png" alt="Jason Vanlandingham Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Jason Vanlandingham Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Custom Build Available</span></div>
+        <a href="https://superior-saddlery.com/product/jason-vanlandingham-reiner-2/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/Jason-Vanlandingham-2020.png" alt="Jason Vanlandingham Show Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Jason Vanlandingham Show Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15”-16.5”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Golden</span></div>
+        <a href="https://superior-saddlery.com/product/jason-vanlandingham-show-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/Jason-Valandingham-2016.png" alt="Jason Vanlandingham Show Saddle — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Jason Vanlandingham Show Saddle</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Golden</span></div>
+        <a href="https://superior-saddlery.com/product/jason-vanlandingham-show-saddle/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/Jason-Vanlandingham.png" alt="Jason Vanlandingham Show Saddle — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Jason Vanlandingham Show Saddle</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15&#8243;-16.5&#8243;</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Golden</span></div>
+        <a href="https://superior-saddlery.com/product/jason-vanlandingham-show-saddle-2/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/08/Vanlandingham.png" alt="Jason Vanlandingham Workhorse — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Jason Vanlandingham Workhorse</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15”-16.5”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Conchos</span><span class="spec-item">H/O Skirting Leather, light Golden</span></div>
+        <a href="https://superior-saddlery.com/product/jason-vanlandingham-workhorse/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2019/04/Jade-Keller.png" alt="JK-Cowhorse/Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">JK-Cowhorse/Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Silver ConchosH/O Skirting Leather, Roughout oiled</span><span class="spec-item">Sheepskin Skirt Lining</span></div>
+        <a href="https://superior-saddlery.com/product/jk-cowhorse-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/Josh-Tishman.png" alt="Josh Tishman Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Josh Tishman Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15”-16.5”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Golden</span></div>
+        <a href="https://superior-saddlery.com/product/josh-tishman-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/LVK-1.png" alt="Linde Von Koeding Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Linde Von Koeding Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Custom Build Available</span></div>
+        <a href="https://superior-saddlery.com/product/linde-von-koeding-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/New-AM-Tree-w-M1-Patterns.png" alt="M1-Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">M1-Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Walnut</span></div>
+        <a href="https://superior-saddlery.com/product/m1-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/Superior-1.png" alt="M1-Reining Saddle — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">M1-Reining Saddle</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Golden</span></div>
+        <a href="https://superior-saddlery.com/product/reining-saddle-6/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/MMC.png" alt="Mandy McCutcheon Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Mandy McCutcheon Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15”-16.5”</span><span class="spec-item">In-Skirt TS Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Golden</span></div>
+        <a href="https://superior-saddlery.com/product/mandy-mccutcheon-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/Mirjam-Stillo-1.png" alt="Mirjam Stillo Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Mirjam Stillo Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Custom Build Available</span></div>
+        <a href="https://superior-saddlery.com/product/mirjam-stillo-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2024/10/Nathan-Piper.png" alt="Nathan Piper — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Nathan Piper</div>
+        <div class="saddle-specs"><span class="spec-item">Custom Build Available</span></div>
+        <a href="https://superior-saddlery.com/product/nathan-piper/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/Nicile-Hutchings-1.png" alt="Nicole Hutchings Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Nicole Hutchings Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15”-16.5”</span><span class="spec-item">F15 Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Golden</span></div>
+        <a href="https://superior-saddlery.com/product/nicole-hutchings-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/NRHA-Anniversary-Saddle-2016.png" alt="NRHA 50th Anniversary Saddle — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">NRHA 50th Anniversary Saddle</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">F15 Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, antiqued Golden</span></div>
+        <a href="https://superior-saddlery.com/product/reining-saddle/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2024/10/R22.png" alt="R22 Square Skirt Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">R22 Square Skirt Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Custom Build Available</span></div>
+        <a href="https://superior-saddlery.com/product/r22-square-skirt-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/Vitale-2-1.png" alt="Reining Saddle — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Reining Saddle</div>
+        <div class="saddle-specs"><span class="spec-item">Custom Build Available</span></div>
+        <a href="https://superior-saddlery.com/product/reining-saddle-3/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/F15-Show-Full-Tooled.png" alt="Reining Saddle — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Reining Saddle</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-17”</span><span class="spec-item">F15-Rigging</span><span class="spec-item">Sterling Overlay Conchos</span><span class="spec-item">H/O Skirting Leather, Russet antiqued</span></div>
+        <a href="https://superior-saddlery.com/product/reining-saddle-2/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/SF19-a.png" alt="Shawn Flarida Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Shawn Flarida Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15”-16.5”</span><span class="spec-item">In-Skirt Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Walnut</span></div>
+        <a href="https://superior-saddlery.com/product/shawn-flarida-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/Todd-Sommers.png" alt="Todd Sommers Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Todd Sommers Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15.5”-16.5”</span><span class="spec-item">In-Skirt TS Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Golden</span></div>
+        <a href="https://superior-saddlery.com/product/todd-sommers-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/08/Sommers.png" alt="Todd Sommers Workhorse — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Todd Sommers Workhorse</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15”-16.5”</span><span class="spec-item">TS In-Skirt Rigging</span><span class="spec-item">Sterling Overlay Conchos</span><span class="spec-item">H/O Skirting Leather, light Golden</span></div>
+        <a href="https://superior-saddlery.com/product/todd-sommers-workhorse/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/CH-FL-w-Scroll-Border.png" alt="Tom McCutcheon Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Tom McCutcheon Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15”-16.5”</span><span class="spec-item">Dropped-D Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Golden</span></div>
+        <a href="https://superior-saddlery.com/product/tom-mccutcheon-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/08/Arab-Saddle-TwoTone-2.png" alt="x-Tra Wide Reiner — Superior Saddlery by Andy Mashke" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">x-Tra Wide Reiner</div>
+        <div class="saddle-specs"><span class="spec-item">Glass Encased Wood Tree</span><span class="spec-item">Seat Sizes 15”-16.5”</span><span class="spec-item">In-Skirt Rigging</span><span class="spec-item">Sterling Overlay Trim</span><span class="spec-item">H/O Skirting Leather, Russet</span></div>
+        <a href="https://superior-saddlery.com/product/x-tra-wide-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View on Superior-Saddlery.com →</a>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- COWHORSE SADDLES -->
+<section class="section" id="cowhorse-saddles">
+  <div class="container">
+    <p class="section-label">Also Available</p>
+    <h2 class="section-title">Cowhorse & Ranch Riding Saddles</h2>
+    <div class="divider"></div>
+    <p class="section-intro">Superior Saddlery also builds purpose-designed cowhorse and ranch riding saddles for NRCHA competitors and working riders.</p>
+    <div class="saddle-grid">
+      
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/09/9O4A1732-1-300x365.png" alt="BA Ranch Riding — Superior Saddlery" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">BA Ranch Riding</div>
+        <a href="https://superior-saddlery.com/product/ba-ranch-riding/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View Details →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/09/RR-Entry-1-300x396.png" alt="BL Ranch Riding EL — Superior Saddlery" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">BL Ranch Riding EL</div>
+        <a href="https://superior-saddlery.com/product/bl-ranch-riding-el/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View Details →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/09/RR-Pro-1-300x396.png" alt="BL Ranch Riding Pro — Superior Saddlery" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">BL Ranch Riding Pro</div>
+        <a href="https://superior-saddlery.com/product/bl-ranch-riding-pro/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View Details →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/09/SS-Ranch-Pleasure-Saddle-1-300x387.png" alt="Cowhorse / Ranch Riding — Superior Saddlery" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Cowhorse / Ranch Riding</div>
+        <a href="https://superior-saddlery.com/product/cowhorse-ranch-riding/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View Details →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2020/07/9O4A7795-300x351.png" alt="Craig Schmersal Allround — Superior Saddlery" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">Craig Schmersal Allround</div>
+        <a href="https://superior-saddlery.com/product/craig-schmersal-allround-saddle/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View Details →</a>
+      </div>
+    </div>
+    <div class="saddle-card">
+      <div class="saddle-img-wrap">
+        <img src="https://superior-saddlery.com/wp-content/uploads/2019/04/Jade-Keller-300x381.png" alt="JK Cowhorse/Reiner — Superior Saddlery" loading="lazy">
+      </div>
+      <div class="saddle-card-body">
+        <div class="saddle-name">JK Cowhorse/Reiner</div>
+        <a href="https://superior-saddlery.com/product/jk-cowhorse-reiner/" target="_blank" rel="noopener" class="btn btn-solid saddle-btn">View Details →</a>
+      </div>
+    </div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section class="section section-dark" id="contact">
-  <div class="container" style="text-align: center; max-width: 640px;">
-    <p class="section-label" style="text-align:center;">Get in Touch</p>
-    <h2 class="section-title" style="color: var(--parchment);">Request a Consultation with Andy Mashke</h2>
-    <div class="divider" style="margin: 24px auto 36px;"></div>
-    <p style="color: var(--tan); margin-bottom: 40px; font-size: 1.1rem;">Ready to start your Superior Saddle build? Reach out to Andy directly to discuss your horse, your riding, and your vision. Custom saddle lead times are currently 8–14 weeks.</p>
-    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-      <a href="mailto:info@superiorsaddles.com" class="btn btn-gold">Email Superior Saddles</a>
-      <a href="used-saddles.html" class="btn">Also Browse Certified Used →</a>
+  <div class="container">
+    <div class="contact-dark">
+      <p class="section-label" style="text-align:center;justify-content:center;display:flex;">Order Direct</p>
+      <h2 class="section-title" style="color:var(--parchment);text-align:center;">Contact Superior Saddlery</h2>
+      <div class="divider" style="margin:20px auto 28px;"></div>
+      <p style="color:var(--tan);margin-bottom:12px;font-size:1rem;">To order a Superior Saddlery saddle or request a custom build consultation, contact Andy Mashke directly through the Superior Saddlery website.</p>
+      <p style="color:rgba(200,169,125,.6);font-size:.9rem;margin-bottom:32px;">All saddles are built to order. Lead times vary by model and tooling complexity.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://superior-saddlery.com/contacts/" target="_blank" rel="noopener" class="btn btn-gold">Contact Superior Saddlery →</a>
+        <a href="https://superior-saddlery.com/shop-test/" target="_blank" rel="noopener" class="btn" style="border-color:var(--tan);color:var(--tan);">Browse Full Shop →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -246,7 +928,7 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
-      <div><div class="footer-brand">Reining<span>Saddles</span>.com</div><p class="footer-tagline">The internet's premier authority on reining saddles.</p></div>
+      <div><div class="footer-brand">Reining<span>Saddles</span>.com</div><p class="footer-tagline">The internet's premier authority on reining saddles. Official sponsor: Superior Saddlery by Andy Mashke.</p></div>
       <div class="footer-col"><h4>Learn</h4><ul>
         <li><a href="history.html">Saddle History</a></li>
         <li><a href="parts-of-the-saddle.html">Parts of the Saddle</a></li>
@@ -256,12 +938,18 @@
       <div class="footer-col"><h4>Shop</h4><ul>
         <li><a href="new-saddles.html">New Reining Saddles</a></li>
         <li><a href="used-saddles.html">Certified Used Saddles</a></li>
+        <li><a href="https://superior-saddlery.com/shop-test/" target="_blank" rel="noopener">Superior Saddlery Shop</a></li>
       </ul></div>
       <div class="footer-col"><h4>More</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="index.html">Home</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2025 ReiningSaddles.com</p><p>Informational resource. Contact sponsors for purchases.</p></div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 ReiningSaddles.com</p>
+      <p>Saddle images &copy; Superior Saddlery, LLC. Used with permission as official sponsor.</p>
+    </div>
   </div>
 </footer>
-<script>document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));</script>
+<script>
+  document.getElementById('hamburger').addEventListener('click', () => document.getElementById('navLinks').classList.toggle('open'));
+</script>
 </body>
 </html>

@@ -238,12 +238,12 @@ a:hover { color: var(--gold); }
   background-image:
     radial-gradient(ellipse at 20% 50%, rgba(139,69,19,.4) 0%, transparent 60%),
     repeating-linear-gradient(45deg, transparent, transparent 4px, rgba(255,255,255,.012) 4px, rgba(255,255,255,.012) 5px);
-  padding: 24px 16px 20px;
+  padding: 8px 16px 8px;
   text-align: center;
   border-bottom: 3px solid var(--cognac);
 }
-@media (min-width: 640px) { .page-hero { padding: 32px 24px 28px; } }
-@media (min-width: 1024px) { .page-hero { padding: 40px 32px 36px; } }
+@media (min-width: 640px) { .page-hero { padding: 16px 24px 14px; } }
+@media (min-width: 1024px) { .page-hero { padding: 28px 32px 24px; } }
 .page-hero .section-label { justify-content: center; display: flex; }
 .page-hero h1 {
   font-family: var(--font-display);

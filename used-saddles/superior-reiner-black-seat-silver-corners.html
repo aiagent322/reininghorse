@@ -307,7 +307,11 @@
       </tr>
         </table>
 
-        <div class="cert-badge">
+        
+      <div class="shipping-note">
+        <strong>Shipping available.</strong> David ships nationwide. Contact for a quote to your zip code.
+      </div>
+      <div class="cert-badge">
           <div class="cert-badge-icon">🔖</div>
           <p><strong>David Solum Certified</strong> — Tree integrity verified, leather condition documented, rigging inspected. Full condition report available on request.</p>
         </div>
@@ -370,10 +374,10 @@
     document.getElementById('navLinks').classList.toggle('open'));
 
   // Gallery image switcher
-  function setMain(src) {
+  function setMain(src, el) {
     document.getElementById('mainImg').src = src;
     document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('gallery-thumb-active'));
-    event.currentTarget.classList.add('gallery-thumb-active');
+    if (el) el.classList.add('gallery-thumb-active');
   }
 </script>
 </body>

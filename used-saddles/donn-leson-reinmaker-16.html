@@ -24,41 +24,204 @@
   "url": "https://www.reiningsaddles.com/used-saddles/donn-leson-reinmaker-16.html"
 }
 </script>
+  <style>
+    /* ── LISTING LAYOUT ── */
+    .listing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    @media (min-width: 768px) {
+      .listing-grid { grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    }
+    @media (min-width: 1024px) {
+      .listing-grid { grid-template-columns: 3fr 2fr; gap: 56px; }
+    }
+
+    /* ── IMAGE GALLERY ── */
+    .main-img-wrap {
+      background: var(--parchment);
+      border: 1px solid rgba(139,69,19,.15);
+      overflow: hidden;
+    }
+    .main-img-wrap img {
+      width: 100%;
+      display: block;
+      transition: transform .3s;
+    }
+    .thumb-strip {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .gallery-thumb {
+      width: 72px; height: 72px;
+      border: 2px solid rgba(139,69,19,.2);
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color .2s;
+      flex-shrink: 0;
+    }
+    @media (min-width: 640px) { .gallery-thumb { width: 88px; height: 88px; } }
+    .gallery-thumb:hover, .gallery-thumb.active { border-color: var(--cognac); }
+    .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ── VIDEO ── */
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0; overflow: hidden;
+      background: var(--charcoal);
+      margin-top: 28px;
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+
+    /* ── LISTING INFO ── */
+    .listing-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      color: var(--dark-saddle); line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .listing-price {
+      font-family: var(--font-display);
+      font-size: 2rem; color: var(--cognac);
+      font-weight: 700;
+      border-top: 2px solid var(--gold);
+      padding-top: 14px;
+      margin-bottom: 20px;
+    }
+
+    /* ── SPECS TABLE ── */
+    .listing-specs table {
+      width: 100%; border-collapse: collapse;
+      margin: 0 0 24px; font-size: .9rem;
+    }
+    @media (min-width: 640px) { .listing-specs table { font-size: 1rem; } }
+    .listing-specs tr { border-bottom: 1px solid rgba(139,69,19,.1); }
+    .listing-specs tr:last-child { border-bottom: none; }
+    .listing-specs th {
+      padding: 10px 12px 10px 0;
+      font-family: var(--font-label);
+      font-size: 10px; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--warm-gray);
+      white-space: nowrap; width: 40%;
+      text-align: left; font-weight: 400;
+    }
+    .listing-specs td {
+      padding: 10px 0 10px 12px;
+      color: var(--charcoal); font-weight: 600;
+    }
+
+    /* ── DESCRIPTION ── */
+    .listing-description {
+      font-size: 1rem; line-height: 1.85;
+      color: var(--charcoal); margin: 24px 0;
+    }
+    @media (min-width: 640px) { .listing-description { font-size: 1.05rem; } }
+    .listing-description p { margin-bottom: 14px; }
+
+    /* ── SHIPPING NOTE ── */
+    .shipping-note {
+      background: #e8f4fd;
+      border-left: 4px solid #2196F3;
+      padding: 14px 16px;
+      font-size: .9rem;
+      color: var(--charcoal);
+      margin: 16px 0;
+      line-height: 1.6;
+    }
+
+    /* ── CERT BADGE ── */
+    .cert-badge {
+      background: var(--parchment);
+      border-left: 4px solid var(--gold);
+      padding: 16px 18px;
+      display: flex; gap: 12px; align-items: center;
+      margin: 16px 0;
+    }
+    .cert-icon { font-size: 1.5rem; flex-shrink: 0; color: var(--gold); }
+    .cert-badge span:last-child { font-size: .9rem; color: var(--mid-brown); line-height: 1.6; }
+    .cert-badge strong { color: var(--dark-saddle); }
+
+    /* ── CTA BUTTON ── */
+    .cta-button {
+      display: block;
+      width: 100%;
+      font-family: var(--font-label);
+      font-size: 13px; letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 16px 24px;
+      background: var(--cognac); color: var(--white);
+      text-align: center;
+      transition: background .25s;
+      margin-top: 16px;
+      border: none; cursor: pointer;
+    }
+    .cta-button:hover { background: var(--dark-saddle); color: var(--white); }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      font-family: var(--font-label); font-size: 10px;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--warm-gray); margin-bottom: 20px;
+    }
+    .breadcrumb a { color: var(--tan); }
+    .breadcrumb a:hover { color: var(--gold-light); }
+  </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="header-inner">
-    <a href="../index.html" class="logo-link"><span class="logo-text">Reining<span class="logo-accent">Saddles</span>.com</span></a>
-    <nav class="main-nav">
-      <a href="../used-saddles.html">Used Saddles</a>
-      <a href="../new-saddles.html">New Saddles</a>
-      <a href="../buying-guide.html">Buying Guide</a>
-      <a href="../faq.html">FAQ</a>
-    </nav>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Reining<span>Saddles</span>.com</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../history.html">History</a></li>
+      <li><a href="../parts-of-the-saddle.html">Saddle Parts</a></li>
+      <li><a href="../reining-vs-cow-horse.html">Reining vs. Cow Horse</a></li>
+      <li><a href="../new-saddles.html">New Saddles</a></li>
+      <li><a href="../used-saddles.html" class="active">Used Saddles</a></li>
+      <li><a href="../buying-guide.html">Buying Guide</a></li>
+      <li><a href="../faq.html">FAQ</a></li>
+      <li><a href="../used-saddles.html" class="nav-cta">Shop Used Saddles</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
   </div>
-</header>
+</nav>
+<div class="sponsor-bar">
+  <span class="sponsor-bar-label">Official Sponsors</span>
+  <a href="../new-saddles.html" class="sponsor-name">&#127942; Superior Saddles by Andy Mashke</a>
+  <span class="sponsor-pipe">|</span>
+  <a href="../used-saddles.html" class="sponsor-name">&#127991; Certified Used Saddles by David Solum</a>
+</div>
 
-<main class="listing-detail">
+<section class="section">
+  <div class="container">
   <div class="breadcrumb"><a href="../index.html">Home</a> › <a href="../used-saddles.html">Used Saddles</a> › Donn Leson Reinmaker 16"</div>
 
-  <div class="listing-layout">
-    <div class="gallery-col">
-      <div class="main-image-wrap">
-        <img id="mainImg" src="../images/used-saddles/donn-leson-reinmaker-16-full-offside.jpg" alt="Donn Leson Reinmaker 16 inch full view">
+  <div class="listing-grid">
+    <div class="gallery-left">
+      <div class="main-img-wrap">
+        <img id="mainImg" src="../images/used-saddles/donn-leson-reinmaker-16-full-offside.jpg" alt="Donn Leson Reinmaker 16 inch full view" width="800" height="1067">
       </div>
       <div class="thumb-strip">
-        <div class="gallery-thumb active" onclick="setMain('../images/used-saddles/donn-leson-reinmaker-16-full-offside.jpg', this)"><img src="../images/used-saddles/donn-leson-reinmaker-16-full-offside.jpg" alt="Full offside view"></div>
-        <div class="gallery-thumb" onclick="setMain('../images/used-saddles/donn-leson-reinmaker-16-full-nearside.jpg', this)"><img src="../images/used-saddles/donn-leson-reinmaker-16-full-nearside.jpg" alt="Full nearside view"></div>
-        <div class="gallery-thumb" onclick="setMain('../images/used-saddles/donn-leson-reinmaker-16-skirt-stamp.jpg', this)"><img src="../images/used-saddles/donn-leson-reinmaker-16-skirt-stamp.jpg" alt="Reinmaker stamp closeup"></div>
-        <div class="gallery-thumb" onclick="setMain('../images/used-saddles/donn-leson-reinmaker-16-horn-detail.jpg', this)"><img src="../images/used-saddles/donn-leson-reinmaker-16-horn-detail.jpg" alt="Horn and swell detail"></div>
+        <div class="gallery-thumb active" onclick="setMain('../images/used-saddles/donn-leson-reinmaker-16-full-offside.jpg', this)"><img src="../images/used-saddles/donn-leson-reinmaker-16-full-offside.jpg" alt="Full offside view" loading="lazy"></div>
+        <div class="gallery-thumb" onclick="setMain('../images/used-saddles/donn-leson-reinmaker-16-full-nearside.jpg', this)"><img src="../images/used-saddles/donn-leson-reinmaker-16-full-nearside.jpg" alt="Full nearside view" loading="lazy"></div>
+        <div class="gallery-thumb" onclick="setMain('../images/used-saddles/donn-leson-reinmaker-16-skirt-stamp.jpg', this)"><img src="../images/used-saddles/donn-leson-reinmaker-16-skirt-stamp.jpg" alt="Reinmaker stamp closeup" loading="lazy"></div>
+        <div class="gallery-thumb" onclick="setMain('../images/used-saddles/donn-leson-reinmaker-16-horn-detail.jpg', this)"><img src="../images/used-saddles/donn-leson-reinmaker-16-horn-detail.jpg" alt="Horn and swell detail" loading="lazy"></div>
       </div>
     </div>
 
-    <div class="detail-col">
+    <div class="detail-right">
       <h1 class="listing-title">Donn Leson Reinmaker — 16" Seat</h1>
       <div class="listing-price">$7,995</div>
 
       <div class="listing-specs">
+        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
         <table>
           <tr><th>Maker</th><td>Donn Leson — Grants Pass, Oregon</td></tr>
           <tr><th>Seat Size</th><td>16"</td></tr>
@@ -68,6 +231,7 @@
           <tr><th>Hardware</th><td>Engraved silver conchos with pendant keepers</td></tr>
           <tr><th>Condition</th><td>Lightly used — excellent</td></tr>
         </table>
+        </div>
       </div>
 
       <div class="listing-description">
@@ -93,7 +257,8 @@
       <a href="mailto:david@certifiedreiningsaddles.com?subject=Donn Leson Reinmaker 16 Inch - Inquiry" class="cta-button">Inquire About This Saddle</a>
     </div>
   </div>
-</main>
+  </div>
+</section>
 
 <footer class="site-footer">
   <p>&copy; 2025 ReiningSaddles.com &mdash; Certified Pre-Owned Reining Saddles</p>
@@ -105,6 +270,12 @@ function setMain(src, el) {
   document.querySelectorAll('.gallery-thumb').forEach(function(t) { t.classList.remove('active'); });
   if (el) el.classList.add('active');
 }
+</script>
+
+<script>
+  var h = document.getElementById('hamburger');
+  var n = document.getElementById('navLinks');
+  if (h) h.addEventListener('click', function() { n.classList.toggle('open'); });
 </script>
 </body>
 </html>

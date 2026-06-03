@@ -46,8 +46,9 @@
     }
     .main-img-wrap img {
       width: 100%;
+      height: auto;
       display: block;
-      transition: transform .3s;
+      object-fit: contain;
     }
     .thumb-strip {
       display: flex;
@@ -65,7 +66,7 @@
     }
     @media (min-width: 640px) { .gallery-thumb { width: 88px; height: 88px; } }
     .gallery-thumb:hover, .gallery-thumb.active { border-color: var(--cognac); }
-    .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-thumb img { width: 100%; height: 100%; object-fit: contain; background: var(--parchment); }
 
     /* ── VIDEO ── */
     .video-wrap {
@@ -216,7 +217,7 @@
   <div class="listing-grid">
     <div class="gallery-left">
       <div class="main-img-wrap">
-        <img id="mainImg" src="../images/used-saddles/superior-ranch-rider-16-5-nevada-full-offside.jpg" alt="Superior Saddlery 16.5 inch elephant seat flower Nevada border" width="800" height="1067">
+        <img id="mainImg" src="../images/used-saddles/superior-ranch-rider-16-5-nevada-full-offside.jpg" alt="Superior Saddlery 16.5 inch elephant seat flower Nevada border">
       </div>
       <div class="thumb-strip">
         <div class="gallery-thumb active" onclick="setMain('../images/used-saddles/superior-ranch-rider-16-5-nevada-full-offside.jpg', this)"><img src="../images/used-saddles/superior-ranch-rider-16-5-nevada-full-offside.jpg" alt="Full offside view" loading="lazy"></div>

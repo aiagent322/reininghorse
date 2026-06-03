@@ -42,7 +42,7 @@
     .gallery-thumb { width: 72px; height: 72px; border: 2px solid rgba(139,69,19,.2); overflow: hidden; cursor: pointer; transition: border-color .2s; flex-shrink: 0; }
     @media (min-width: 640px) { .gallery-thumb { width: 88px; height: 88px; } }
     .gallery-thumb:hover, .gallery-thumb-active { border-color: var(--cognac); }
-    .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-thumb img { width: 100%; height: 100%; object-fit: contain; background: var(--parchment); }
     .video-section { margin-top: 36px; }
     .video-title { font-family: var(--font-display); font-size: 1.2rem; color: var(--dark-saddle); margin-bottom: 14px; }
     .listing-maker-tag { font-family: var(--font-label); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
@@ -111,7 +111,7 @@
       <!-- LEFT: Images + Video -->
       <div>
         <div class="main-img-wrap">
-          <img src="../images/used-saddles/srs-ranch-saddle-16-main.jpg" alt="SRS Ranch Saddle 16 inch seat — hand tooled two-tone black and tan with buck-stitch trim" id="mainImg" loading="eager" width="800" height="1067">
+          <img src="../images/used-saddles/srs-ranch-saddle-16-main.jpg" alt="SRS Ranch Saddle 16 inch seat — hand tooled two-tone black and tan with buck-stitch trim" id="mainImg" loading="eager">
         </div>
         <div class="gallery-strip">
           <div class="gallery-thumb gallery-thumb-active" onclick="setMain('../images/used-saddles/srs-ranch-saddle-16-main.jpg', this)">

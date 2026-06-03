@@ -831,26 +831,61 @@
 </section>
 
 <!-- WANT LIST + CONTACT -->
-<section class="section" id="contact">
+<section class="section section-alt" id="contact">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr;gap:24px;">
-      <div class="want-box">
-        <h3>🎯 Don't See What You're Looking For?</h3>
-        <p>David maintains an active want-list. Tell him exactly what you need — maker, seat size, tree width, price range — and he'll contact you when a matching saddle comes through. Inventory moves quickly.</p>
-        <p>David also accepts quality reining saddles on <strong>consignment</strong>. If you have a saddle to sell, reach out for a no-obligation evaluation.</p>
+
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">Contact David Solum</h2>
+    <div class="divider"></div>
+
+    <div style="display:grid;grid-template-columns:1fr;gap:24px;margin-bottom:32px;">
+      <div style="background:var(--dark-saddle);border-radius:2px;padding:36px 28px;display:grid;grid-template-columns:1fr;gap:28px;">
+
+        <!-- Contact Card -->
+        <div style="text-align:center;">
+          <div style="font-family:var(--font-display);font-size:1.5rem;color:var(--parchment);margin-bottom:6px;">David Solum</div>
+          <div style="font-family:var(--font-label);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;">Certified Reining Saddle Specialist · 40+ Years Experience</div>
+
+          <div style="display:flex;flex-direction:column;gap:14px;align-items:center;margin-bottom:32px;">
+
+            <a href="tel:4177931403" style="display:flex;align-items:center;gap:12px;background:var(--cognac);color:var(--white);padding:16px 28px;text-decoration:none;width:100%;max-width:320px;justify-content:center;transition:background .2s;" onmouseover="this.style.background='#6b3520'" onmouseout="this.style.background='var(--cognac)'">
+              <span style="font-size:1.3rem;">📞</span>
+              <span style="font-family:var(--font-label);font-size:14px;letter-spacing:.08em;">(417) 793-1403</span>
+            </a>
+
+            <a href="mailto:davidsolumsales@gmail.com" style="display:flex;align-items:center;gap:12px;background:transparent;border:2px solid var(--gold);color:var(--gold);padding:14px 28px;text-decoration:none;width:100%;max-width:320px;justify-content:center;transition:all .2s;" onmouseover="this.style.background='var(--gold)';this.style.color='var(--charcoal)'" onmouseout="this.style.background='transparent';this.style.color='var(--gold)'">
+              <span style="font-size:1.3rem;">✉️</span>
+              <span style="font-family:var(--font-label);font-size:12px;letter-spacing:.06em;">davidsolumsales@gmail.com</span>
+            </a>
+
+          </div>
+
+          <p style="font-size:.85rem;color:var(--warm-gray);line-height:1.6;max-width:420px;margin:0 auto;">
+            David responds quickly. For fastest response, call or text. For photos or detailed questions, email works great.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Want List + Consignment -->
+      <div style="display:grid;grid-template-columns:1fr;gap:16px;">
+        <div class="want-box">
+          <h3>🎯 Don't See What You're Looking For?</h3>
+          <p>David maintains an active want-list. Tell him exactly what you need — maker, seat size, tree width, price range — and he'll contact you when a matching saddle comes through. Inventory moves quickly.</p>
+          <div style="margin-top:14px;">
+            <a href="tel:4177931403" class="btn btn-solid" style="margin-right:10px;">Call (417) 793-1403</a>
+          </div>
+        </div>
+        <div class="want-box" style="border-left-color:var(--cognac);">
+          <h3>🤝 Consignment Welcome</h3>
+          <p>David accepts quality reining saddles on consignment. If you have a saddle to sell, reach out for a no-obligation evaluation. He knows the market and moves inventory fast.</p>
+          <div style="margin-top:14px;">
+            <a href="mailto:davidsolumsales@gmail.com?subject=Consignment Inquiry" class="btn">Email About Consignment</a>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div style="background:var(--dark-saddle);padding:40px 28px;text-align:center;margin-top:28px;" id="contact-form">
-      <p class="section-label" style="text-align:center;justify-content:center;display:flex;">Get in Touch</p>
-      <h2 class="section-title" style="color:var(--parchment);text-align:center;">Contact David Solum</h2>
-      <div class="divider" style="margin:20px auto 28px;"></div>
-      <p style="color:var(--tan);margin-bottom:32px;font-size:1rem;max-width:520px;margin-left:auto;margin-right:auto;">Ready to inquire about a saddle, join the want-list, or discuss consignment? Reach out to David directly — he responds fast.</p>
-      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="mailto:david@certifiedreiningsaddles.com" class="btn btn-gold">Email David Solum</a>
-        <a href="new-saddles.html" class="btn" style="border-color:var(--tan);color:var(--tan);">Also See New Saddles →</a>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -874,7 +909,14 @@
         <li><a href="index.html">Home</a></li>
       </ul></div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2025 ReiningSaddles.com</p><p>Informational resource. Contact David Solum directly for purchases.</p></div>
+    <div class="footer-bottom">
+    <p>&copy; 2025 ReiningSaddles.com</p>
+    <p>
+      <a href="tel:4177931403" style="color:var(--warm-gray);">&#128222; (417) 793-1403</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="mailto:davidsolumsales@gmail.com" style="color:var(--warm-gray);">davidsolumsales@gmail.com</a>
+    </p>
+  </div>
   </div>
 </footer>
 <script>document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));</script>

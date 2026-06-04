@@ -168,15 +168,24 @@
 </section>
 
 <!-- PAGE NAV STRIP -->
+<style>
+  .pnav-inner{display:flex;flex-direction:column;width:100%;max-width:1200px;margin:0 auto}
+  .pnav-inner a{font-family:var(--font-label);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,237,216,.75);padding:13px 20px;border-bottom:1px solid rgba(255,255,255,.05);transition:all .2s;text-decoration:none;white-space:nowrap}
+  .pnav-inner a.pnav-cta{background:#8B4513;color:#fff;font-weight:700;border-bottom:none}
+  @media(min-width:640px){
+    .pnav-inner{flex-direction:row;flex-wrap:wrap}
+    .pnav-inner a{border-bottom:none;border-right:1px solid rgba(255,255,255,.07)}
+  }
+</style>
 <nav style="background:#3D1F0A;border-bottom:2px solid #8B4513" aria-label="Page navigation">
-  <div style="display:flex;flex-direction:column;max-width:1200px;margin:0 auto">
-    <a href="buying-guide.html" style="font-family:var(--font-label);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,237,216,.75);padding:13px 20px;border-bottom:1px solid rgba(255,255,255,.05);transition:all .2s;text-decoration:none">Buying Guide</a>
-    <a href="history.html" style="font-family:var(--font-label);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,237,216,.75);padding:13px 20px;border-bottom:1px solid rgba(255,255,255,.05);transition:all .2s;text-decoration:none">History</a>
-    <a href="parts-of-the-saddle.html" style="font-family:var(--font-label);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,237,216,.75);padding:13px 20px;border-bottom:1px solid rgba(255,255,255,.05);transition:all .2s;text-decoration:none">Parts of a Saddle</a>
-    <a href="reining-vs-cow-horse.html" style="font-family:var(--font-label);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,237,216,.75);padding:13px 20px;border-bottom:1px solid rgba(255,255,255,.05);transition:all .2s;text-decoration:none">Reining vs Cow Horse</a>
-    <a href="endorsers/index.html" style="font-family:var(--font-label);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,237,216,.75);padding:13px 20px;border-bottom:1px solid rgba(255,255,255,.05);transition:all .2s;text-decoration:none">Champion Endorsers</a>
-    <a href="faq.html" style="font-family:var(--font-label);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,237,216,.75);padding:13px 20px;border-bottom:1px solid rgba(255,255,255,.05);transition:all .2s;text-decoration:none">FAQ</a>
-    <a href="used-saddles.html" style="font-family:var(--font-label);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#fff;font-weight:700;padding:13px 20px;background:#8B4513;transition:all .2s;text-decoration:none">Shop Used Saddles</a>
+  <div class="pnav-inner">
+    <a href="buying-guide.html">Buying Guide</a>
+    <a href="history.html">History</a>
+    <a href="parts-of-the-saddle.html">Parts of a Saddle</a>
+    <a href="reining-vs-cow-horse.html">Reining vs Cow Horse</a>
+    <a href="endorsers/index.html">Champion Endorsers</a>
+    <a href="faq.html">FAQ</a>
+    <a href="used-saddles.html" class="pnav-cta">Shop Used Saddles</a>
   </div>
 </nav>
 

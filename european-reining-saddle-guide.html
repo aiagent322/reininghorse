@@ -584,10 +584,7 @@
     <h2 class="form-title">Interested in an NRHA Reining Saddle?</h2>
     <p class="form-sub">Complete this form and we will connect you with the right sponsor for your seat size, horse fit, competition level, and budget. Include your WhatsApp number for fastest response. We reply within one business day (US Mountain Time).</p>
 
-    <form id="reinEuroForm" action="https://formspree.io/f/xwkgjdlo" method="POST">
-      <input type="hidden" name="_subject" value="ReiningSaddles.com European Reining Buyer Enquiry">
-      <input type="hidden" name="_next" value="https://reiningsaddles.com/thank-you.html">
-      <div class="fg">
+    <form id="reinEuroForm" action="mailto:davidsolumsales@gmail.com" method="POST" enctype="text/plain">      <div class="fg">
 
         <div class="fl">
           <label for="name">Full Name *</label>
@@ -792,11 +789,7 @@
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.getElementById("navLinks");
   hamburger.addEventListener("click", () => navLinks.classList.toggle("open"));
-  document.getElementById("reinEuroForm").addEventListener("submit", function() {
-    const btn = this.querySelector("button[type=submit]");
-    btn.textContent = "Sending...";
-    btn.disabled = true;
-  });
+// Form submits directly to davidsolumsales@gmail.com via mailto
 </script>
 </body>
 </html>

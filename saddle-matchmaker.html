@@ -412,8 +412,11 @@ function render(){
   renderBar();
   var app=document.getElementById('mmApp');
   app.innerHTML = step===STEPS.length ? renderResults() : renderStep();
-  app.onclick=handleChipClick;
 }
+
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelector('.mm-wrap').addEventListener('click',handleChipClick);
+});
 
 
 var hb=document.getElementById('hamburger');

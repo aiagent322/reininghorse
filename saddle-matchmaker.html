@@ -186,69 +186,63 @@ var step=0,results=null;
 function score(s){
   var pts=0,why=[];
 
-  // --- HARD ELIMINANTS (return null = excluded) ---
+  // --- SCORING ONLY — no hard eliminants, always return closest match ---
 
-  // Discipline: if user selected disciplines, saddle must match one
-  if(st.disc.length && st.disc.indexOf(s.cat)===-1) return null;
-
-  // Seat: hard limit ±0.5" only; anything further is excluded
-  if(st.seat!==null){
-    var d=Math.abs(s.seat-st.seat);
-    if(d>0.5) return null;
+  // DISCIPLINE — 25 pts
+  if(!st.disc.length){
+    pts+=15; // no preference
+  } else if(st.disc.indexOf(s.cat)>-1){
+    pts+=25;why.push('Discipline match');
+  } else {
+    pts+=0; // wrong discipline, penalised but not excluded
   }
 
-  // Budget (used saddles only): exclude if price is known and outside range
-  if(s.type==='used' && s.price>0){
-    if(s.price<st.bMin || s.price>st.bMax) return null;
-  }
-
-  // New saddles: exclude if user said no
-  if(s.type==='new' && st.newSaddles==='no') return null;
-
-  // --- SCORING (100 pts total) ---
-
-  // MAKER — 35 pts (most important)
+  // MAKER — 30 pts (most important)
   if(!st.makers.length){
-    pts+=25; // neutral, no preference expressed
+    pts+=20; // no preference
   } else if(st.makers.indexOf(s.maker)>-1){
-    pts+=35;why.push('Preferred maker');
+    pts+=30;why.push('Preferred maker');
   } else {
-    pts+=0; // wrong maker — real penalty
+    pts+=0;
   }
 
-  // SILVER — 30 pts (important)
+  // SILVER — 25 pts
   if(st.silver==='any'){
-    pts+=20; // neutral
+    pts+=15; // no preference
   } else if(st.silver===s.silver){
-    pts+=30;why.push('Silver match');
+    pts+=25;why.push('Silver match');
   } else if(st.silver==='full'&&s.silver==='partial'){
-    pts+=12;why.push('Partial silver');
+    pts+=10;why.push('Partial silver');
   } else if(st.silver==='partial'&&s.silver==='full'){
-    pts+=18;why.push('More silver than needed');
+    pts+=15;why.push('More silver than needed');
   } else {
-    pts+=0; // minimal when they wanted full — real penalty
+    pts+=5;
   }
 
-  // SEAT — 20 pts (hard filter already ran, so remaining are ±0 or ±0.5)
+  // SEAT — 20 pts
   if(st.seat===null){
-    pts+=14;
+    pts+=12;
   } else {
     var diff=Math.abs(s.seat-st.seat);
     if(diff===0){pts+=20;why.push('Exact seat size');}
-    else{pts+=10;why.push('Half-size off');}
+    else if(diff<=0.5){pts+=14;why.push('Half-size off');}
+    else if(diff<=1){pts+=8;why.push('One size off');}
+    else{pts+=2;}
   }
 
-  // BUDGET — 15 pts (used saddles; new saddles get flat credit)
+  // BUDGET — saddles within range score full points, outside range score partial
   if(s.type==='new'){
-    pts+=10; // contact-priced, can't evaluate
+    pts+=8;
+  } else if(s.price===0){
+    pts+=8;
+  } else if(s.price>=st.bMin && s.price<=st.bMax){
+    pts+=8;why.push('Within budget');
   } else {
-    // Already passed hard filter, so it's within range
-    // Reward saddles toward middle of their budget range
-    var mid=(st.bMin+st.bMax)/2;
-    var range=Math.max(st.bMax-st.bMin,1);
-    var proximity=1-(Math.abs(s.price-mid)/range);
-    pts+=Math.round(proximity*15);
-    why.push('Within budget');
+    // Outside budget — penalise proportionally but don't exclude
+    var over=Math.max(s.price-st.bMax,0);
+    var under=Math.max(st.bMin-s.price,0);
+    var gap=Math.max(over,under);
+    pts+=Math.max(0,8-Math.round(gap/500));
   }
 
   return{pct:Math.min(100,pts),why:why};
@@ -258,24 +252,10 @@ function compute(){
   var used=[], news=[];
   INVENTORY.forEach(function(s){
     var sc=score(s);
-    if(!sc) return;
     var item=Object.assign({},s,{pct:sc.pct,why:sc.why});
     if(s.type==='new') news.push(item);
     else used.push(item);
   });
-  console.log('compute: st=',JSON.stringify(st),'used=',used.length,'new=',news.length);
-  // If no used results, relax budget filter and retry
-  if(!used.length){
-    var savedMin=st.bMin, savedMax=st.bMax;
-    st.bMin=0; st.bMax=9999999;
-    INVENTORY.forEach(function(s){
-      if(s.type!=='used') return;
-      var sc=score(s);
-      if(!sc) return;
-      used.push(Object.assign({},s,{pct:sc.pct,why:sc.why}));
-    });
-    st.bMin=savedMin; st.bMax=savedMax;
-  }
   used.sort(function(a,b){return b.pct-a.pct;});
   news.sort(function(a,b){return b.pct-a.pct;});
   return{used:used.slice(0,8), news:news.slice(0,6)};

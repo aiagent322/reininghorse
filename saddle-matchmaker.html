@@ -274,7 +274,15 @@ function fmt(n,type){
 }
 
 function chip(label,sel,fn){
-  return '<span class="mm-chip'+(sel?' sel':'')+'" onclick="'+fn+'">'+label+'</span>';
+  var encoded=fn.replace(/&/g,'&amp;').replace(/"/g,'&quot;');
+  return '<button class="mm-chip'+(sel?' sel':'')+'" data-fn="'+encoded+'" type="button">'+label+'</button>';
+}
+
+function handleChipClick(e){
+  var btn=e.target.closest('button.mm-chip');
+  if(!btn) return;
+  var fn=btn.getAttribute('data-fn');
+  if(fn) new Function(fn)();
 }
 function toggleArr(arr,v){
   var i=arr.indexOf(v);
@@ -398,7 +406,9 @@ function renderResults(){
 
 function render(){
   renderBar();
-  document.getElementById('mmApp').innerHTML = step===STEPS.length ? renderResults() : renderStep();
+  var app=document.getElementById('mmApp');
+  app.innerHTML = step===STEPS.length ? renderResults() : renderStep();
+  app.onclick=handleChipClick;
 }
 
 window.toggleDisc=function(v){toggleArr(st.disc,v);render();};

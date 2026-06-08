@@ -263,6 +263,19 @@ function compute(){
     if(s.type==='new') news.push(item);
     else used.push(item);
   });
+  console.log('compute: st=',JSON.stringify(st),'used=',used.length,'new=',news.length);
+  // If no used results, relax budget filter and retry
+  if(!used.length){
+    var savedMin=st.bMin, savedMax=st.bMax;
+    st.bMin=0; st.bMax=9999999;
+    INVENTORY.forEach(function(s){
+      if(s.type!=='used') return;
+      var sc=score(s);
+      if(!sc) return;
+      used.push(Object.assign({},s,{pct:sc.pct,why:sc.why}));
+    });
+    st.bMin=savedMin; st.bMax=savedMax;
+  }
   used.sort(function(a,b){return b.pct-a.pct;});
   news.sort(function(a,b){return b.pct-a.pct;});
   return{used:used.slice(0,8), news:news.slice(0,6)};

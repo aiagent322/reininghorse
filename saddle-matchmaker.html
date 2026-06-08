@@ -273,16 +273,20 @@ function fmt(n,type){
   return n>0?'$'+n.toLocaleString():'Contact for Price';
 }
 
-function chip(label,sel,fn){
-  var encoded=fn.replace(/&/g,'&amp;').replace(/"/g,'&quot;');
-  return '<button class="mm-chip'+(sel?' sel':'')+'" data-fn="'+encoded+'" type="button">'+label+'</button>';
+function chip(label,sel,action,value){
+  return '<button class="mm-chip'+(sel?' sel':'')+'" data-action="'+action+'" data-value="'+encodeURIComponent(value)+'" type="button">'+label+'</button>';
 }
 
 function handleChipClick(e){
   var btn=e.target.closest('button.mm-chip');
   if(!btn) return;
-  var fn=btn.getAttribute('data-fn');
-  if(fn) new Function(fn)();
+  var action=btn.getAttribute('data-action');
+  var value=decodeURIComponent(btn.getAttribute('data-value'));
+  if(action==='disc') toggleArr(st.disc,value);
+  else if(action==='seat') st.seat=(value==='null'?null:parseFloat(value));
+  else if(action==='silver') st.silver=value;
+  else if(action==='maker') toggleArr(st.makers,value);
+  render();
 }
 function toggleArr(arr,v){
   var i=arr.indexOf(v);
@@ -312,7 +316,7 @@ function renderStep(){
     h+='<h2 class="mm-h">What discipline do you ride?</h2>';
     h+='<p class="mm-sub">Select all that apply. Skip to see all saddles.</p>';
     h+='<div class="mm-chips">';
-    CATS.forEach(function(c){h+=chip(c,st.disc.indexOf(c)>-1,'toggleDisc("'+c+'")');});
+    CATS.forEach(function(c){h+=chip(c,st.disc.indexOf(c)>-1,'disc',c);});
     h+='</div>';
     h+='<p class="mm-sub" style="font-size:.82rem;margin-top:4px;">Note: seat size will filter to exact or half-size only. Any saddle more than half a size away is excluded.</p>';
   }
@@ -320,15 +324,15 @@ function renderStep(){
     h+='<h2 class="mm-h">What seat size do you ride?</h2>';
     h+='<p class="mm-sub">Saddles more than half a size away are excluded entirely. Exact fit scores 20 pts, half-size off scores 10.</p>';
     h+='<div class="mm-chips">';
-    h+=chip('Any size',st.seat===null,'setSeat(null)');
-    SLABELS.forEach(function(l,i){h+=chip(l,st.seat===SVALS[i],'setSeat('+SVALS[i]+')');});
+    h+=chip('Any size',st.seat===null,'seat','null');
+    SLABELS.forEach(function(l,i){h+=chip(l,st.seat===SVALS[i],'seat',String(SVALS[i]));});
     h+='</div>';
   }
   if(step===2){
     h+='<h2 class="mm-h">Silver preference?</h2>';
     h+='<p class="mm-sub">Silver is a significant factor. Wrong silver match is a real penalty, not just a missed bonus.</p>';
     h+='<div class="mm-chips">';
-    SILVER.forEach(function(o){h+=chip(o[1],st.silver===o[0],'setSilver("'+o[0]+'")');});
+    SILVER.forEach(function(o){h+=chip(o[1],st.silver===o[0],'silver',o[0]);});
     h+='</div>';
   }
   if(step===3){
@@ -336,7 +340,7 @@ function renderStep(){
     h+='<p class="mm-sub">Maker is the top scoring factor. Select your preferred brands or skip to score all equally.</p>';
     h+='<div class="mm-chips">';
     ALL_MAKERS.forEach(function(m){
-      h+=chip(m,st.makers.indexOf(m)>-1,'toggleMaker("'+m.replace(/'/g,"\\'")+'")');
+      h+=chip(m,st.makers.indexOf(m)>-1,'maker',m);
     });
     h+='</div>';
   }
@@ -411,10 +415,6 @@ function render(){
   app.onclick=handleChipClick;
 }
 
-window.toggleDisc=function(v){toggleArr(st.disc,v);render();};
-window.setSeat=function(v){st.seat=v;render();};
-window.setSilver=function(v){st.silver=v;render();};
-window.toggleMaker=function(v){toggleArr(st.makers,v);render();};
 
 var hb=document.getElementById('hamburger');
 var nl=document.getElementById('navLinks');

@@ -111,6 +111,20 @@
     @media (min-width: 640px) { .want-box { padding: 28px 32px; } }
     .want-box h3 { font-family: var(--font-display); font-size: 1.2rem; color: var(--dark-saddle); margin-bottom: 10px; }
     .want-box p { font-size: .95rem; color: var(--mid-brown); line-height: 1.75; margin-bottom: 14px; }
+  
+    /* ── LISTING CARD MINI GALLERY ── */
+    .listing-img-wrap { position: relative; overflow: hidden; background: var(--parchment); }
+    .listing-img-wrap img.gallery-main { width: 100%; height: 240px; object-fit: contain; display: block; cursor: pointer; }
+    .gallery-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,.45); color: #fff; border: none; width: 32px; height: 32px; border-radius: 50%; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 2; transition: background .2s; }
+    .gallery-nav:hover { background: rgba(0,0,0,.7); }
+    .gallery-nav-prev { left: 6px; }
+    .gallery-nav-next { right: 6px; }
+    .gallery-nav.hidden { display: none; }
+    .gallery-dots { position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%); display: flex; gap: 5px; }
+    .gallery-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.5); cursor: pointer; transition: background .2s; }
+    .gallery-dot.active { background: #fff; }
+    @media (min-width: 640px) { .listing-img-wrap img.gallery-main { height: 280px; } }
+
   </style>
   <meta property="og:type" content="website">
   <meta property="og:title" content="Certified Used Reining Saddles — David Solum | ReiningSaddles.com">
@@ -184,8 +198,11 @@
 
       <!-- 1: MR Reiner Superior — TOP LISTING $6,495 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/mr-reiner-superior-15-5-full-left.jpg" onclick="window.location='used-saddles/mr-reiner-superior-15-5.html'" style="cursor:pointer" alt="MR Reiner by Superior Saddlery — 15.5 Chocolate Seat — $6,495" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/mr-reiner-superior-15-5-full-left.jpg", "images/used-saddles/mr-reiner-superior-15-5-full-right.jpg", "images/used-saddles/mr-reiner-superior-15-5-cantle-rear.jpg", "images/used-saddles/mr-reiner-superior-15-5-cantle-silver-close.jpg", "images/used-saddles/mr-reiner-superior-15-5-skirt-silver-detail.jpg", "images/used-saddles/mr-reiner-superior-15-5-seat-top.jpg", "images/used-saddles/mr-reiner-superior-15-5-right-side.jpg", "images/used-saddles/mr-reiner-superior-15-5-horn-swell-left.jpg", "images/used-saddles/mr-reiner-superior-15-5-horn-swell-right.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/mr-reiner-superior-15-5-full-left.jpg" class="gallery-main" data-base-alt="MR Reiner by Superior Saddlery — 15.5 Chocolate Seat — $6,495" onclick="window.location='used-saddles/mr-reiner-superior-15-5.html'" style="cursor:pointer" alt="MR Reiner by Superior Saddlery — 15.5 Chocolate Seat — $6,495" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Superior Saddlery</div>
@@ -203,8 +220,11 @@
 
       <!-- 2: Bob Avila by Bob's Custom $5,995 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/bob-avila-bobs-custom-16-full-right.jpg" onclick="window.location='used-saddles/bob-avila-bobs-custom-16.html'" style="cursor:pointer" alt="Bob Avila by Bob's Custom Saddle — 16 Seat — $5,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/bob-avila-bobs-custom-16-full-right.jpg", "images/used-saddles/bob-avila-bobs-custom-16-full-left.jpg", "images/used-saddles/bob-avila-bobs-custom-16-cantle-rear.jpg", "images/used-saddles/bob-avila-bobs-custom-16-cantle-right-silver.jpg", "images/used-saddles/bob-avila-bobs-custom-16-right-side.jpg", "images/used-saddles/bob-avila-bobs-custom-16-left-side.jpg", "images/used-saddles/bob-avila-bobs-custom-16-horn-swell-left.jpg", "images/used-saddles/bob-avila-bobs-custom-16-horn-swell-right.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/bob-avila-bobs-custom-16-full-right.jpg" class="gallery-main" data-base-alt="Bob Avila by Bob's Custom Saddle — 16 Seat — $5,995" onclick="window.location='used-saddles/bob-avila-bobs-custom-16.html'" style="cursor:pointer" alt="Bob Avila by Bob's Custom Saddle — 16 Seat — $5,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Bob's Custom Saddle</div>
@@ -221,8 +241,11 @@
 
       <!-- 3: Bob Avila B17-120M Silver Overlays — $5,995 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/bob-avila-bobs-custom-16-b-full-left.jpg" onclick="window.location='used-saddles/bob-avila-bobs-custom-16-b.html'" style="cursor:pointer" alt="Bob Avila by Bob's Custom Saddle — 16 Seat B17-120M Silver Overlays — $5,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/bob-avila-bobs-custom-16-b-full-left.jpg", "images/used-saddles/bob-avila-bobs-custom-16-b-full-right.jpg", "images/used-saddles/bob-avila-bobs-custom-16-b-seat-top-left.jpg", "images/used-saddles/bob-avila-bobs-custom-16-b-seat-top-right.jpg", "images/used-saddles/bob-avila-bobs-custom-16-b-cantle-rear.jpg", "images/used-saddles/bob-avila-bobs-custom-16-b-cantle-right-silver.jpg", "images/used-saddles/bob-avila-bobs-custom-16-b-skirt-silver-detail.jpg", "images/used-saddles/bob-avila-bobs-custom-16-b-horn-swell-left.jpg", "images/used-saddles/bob-avila-bobs-custom-16-b-horn-swell-right.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/bob-avila-bobs-custom-16-b-full-left.jpg" class="gallery-main" data-base-alt="Bob Avila by Bob's Custom Saddle — 16 Seat B17-120M Silver Overlays — $5,995" onclick="window.location='used-saddles/bob-avila-bobs-custom-16-b.html'" style="cursor:pointer" alt="Bob Avila by Bob's Custom Saddle — 16 Seat B17-120M Silver Overlays — $5,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Bob's Custom Saddle</div>
@@ -239,8 +262,11 @@
 
       <!-- 4: Bob's Custom 16" Basketweave Silver — $5,995 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/bobs-custom-16-basketweave-silver-full-left.jpg" onclick="window.location='used-saddles/bobs-custom-16-basketweave-silver.html'" style="cursor:pointer" alt="Bob's Custom Saddle — 16 Seat Basketweave Floral Sterling Silver Conchos — $5,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/bobs-custom-16-basketweave-silver-full-left.jpg", "images/used-saddles/bobs-custom-16-basketweave-silver-full-right.jpg", "images/used-saddles/bobs-custom-16-basketweave-silver-seat-top-left.jpg", "images/used-saddles/bobs-custom-16-basketweave-silver-seat-top-right.jpg", "images/used-saddles/bobs-custom-16-basketweave-silver-cantle-skirt-detail.jpg", "images/used-saddles/bobs-custom-16-basketweave-silver-cantle-right-detail.jpg", "images/used-saddles/bobs-custom-16-basketweave-silver-skirt-silver-close.jpg", "images/used-saddles/bobs-custom-16-basketweave-silver-horn-swell-right.jpg", "images/used-saddles/bobs-custom-16-basketweave-silver-horn-badge.jpg", "images/used-saddles/bobs-custom-16-basketweave-silver-cantle-rear.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/bobs-custom-16-basketweave-silver-full-left.jpg" class="gallery-main" data-base-alt="Bob's Custom Saddle — 16 Seat Basketweave Floral Sterling Silver Conchos — $5,995" onclick="window.location='used-saddles/bobs-custom-16-basketweave-silver.html'" style="cursor:pointer" alt="Bob's Custom Saddle — 16 Seat Basketweave Floral Sterling Silver Conchos — $5,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Bob's Custom Saddle</div>
@@ -257,8 +283,11 @@
 
       <!-- 5: Bob's Custom 16" Tan Leather Sterling Silver — $5,995 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/bobs-custom-16-tan-sterling-full-left.jpg" onclick="window.location='used-saddles/bobs-custom-16-tan-sterling-silver.html'" style="cursor:pointer" alt="Bob's Custom Saddle — 16 Seat Tan Leather Sterling Silver Corner Plates — $5,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/bobs-custom-16-tan-sterling-full-left.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-full-right-a.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-full-right-b.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-seat-top-left.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-seat-top-right.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-cantle-rear.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-cantle-skirt-detail.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-skirt-silver-right.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-skirt-silver-detail.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-skirt-corner-close.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-horn-badge-left.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-horn-swell-right.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/bobs-custom-16-tan-sterling-full-left.jpg" class="gallery-main" data-base-alt="Bob's Custom Saddle — 16 Seat Tan Leather Sterling Silver Corner Plates — $5,995" onclick="window.location='used-saddles/bobs-custom-16-tan-sterling-silver.html'" style="cursor:pointer" alt="Bob's Custom Saddle — 16 Seat Tan Leather Sterling Silver Corner Plates — $5,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Bob's Custom Saddle</div>
@@ -275,8 +304,11 @@
 
       <!-- 6: Bob Avila Silver Swell Cap — $5,995 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/bob-avila-bobs-custom-16-c-full-left.jpg" onclick="window.location='used-saddles/bob-avila-bobs-custom-16-c.html'" style="cursor:pointer" alt="Bob Avila by Bob's Custom Saddle — 16 Seat Silver Swell Cap Full Silver Package — $5,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/bob-avila-bobs-custom-16-c-full-left.jpg", "images/used-saddles/bob-avila-bobs-custom-16-c-full-right.jpg", "images/used-saddles/bob-avila-bobs-custom-16-c-left-side.jpg", "images/used-saddles/bob-avila-bobs-custom-16-c-seat-top-left.jpg", "images/used-saddles/bob-avila-bobs-custom-16-c-cantle-rear.jpg", "images/used-saddles/bob-avila-bobs-custom-16-c-cantle-right-silver.jpg", "images/used-saddles/bob-avila-bobs-custom-16-c-skirt-silver-detail.jpg", "images/used-saddles/bob-avila-bobs-custom-16-c-horn-swell-left.jpg", "images/used-saddles/bob-avila-bobs-custom-16-c-horn-swell-right.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/bob-avila-bobs-custom-16-c-full-left.jpg" class="gallery-main" data-base-alt="Bob Avila by Bob's Custom Saddle — 16 Seat Silver Swell Cap Full Silver Package — $5,995" onclick="window.location='used-saddles/bob-avila-bobs-custom-16-c.html'" style="cursor:pointer" alt="Bob Avila by Bob's Custom Saddle — 16 Seat Silver Swell Cap Full Silver Package — $5,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Bob's Custom Saddle</div>
@@ -293,8 +325,11 @@
 
       <!-- 6: Donn Leson TVB #386 — $6,495 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/donn-leson-tvb-386-16-full-left.jpg" onclick="window.location='used-saddles/donn-leson-tvb-386-16.html'" style="cursor:pointer" alt="Donn Leson TVB 386 — 16 Seat — $6,495" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/donn-leson-tvb-386-16-full-left.jpg", "images/used-saddles/donn-leson-tvb-386-16-full-right.jpg", "images/used-saddles/donn-leson-tvb-386-16-seat-top-left.jpg", "images/used-saddles/donn-leson-tvb-386-16-seat-top-right.jpg", "images/used-saddles/donn-leson-tvb-386-16-cantle-rear.jpg", "images/used-saddles/donn-leson-tvb-386-16-badge-close.jpg", "images/used-saddles/donn-leson-tvb-386-16-cantle-left-detail.jpg", "images/used-saddles/donn-leson-tvb-386-16-skirt-concho-detail.jpg", "images/used-saddles/donn-leson-tvb-386-16-horn-swell-left.jpg", "images/used-saddles/donn-leson-tvb-386-16-horn-swell-right.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/donn-leson-tvb-386-16-full-left.jpg" class="gallery-main" data-base-alt="Donn Leson TVB 386 — 16 Seat — $6,495" onclick="window.location='used-saddles/donn-leson-tvb-386-16.html'" style="cursor:pointer" alt="Donn Leson TVB 386 — 16 Seat — $6,495" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Donn Leson Saddles</div>
@@ -311,8 +346,11 @@
 
       <!-- 4: Craig Schmersal Reiner Superior $4,995 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/craig-schmersal-reiner-superior-16.jpg" onclick="window.location='used-saddles/craig-schmersal-reiner-superior-16.html'" style="cursor:pointer" alt="Craig Schmersal Reiner by Superior Saddlery — 16 Seat — $4,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/craig-schmersal-reiner-superior-16.jpg", "images/used-saddles/craig-schmersal-superior-16-full.jpg", "images/used-saddles/craig-schmersal-superior-16-seat-top.jpg", "images/used-saddles/craig-schmersal-superior-16-right-skirt.jpg", "images/used-saddles/craig-schmersal-superior-16-dee-detail.jpg", "images/used-saddles/craig-schmersal-superior-16-horn-swell.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/craig-schmersal-reiner-superior-16.jpg" class="gallery-main" data-base-alt="Craig Schmersal Reiner by Superior Saddlery — 16 Seat — $4,995" onclick="window.location='used-saddles/craig-schmersal-reiner-superior-16.html'" style="cursor:pointer" alt="Craig Schmersal Reiner by Superior Saddlery — 16 Seat — $4,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Superior Saddlery</div>
@@ -330,8 +368,11 @@
       
       <!-- Casey Deary Reiner Superior 16" $5,995 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/casey-deary-superior-16-full-left.jpg" onclick="window.location='used-saddles/casey-deary-reiner-superior-16.html'" style="cursor:pointer" alt="Casey Deary Reiner by Superior Saddlery — 16&quot; Seat — $5,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/casey-deary-superior-16-main.jpg", "images/used-saddles/casey-deary-superior-16-full-left.jpg", "images/used-saddles/casey-deary-superior-16-seat-top.jpg", "images/used-saddles/casey-deary-superior-16-seat-front.jpg", "images/used-saddles/casey-deary-superior-16-right-seat.jpg", "images/used-saddles/casey-deary-superior-16-horn-seat.jpg", "images/used-saddles/casey-deary-superior-16-right-skirt.jpg", "images/used-saddles/casey-deary-superior-16-cantle-right.jpg", "images/used-saddles/casey-deary-superior-16-cantle-brand.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/casey-deary-superior-16-main.jpg" class="gallery-main" data-base-alt="Casey Deary Reiner by Superior Saddlery — 16&quot; Seat — $5,995" onclick="window.location='used-saddles/casey-deary-reiner-superior-16.html'" style="cursor:pointer" alt="Casey Deary Reiner by Superior Saddlery — 16&quot; Seat — $5,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Superior Saddlery</div>
@@ -348,8 +389,11 @@
 
       <!-- 4: Superior Reiner w/ $4,995 tag (FB image 3) -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/superior-reiner-4995-tag.jpg" onclick="window.location='used-saddles/superior-reiner-floral-4995.html'" style="cursor:pointer" alt="Superior Saddlery Reiner — $4,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/superior-reiner-4995-tag.jpg"]'>
+          
+          
+          
+          <img src="images/used-saddles/superior-reiner-4995-tag.jpg" class="gallery-main" data-base-alt="Superior Saddlery Reiner — $4,995" onclick="window.location='used-saddles/superior-reiner-floral-4995.html'" style="cursor:pointer" alt="Superior Saddlery Reiner — $4,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Superior Saddlery</div>
@@ -366,8 +410,11 @@
 
       <!-- 5: Lady Cowhorse Bob's Custom Brand New $4,995 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/lady-cowhorse-bobs-custom-15-5-full-left.jpg" onclick="window.location='used-saddles/lady-cowhorse-bobs-custom-15-5.html'" style="cursor:pointer" alt="Lady Cowhorse by Bob's Custom Saddle — 15.5 Seat — Brand New $4,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/lady-cowhorse-bobs-custom-15-5-full-left.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-full-right.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-right-side.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-seat-top.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-seat-top-right.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-cantle-skirt-left.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-skirt-concho-detail.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-horn-swell-left.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-horn-swell-right.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/lady-cowhorse-bobs-custom-15-5-full-left.jpg" class="gallery-main" data-base-alt="Lady Cowhorse by Bob's Custom Saddle — 15.5 Seat — Brand New $4,995" onclick="window.location='used-saddles/lady-cowhorse-bobs-custom-15-5.html'" style="cursor:pointer" alt="Lady Cowhorse by Bob's Custom Saddle — 15.5 Seat — Brand New $4,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Bob's Custom Saddle</div>
@@ -384,8 +431,11 @@
 
       <!-- 6: Bob's Custom KR Lady Reiner 15.5" Bison — $4,995 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/bobs-custom-kr-lady-reiner-15-5-full-left.jpg" onclick="window.location='used-saddles/bobs-custom-kr-lady-reiner-15-5.html'" style="cursor:pointer" alt="Bob's Custom KR Lady Reiner — 15.5 Bison Seat B21-584 — $4,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/bobs-custom-kr-lady-reiner-15-5-full-left.jpg", "images/used-saddles/bobs-custom-kr-lady-reiner-15-5-full-right.jpg", "images/used-saddles/bobs-custom-kr-lady-reiner-15-5-seat-top-left.jpg", "images/used-saddles/bobs-custom-kr-lady-reiner-15-5-seat-top-right.jpg", "images/used-saddles/bobs-custom-kr-lady-reiner-15-5-cantle-skirt-left.jpg", "images/used-saddles/bobs-custom-kr-lady-reiner-15-5-cantle-skirt-right.jpg", "images/used-saddles/bobs-custom-kr-lady-reiner-15-5-horn-swell-left.jpg", "images/used-saddles/bobs-custom-kr-lady-reiner-15-5-horn-badge-right.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/bobs-custom-kr-lady-reiner-15-5-full-left.jpg" class="gallery-main" data-base-alt="Bob's Custom KR Lady Reiner — 15.5 Bison Seat B21-584 — $4,995" onclick="window.location='used-saddles/bobs-custom-kr-lady-reiner-15-5.html'" style="cursor:pointer" alt="Bob's Custom KR Lady Reiner — 15.5 Bison Seat B21-584 — $4,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Bob's Custom Saddle</div>
@@ -402,8 +452,11 @@
 
       <!-- 7: Kyle Tack 16" Like New $3,995 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/kyle-tack-reiner-16-like-new.jpg" onclick="window.location='used-saddles/kyle-tack-reiner-16-like-new.html'" style="cursor:pointer" alt="Kyle Tack Reiner — 16 Seat — Like New — $3,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/kyle-tack-reiner-16-like-new.jpg"]'>
+          
+          
+          
+          <img src="images/used-saddles/kyle-tack-reiner-16-like-new.jpg" class="gallery-main" data-base-alt="Kyle Tack Reiner — 16 Seat — Like New — $3,995" onclick="window.location='used-saddles/kyle-tack-reiner-16-like-new.html'" style="cursor:pointer" alt="Kyle Tack Reiner — 16 Seat — Like New — $3,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Kyle Tack</div>
@@ -420,8 +473,11 @@
 
       <!-- 7: Kyle Tack 16" Sterling Silver Conchos $3,995 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/kyle-tack-reiner-16-silver-conchos-main.jpg" onclick="window.location='used-saddles/kyle-tack-reiner-16-silver-conchos.html'" style="cursor:pointer" alt="Kyle Tack Reiner — 16 Seat — Sterling Silver Conchos & Rear Dees — $3,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/kyle-tack-reiner-16-silver-conchos-main.jpg", "images/used-saddles/kyle-tack-reiner-16-silver-conchos-cantle-right.jpg", "images/used-saddles/kyle-tack-reiner-16-silver-conchos-front-left.jpg", "images/used-saddles/kyle-tack-reiner-16-silver-conchos-right-side.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/kyle-tack-reiner-16-silver-conchos-main.jpg" class="gallery-main" data-base-alt="Kyle Tack Reiner — 16 Seat — Sterling Silver Conchos & Rear Dees — $3,995" onclick="window.location='used-saddles/kyle-tack-reiner-16-silver-conchos.html'" style="cursor:pointer" alt="Kyle Tack Reiner — 16 Seat — Sterling Silver Conchos & Rear Dees — $3,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Kyle Tack</div>
@@ -438,8 +494,11 @@
 
       <!-- 8: Kyle Tack 16" $3,995 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/kyle-tack-reiner-16.jpg" onclick="window.location='used-saddles/kyle-tack-reiner-16.html'" style="cursor:pointer" alt="Kyle Tack Reiner — 16 Seat — $3,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/kyle-tack-reiner-16.jpg"]'>
+          
+          
+          
+          <img src="images/used-saddles/kyle-tack-reiner-16.jpg" class="gallery-main" data-base-alt="Kyle Tack Reiner — 16 Seat — $3,995" onclick="window.location='used-saddles/kyle-tack-reiner-16.html'" style="cursor:pointer" alt="Kyle Tack Reiner — 16 Seat — $3,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Kyle Tack</div>
@@ -457,8 +516,11 @@
       
       <!-- Kyle Tack Reiner 16" Mint $3,995 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/kyle-tack-reiner-16-mint-full-left.jpg" onclick="window.location='used-saddles/kyle-tack-reiner-16-mint.html'" style="cursor:pointer" alt="Kyle Tack Reiner — 16&quot; Seat — Mint Condition — $3,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/kyle-tack-reiner-16-mint-main.jpg", "images/used-saddles/kyle-tack-reiner-16-mint-full-left.jpg", "images/used-saddles/kyle-tack-reiner-16-mint-full-right.jpg", "images/used-saddles/kyle-tack-reiner-16-mint-seat-top.jpg", "images/used-saddles/kyle-tack-reiner-16-mint-cantle-right.jpg", "images/used-saddles/kyle-tack-reiner-16-mint-right-skirt.jpg", "images/used-saddles/kyle-tack-reiner-16-mint-horn-swell.jpg", "images/used-saddles/kyle-tack-reiner-16-mint-left-badge.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/kyle-tack-reiner-16-mint-main.jpg" class="gallery-main" data-base-alt="Kyle Tack Reiner — 16&quot; Seat — Mint Condition — $3,995" onclick="window.location='used-saddles/kyle-tack-reiner-16-mint.html'" style="cursor:pointer" alt="Kyle Tack Reiner — 16&quot; Seat — Mint Condition — $3,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Kyle Tack</div>
@@ -475,8 +537,11 @@
 
       <!-- 8: Kyle Tack 15.5" $3,995 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/kyle-tack-reiner-15.5.jpg" onclick="window.location='used-saddles/kyle-tack-reiner-15-5.html'" style="cursor:pointer" alt="Kyle Tack Reiner — 15.5 Seat — $3,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/kyle-tack-reiner-15.5.jpg", "images/used-saddles/kyle-tack-reiner-15.5-detail-seat.jpg", "images/used-saddles/kyle-tack-reiner-15.5-detail-left.jpg", "images/used-saddles/kyle-tack-reiner-15.5-detail-right.jpg", "images/used-saddles/kyle-tack-reiner-15.5-detail-cantle.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/kyle-tack-reiner-15.5.jpg" class="gallery-main" data-base-alt="Kyle Tack Reiner — 15.5 Seat — $3,995" onclick="window.location='used-saddles/kyle-tack-reiner-15-5.html'" style="cursor:pointer" alt="Kyle Tack Reiner — 15.5 Seat — $3,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Kyle Tack</div>
@@ -493,8 +558,11 @@
 
       <!-- 9: Superior Schmersal black seat silver corners (FB 2) -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/superior-schmersal-black-seat-silver.jpg" onclick="window.location='used-saddles/superior-reiner-black-seat-silver-corners.html'" style="cursor:pointer" alt="Superior Saddlery Reiner — Black Seat — Silver Corner Plates" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/superior-schmersal-black-seat-silver.jpg"]'>
+          
+          
+          
+          <img src="images/used-saddles/superior-schmersal-black-seat-silver.jpg" class="gallery-main" data-base-alt="Superior Saddlery Reiner — Black Seat — Silver Corner Plates" onclick="window.location='used-saddles/superior-reiner-black-seat-silver-corners.html'" style="cursor:pointer" alt="Superior Saddlery Reiner — Black Seat — Silver Corner Plates" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Superior Saddlery</div>
@@ -511,8 +579,11 @@
 
       <!-- 10: Jason Vanlandingham Reiner Superior — $2,995 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/jason-vanlandingham-reiner-superior-16-full-left.jpg" onclick="window.location='used-saddles/jason-vanlandingham-reiner-superior-16.html'" style="cursor:pointer" alt="Jason Vanlandingham Reiner by Superior Saddlery — 16 Bison Seat — $2,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/jason-vanlandingham-reiner-superior-16-full-left.jpg", "images/used-saddles/jason-vanlandingham-reiner-superior-16-full-right.jpg", "images/used-saddles/jason-vanlandingham-reiner-superior-16-seat-top-left.jpg", "images/used-saddles/jason-vanlandingham-reiner-superior-16-seat-top-right.jpg", "images/used-saddles/jason-vanlandingham-reiner-superior-16-cantle-right.jpg", "images/used-saddles/jason-vanlandingham-reiner-superior-16-cantle-skirt-right.jpg", "images/used-saddles/jason-vanlandingham-reiner-superior-16-horn-swell-right.jpg", "images/used-saddles/jason-vanlandingham-reiner-superior-16-horn-badge-left.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/jason-vanlandingham-reiner-superior-16-full-left.jpg" class="gallery-main" data-base-alt="Jason Vanlandingham Reiner by Superior Saddlery — 16 Bison Seat — $2,995" onclick="window.location='used-saddles/jason-vanlandingham-reiner-superior-16.html'" style="cursor:pointer" alt="Jason Vanlandingham Reiner by Superior Saddlery — 16 Bison Seat — $2,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Superior Saddlery</div>
@@ -529,8 +600,11 @@
 
       <!-- 11: Equine Oasis Tim Bauer 17" $2,995 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/equine-oasis-tim-bauer-17.jpg" onclick="window.location='used-saddles/equine-oasis-tim-bauer-17.html'" style="cursor:pointer" alt="Equine Oasis by Tim Bauer — 17 Seat — $2,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/equine-oasis-tim-bauer-17-main.jpg", "images/used-saddles/equine-oasis-tim-bauer-17-full-left.jpg", "images/used-saddles/equine-oasis-tim-bauer-17-full-right-a.jpg", "images/used-saddles/equine-oasis-tim-bauer-17-seat-left.jpg", "images/used-saddles/equine-oasis-tim-bauer-17-seat-right.jpg", "images/used-saddles/equine-oasis-tim-bauer-17-horn-left.jpg", "images/used-saddles/equine-oasis-tim-bauer-17-cantle-left.jpg", "images/used-saddles/equine-oasis-tim-bauer-17-cantle-right.jpg", "images/used-saddles/equine-oasis-tim-bauer-17-brand-stamp.jpg", "images/used-saddles/equine-oasis-tim-bauer-17-full-right-b.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/equine-oasis-tim-bauer-17-main.jpg" class="gallery-main" data-base-alt="Equine Oasis by Tim Bauer — 17 Seat — $2,995" onclick="window.location='used-saddles/equine-oasis-tim-bauer-17.html'" style="cursor:pointer" alt="Equine Oasis by Tim Bauer — 17 Seat — $2,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Equine Oasis — Tim Bauer</div>
@@ -547,8 +621,11 @@
 
       <!-- 11: Mandy McCutcheon Reiner Superior $2,995 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/mandy-mccutcheon-reiner-superior-16.jpg" onclick="window.location='used-saddles/mandy-mccutcheon-reiner-superior-16.html'" style="cursor:pointer" alt="Mandy McCutcheon Reiner by Superior Saddlery — 16 Chocolate Seat — $2,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/mandy-mccutcheon-superior-16-main.jpg", "images/used-saddles/mandy-mccutcheon-superior-16-full-left.jpg", "images/used-saddles/mandy-mccutcheon-superior-16-horn-badge.jpg", "images/used-saddles/mandy-mccutcheon-superior-16-cantle-concho.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/mandy-mccutcheon-superior-16-main.jpg" class="gallery-main" data-base-alt="Mandy McCutcheon Reiner by Superior Saddlery — 16 Chocolate Seat — $2,995" onclick="window.location='used-saddles/mandy-mccutcheon-reiner-superior-16.html'" style="cursor:pointer" alt="Mandy McCutcheon Reiner by Superior Saddlery — 16 Chocolate Seat — $2,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Superior Saddlery</div>
@@ -565,8 +642,11 @@
 
       <!-- 12: Andrea Maschke Reiner 15.5" $2,495 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/andrea-maschke-reiner-15.5.jpg" onclick="window.location='used-saddles/andrea-maschke-reiner-15-5.html'" style="cursor:pointer" alt="Andrea Maschke Reiner — 15.5 Seat — Built 2004 — $2,495" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/andrea-maschke-reiner-15.5.jpg"]'>
+          
+          
+          
+          <img src="images/used-saddles/andrea-maschke-reiner-15.5.jpg" class="gallery-main" data-base-alt="Andrea Maschke Reiner — 15.5 Seat — Built 2004 — $2,495" onclick="window.location='used-saddles/andrea-maschke-reiner-15-5.html'" style="cursor:pointer" alt="Andrea Maschke Reiner — 15.5 Seat — Built 2004 — $2,495" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">A. Maschke / Superior Saddlery</div>
@@ -583,8 +663,11 @@
 
       <!-- 13: Brown Reiner Silver Conchos (FB 4) -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/brown-reiner-silver-conchos-dees.jpg" onclick="window.location='used-saddles/reiner-basket-floral-silver-conchos.html'" style="cursor:pointer" alt="Reiner — Silver Conchos and Dee Rings" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/brown-reiner-silver-conchos-dees.jpg"]'>
+          
+          
+          
+          <img src="images/used-saddles/brown-reiner-silver-conchos-dees.jpg" class="gallery-main" data-base-alt="Reiner — Silver Conchos and Dee Rings" onclick="window.location='used-saddles/reiner-basket-floral-silver-conchos.html'" style="cursor:pointer" alt="Reiner — Silver Conchos and Dee Rings" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Contact for Maker Details</div>
@@ -601,8 +684,11 @@
 
       <!-- 14: Bob's Custom 15" B14-867M $1,795 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/bobs-custom-15-b14-867m.jpg" onclick="window.location='used-saddles/bobs-custom-saddle-15-b14-867m.html'" style="cursor:pointer" alt="Bob's Custom Saddle — 15 Seat — B14-867M — $1,795" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/bobs-custom-15-b14-867m.jpg"]'>
+          
+          
+          
+          <img src="images/used-saddles/bobs-custom-15-b14-867m.jpg" class="gallery-main" data-base-alt="Bob's Custom Saddle — 15 Seat — B14-867M — $1,795" onclick="window.location='used-saddles/bobs-custom-saddle-15-b14-867m.html'" style="cursor:pointer" alt="Bob's Custom Saddle — 15 Seat — B14-867M — $1,795" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Bob's Custom Saddle</div>
@@ -619,8 +705,11 @@
 
       <!-- 15: Roughout Reiner Two-Tone Black (FB 1) -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/roughout-reiner-two-tone-black.jpg" onclick="window.location='used-saddles/roughout-reiner-two-tone-black.html'" style="cursor:pointer" alt="Roughout Reiner — Two-Tone Black and Tan Tooling" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/roughout-reiner-two-tone-black.jpg"]'>
+          
+          
+          
+          <img src="images/used-saddles/roughout-reiner-two-tone-black.jpg" class="gallery-main" data-base-alt="Roughout Reiner — Two-Tone Black and Tan Tooling" onclick="window.location='used-saddles/roughout-reiner-two-tone-black.html'" style="cursor:pointer" alt="Roughout Reiner — Two-Tone Black and Tan Tooling" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Contact for Maker Details</div>
@@ -638,8 +727,11 @@
       
       <!-- SRS Ranch Saddle 16" $1,495 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/srs-ranch-saddle-16-left-full.jpg" onclick="window.location='used-saddles/srs-ranch-saddle-16.html'" style="cursor:pointer" alt="SRS Ranch Saddle — 16&quot; Seat — $1,495" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/srs-ranch-saddle-16-main.jpg", "images/used-saddles/srs-ranch-saddle-16-seat-top.jpg", "images/used-saddles/srs-ranch-saddle-16-seat-front.jpg", "images/used-saddles/srs-ranch-saddle-16-seat-left.jpg", "images/used-saddles/srs-ranch-saddle-16-seat-right.jpg", "images/used-saddles/srs-ranch-saddle-16-left-full.jpg", "images/used-saddles/srs-ranch-saddle-16-horn-detail.jpg", "images/used-saddles/srs-ranch-saddle-16-cantle-skirt.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/srs-ranch-saddle-16-main.jpg" class="gallery-main" data-base-alt="SRS Ranch Saddle — 16&quot; Seat — $1,495" onclick="window.location='used-saddles/srs-ranch-saddle-16.html'" style="cursor:pointer" alt="SRS Ranch Saddle — 16&quot; Seat — $1,495" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">SRS</div>
@@ -657,8 +749,11 @@
       
       <!-- Teddy Johnson Cutter 16" Full Floral $1,195 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/teddy-johnson-cutter-16-full-left.jpg" onclick="window.location='used-saddles/teddy-johnson-cutter-16-full.html'" style="cursor:pointer" alt="Teddy Johnson Cutter — 16&quot; Seat — Full Floral — $1,195" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/teddy-johnson-cutter-16-seat-top.jpg", "images/used-saddles/teddy-johnson-cutter-16-full-right.jpg", "images/used-saddles/teddy-johnson-cutter-16-full-left.jpg", "images/used-saddles/teddy-johnson-cutter-16-horn-left.jpg", "images/used-saddles/teddy-johnson-cutter-16-horn-right.jpg", "images/used-saddles/teddy-johnson-cutter-16-cantle-rear.jpg", "images/used-saddles/teddy-johnson-cutter-16-cantle-left.jpg", "images/used-saddles/teddy-johnson-cutter-16-right-skirt.jpg", "images/used-saddles/teddy-johnson-cutter-16-brand-stamp.jpg", "images/used-saddles/teddy-johnson-cutter-16-woolskin.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/teddy-johnson-cutter-16-seat-top.jpg" class="gallery-main" data-base-alt="Teddy Johnson Cutter — 16&quot; Seat — Full Floral — $1,195" onclick="window.location='used-saddles/teddy-johnson-cutter-16-full.html'" style="cursor:pointer" alt="Teddy Johnson Cutter — 16&quot; Seat — Full Floral — $1,195" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Teddy Johnson</div>
@@ -675,8 +770,11 @@
 
       <!-- 16: Teddy Johnson Cutter 16" $1,195 -->
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/teddy-johnson-cutter-16.jpg" onclick="window.location='used-saddles/teddy-johnson-cutter-16.html'" style="cursor:pointer" alt="Teddy Johnson Cutter — 16 Seat — $1,195" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/teddy-johnson-cutter-16.jpg"]'>
+          
+          
+          
+          <img src="images/used-saddles/teddy-johnson-cutter-16.jpg" class="gallery-main" data-base-alt="Teddy Johnson Cutter — 16 Seat — $1,195" onclick="window.location='used-saddles/teddy-johnson-cutter-16.html'" style="cursor:pointer" alt="Teddy Johnson Cutter — 16 Seat — $1,195" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Teddy Johnson</div>
@@ -692,8 +790,11 @@
 
 
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/donn-leson-reinmaker-16-full-offside.jpg" onclick="window.location='used-saddles/donn-leson-reinmaker-16.html'" style="cursor:pointer" alt="Donn Leson Reinmaker 16 inch seat $7,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/donn-leson-reinmaker-16-full-offside.jpg", "images/used-saddles/donn-leson-reinmaker-16-full-nearside.jpg", "images/used-saddles/donn-leson-reinmaker-16-skirt-stamp.jpg", "images/used-saddles/donn-leson-reinmaker-16-horn-detail.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/donn-leson-reinmaker-16-full-offside.jpg" class="gallery-main" data-base-alt="Donn Leson Reinmaker 16 inch seat $7,995" onclick="window.location='used-saddles/donn-leson-reinmaker-16.html'" style="cursor:pointer" alt="Donn Leson Reinmaker 16 inch seat $7,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Donn Leson</div>
@@ -709,8 +810,11 @@
       </div>
 
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/superior-ranch-rider-deluxe-16-5-full-offside.jpg" onclick="window.location='used-saddles/superior-ranch-rider-deluxe-16-5.html'" style="cursor:pointer" alt="Ranch Rider Deluxe Superior Saddlery 16.5 inch $5,495" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/superior-ranch-rider-deluxe-16-5-full-offside.jpg", "images/used-saddles/superior-ranch-rider-deluxe-16-5-full-nearside.jpg", "images/used-saddles/superior-ranch-rider-deluxe-16-5-seat-top.jpg", "images/used-saddles/superior-ranch-rider-deluxe-16-5-horn.jpg", "images/used-saddles/superior-ranch-rider-deluxe-16-5-cantle.jpg", "images/used-saddles/superior-ranch-rider-deluxe-16-5-skirt-detail.jpg", "images/used-saddles/superior-ranch-rider-deluxe-16-5-tag.jpg", "images/used-saddles/superior-ranch-rider-deluxe-16-5-offside-skirt.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/superior-ranch-rider-deluxe-16-5-full-offside.jpg" class="gallery-main" data-base-alt="Ranch Rider Deluxe Superior Saddlery 16.5 inch $5,495" onclick="window.location='used-saddles/superior-ranch-rider-deluxe-16-5.html'" style="cursor:pointer" alt="Ranch Rider Deluxe Superior Saddlery 16.5 inch $5,495" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">AM Superior Saddlery</div>
@@ -726,8 +830,11 @@
       </div>
 
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/trevor-dare-martin-saddlery-15-5-full-offside.jpg" onclick="window.location='used-saddles/trevor-dare-martin-saddlery-15-5.html'" style="cursor:pointer" alt="Trevor Dare Reiner Martin Saddlery 15.5 inch $4,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/trevor-dare-martin-saddlery-15-5-full-offside.jpg", "images/used-saddles/trevor-dare-martin-saddlery-15-5-full-nearside.jpg", "images/used-saddles/trevor-dare-martin-saddlery-15-5-cantle-silver.jpg", "images/used-saddles/trevor-dare-martin-saddlery-15-5-horn-silver.jpg", "images/used-saddles/trevor-dare-martin-saddlery-15-5-offside-skirt.jpg", "images/used-saddles/trevor-dare-martin-saddlery-15-5-nearside-skirt.jpg", "images/used-saddles/trevor-dare-martin-saddlery-15-5-skirt-silver-detail.jpg", "images/used-saddles/trevor-dare-martin-saddlery-15-5-tag.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/trevor-dare-martin-saddlery-15-5-full-offside.jpg" class="gallery-main" data-base-alt="Trevor Dare Reiner Martin Saddlery 15.5 inch $4,995" onclick="window.location='used-saddles/trevor-dare-martin-saddlery-15-5.html'" style="cursor:pointer" alt="Trevor Dare Reiner Martin Saddlery 15.5 inch $4,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Martin Saddlery</div>
@@ -743,8 +850,11 @@
       </div>
 
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/lady-cowhorse-bobs-custom-15-5-b-full-offside.jpg" onclick="window.location='used-saddles/lady-cowhorse-bobs-custom-15-5-b.html'" style="cursor:pointer" alt="Lady Cowhorse Bob's Custom 15.5 inch brand new $4,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/lady-cowhorse-bobs-custom-15-5-b-full-offside.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-b-full-nearside.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-b-seat-top.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-b-horn.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-b-cantle.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-b-skirt-detail.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-b-offside-skirt.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-b-nearside-skirt.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/lady-cowhorse-bobs-custom-15-5-b-full-offside.jpg" class="gallery-main" data-base-alt="Lady Cowhorse Bob's Custom 15.5 inch brand new $4,995" onclick="window.location='used-saddles/lady-cowhorse-bobs-custom-15-5-b.html'" style="cursor:pointer" alt="Lady Cowhorse Bob's Custom 15.5 inch brand new $4,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Bob's Custom Saddles</div>
@@ -761,8 +871,11 @@
       </div>
 
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/bob-avila-bobs-custom-17-full-offside.jpg" onclick="window.location='used-saddles/bob-avila-bobs-custom-17.html'" style="cursor:pointer" alt="Bob Avila Bob's Custom 17 inch S-scroll $2,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/bob-avila-bobs-custom-17-full-offside.jpg", "images/used-saddles/bob-avila-bobs-custom-17-full-nearside.jpg", "images/used-saddles/bob-avila-bobs-custom-17-seat-top.jpg", "images/used-saddles/bob-avila-bobs-custom-17-horn-detail.jpg", "images/used-saddles/bob-avila-bobs-custom-17-cantle.jpg", "images/used-saddles/bob-avila-bobs-custom-17-skirt-stamp.jpg", "images/used-saddles/bob-avila-bobs-custom-17-fender.jpg", "images/used-saddles/bob-avila-bobs-custom-17-offside-skirt.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/bob-avila-bobs-custom-17-full-offside.jpg" class="gallery-main" data-base-alt="Bob Avila Bob's Custom 17 inch S-scroll $2,995" onclick="window.location='used-saddles/bob-avila-bobs-custom-17.html'" style="cursor:pointer" alt="Bob Avila Bob's Custom 17 inch S-scroll $2,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Bob's Custom Saddles</div>
@@ -778,8 +891,11 @@
       </div>
 
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/roohide-reiner-17-full-offside.jpg" onclick="window.location='used-saddles/roohide-reiner-17.html'" style="cursor:pointer" alt="Roohide Reiner 17 inch seat $2,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/roohide-reiner-17-full-offside.jpg", "images/used-saddles/roohide-reiner-17-horn.jpg", "images/used-saddles/roohide-reiner-17-skirt-detail.jpg", "images/used-saddles/roohide-reiner-17-serial-stamp.jpg", "images/used-saddles/roohide-reiner-17-tree-stamp.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/roohide-reiner-17-full-offside.jpg" class="gallery-main" data-base-alt="Roohide Reiner 17 inch seat $2,995" onclick="window.location='used-saddles/roohide-reiner-17.html'" style="cursor:pointer" alt="Roohide Reiner 17 inch seat $2,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Roohide</div>
@@ -795,8 +911,11 @@
       </div>
 
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/bob-avila-bobs-custom-16-d-full-offside.jpg" onclick="window.location='used-saddles/bob-avila-bobs-custom-16-d.html'" style="cursor:pointer" alt="Bob Avila Bob's Custom 16 B99-472 full silver $1,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/bob-avila-bobs-custom-16-d-full-offside.jpg", "images/used-saddles/bob-avila-bobs-custom-16-d-horn-silver.jpg", "images/used-saddles/bob-avila-bobs-custom-16-d-cantle-silver.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/bob-avila-bobs-custom-16-d-full-offside.jpg" class="gallery-main" data-base-alt="Bob Avila Bob's Custom 16 B99-472 full silver $1,995" onclick="window.location='used-saddles/bob-avila-bobs-custom-16-d.html'" style="cursor:pointer" alt="Bob Avila Bob's Custom 16 B99-472 full silver $1,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Bob's Custom Saddles</div>
@@ -812,8 +931,11 @@
       </div>
 
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/calvin-allen-ranch-cutter-15-5-full-offside.jpg" onclick="window.location='used-saddles/calvin-allen-ranch-cutter-15-5.html'" style="cursor:pointer" alt="Calvin Allen Ranch Cutter 15.5 inch $1,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/calvin-allen-ranch-cutter-15-5-full-offside.jpg", "images/used-saddles/calvin-allen-ranch-cutter-15-5-full-nearside.jpg", "images/used-saddles/calvin-allen-ranch-cutter-15-5-seat-top.jpg", "images/used-saddles/calvin-allen-ranch-cutter-15-5-horn.jpg", "images/used-saddles/calvin-allen-ranch-cutter-15-5-stamp.jpg", "images/used-saddles/calvin-allen-ranch-cutter-15-5-nearside-skirt.jpg", "images/used-saddles/calvin-allen-ranch-cutter-15-5-cantle.jpg", "images/used-saddles/calvin-allen-ranch-cutter-15-5-offside-skirt.jpg", "images/used-saddles/calvin-allen-ranch-cutter-15-5-fender.jpg", "images/used-saddles/calvin-allen-ranch-cutter-15-5-gullet.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/calvin-allen-ranch-cutter-15-5-full-offside.jpg" class="gallery-main" data-base-alt="Calvin Allen Ranch Cutter 15.5 inch $1,995" onclick="window.location='used-saddles/calvin-allen-ranch-cutter-15-5.html'" style="cursor:pointer" alt="Calvin Allen Ranch Cutter 15.5 inch $1,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Calvin Allen Saddlery</div>
@@ -830,8 +952,11 @@
       </div>
 
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/rios-bros-roper-15-5-full-offside.jpg" onclick="window.location='used-saddles/rios-bros-roper-15-5.html'" style="cursor:pointer" alt="Rios Bros Roper 15.5 inch seat needs stitching $495" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/rios-bros-roper-15-5-full-offside.jpg", "images/used-saddles/rios-bros-roper-15-5-full-nearside.jpg", "images/used-saddles/rios-bros-roper-15-5-seat-top.jpg", "images/used-saddles/rios-bros-roper-15-5-seat-stitching.jpg", "images/used-saddles/rios-bros-roper-15-5-cantle-seat.jpg", "images/used-saddles/rios-bros-roper-15-5-horn.jpg", "images/used-saddles/rios-bros-roper-15-5-skirt-silver.jpg", "images/used-saddles/rios-bros-roper-15-5-cantle-detail.jpg", "images/used-saddles/rios-bros-roper-15-5-nearside-skirt.jpg", "images/used-saddles/rios-bros-roper-15-5-offside.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/rios-bros-roper-15-5-full-offside.jpg" class="gallery-main" data-base-alt="Rios Bros Roper 15.5 inch seat needs stitching $495" onclick="window.location='used-saddles/rios-bros-roper-15-5.html'" style="cursor:pointer" alt="Rios Bros Roper 15.5 inch seat needs stitching $495" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Rios Bros.</div>
@@ -847,8 +972,11 @@
       </div>
 
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/af-reiner-pinnacle-saddlery-16-full-offside.jpg" onclick="window.location='used-saddles/af-reiner-pinnacle-saddlery-16.html'" style="cursor:pointer" alt="AF Reiner Pinnacle Saddlery Andreas Maschke 16 inch $5,995" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/af-reiner-pinnacle-saddlery-16-full-offside.jpg", "images/used-saddles/af-reiner-pinnacle-saddlery-16-full-nearside.jpg", "images/used-saddles/af-reiner-pinnacle-saddlery-16-seat-top.jpg", "images/used-saddles/af-reiner-pinnacle-saddlery-16-silver-skirt.jpg", "images/used-saddles/af-reiner-pinnacle-saddlery-16-horn-silver.jpg", "images/used-saddles/af-reiner-pinnacle-saddlery-16-cantle-silver.jpg", "images/used-saddles/af-reiner-pinnacle-saddlery-16-stamp.jpg", "images/used-saddles/af-reiner-pinnacle-saddlery-16-nearside-silver.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/af-reiner-pinnacle-saddlery-16-full-offside.jpg" class="gallery-main" data-base-alt="AF Reiner Pinnacle Saddlery Andreas Maschke 16 inch $5,995" onclick="window.location='used-saddles/af-reiner-pinnacle-saddlery-16.html'" style="cursor:pointer" alt="AF Reiner Pinnacle Saddlery Andreas Maschke 16 inch $5,995" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Pinnacle Saddlery / Andreas Maschke</div>
@@ -864,8 +992,11 @@
       </div>
 
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/superior-ranch-rider-16-5-nevada-full-offside.jpg" onclick="window.location='used-saddles/superior-ranch-rider-16-5-nevada.html'" style="cursor:pointer" alt="Superior Saddlery 16.5 inch elephant Nevada border $5,495" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/superior-ranch-rider-16-5-nevada-full-offside.jpg", "images/used-saddles/superior-ranch-rider-16-5-nevada-full-nearside.jpg", "images/used-saddles/superior-ranch-rider-16-5-nevada-seat-top.jpg", "images/used-saddles/superior-ranch-rider-16-5-nevada-horn.jpg", "images/used-saddles/superior-ranch-rider-16-5-nevada-cantle.jpg", "images/used-saddles/superior-ranch-rider-16-5-nevada-skirt-detail.jpg", "images/used-saddles/superior-ranch-rider-16-5-nevada-offside.jpg", "images/used-saddles/superior-ranch-rider-16-5-nevada-horn-detail.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/superior-ranch-rider-16-5-nevada-full-offside.jpg" class="gallery-main" data-base-alt="Superior Saddlery 16.5 inch elephant Nevada border $5,495" onclick="window.location='used-saddles/superior-ranch-rider-16-5-nevada.html'" style="cursor:pointer" alt="Superior Saddlery 16.5 inch elephant Nevada border $5,495" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">AM Superior Saddlery</div>
@@ -882,8 +1013,11 @@
       </div>
 
       <div class="listing-card">
-        <div class="listing-img-wrap">
-          <img src="images/used-saddles/bobs-custom-16-b16-1455m-full-offside.jpg" onclick="window.location='used-saddles/bobs-custom-16-b16-1455m.html'" style="cursor:pointer" alt="Bob's Custom Saddle 16 inch B16-1455M $2,495" loading="lazy" width="400" height="300">
+        <div class="listing-img-wrap" data-imgs='["images/used-saddles/bobs-custom-16-b16-1455m-full-offside.jpg", "images/used-saddles/bobs-custom-16-b16-1455m-full-nearside.jpg", "images/used-saddles/bobs-custom-16-b16-1455m-seat-top.jpg", "images/used-saddles/bobs-custom-16-b16-1455m-horn.jpg", "images/used-saddles/bobs-custom-16-b16-1455m-cantle.jpg", "images/used-saddles/bobs-custom-16-b16-1455m-skirt-detail.jpg", "images/used-saddles/bobs-custom-16-b16-1455m-offside.jpg", "images/used-saddles/bobs-custom-16-b16-1455m-stamp.jpg", "images/used-saddles/bobs-custom-16-b16-1455m-serial-stamp.jpg"]'>
+          <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
+          <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
+          <div class="gallery-dots"></div>
+          <img src="images/used-saddles/bobs-custom-16-b16-1455m-full-offside.jpg" class="gallery-main" data-base-alt="Bob's Custom Saddle 16 inch B16-1455M $2,495" onclick="window.location='used-saddles/bobs-custom-16-b16-1455m.html'" style="cursor:pointer" alt="Bob's Custom Saddle 16 inch B16-1455M $2,495" loading="lazy" width="400" height="300">
         </div>
         <div class="listing-body">
           <div class="listing-maker">Bob's Custom Saddles</div>
@@ -1028,5 +1162,52 @@
   </div>
 </footer>
 <script>document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));</script>
+
+  <script>
+  (function() {
+    function initGalleries() {
+      document.querySelectorAll('.listing-card').forEach(function(card) {
+        var wrap = card.querySelector('.listing-img-wrap');
+        if (!wrap || wrap.dataset.galleryInit) return;
+        wrap.dataset.galleryInit = '1';
+        var imgs = JSON.parse(wrap.dataset.imgs || '[]');
+        if (imgs.length <= 1) return;
+        var mainImg = wrap.querySelector('img.gallery-main');
+        var idx = 0;
+
+        // Dots
+        var dotsEl = wrap.querySelector('.gallery-dots');
+        imgs.forEach(function(_, i) {
+          var d = document.createElement('div');
+          d.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+          d.onclick = function() { setIdx(i); };
+          dotsEl.appendChild(d);
+        });
+
+        function setIdx(n) {
+          idx = (n + imgs.length) % imgs.length;
+          mainImg.src = imgs[idx];
+          mainImg.alt = mainImg.dataset.baseAlt + ' — view ' + (idx+1);
+          dotsEl.querySelectorAll('.gallery-dot').forEach(function(d, i) {
+            d.classList.toggle('active', i === idx);
+          });
+        }
+
+        wrap.querySelector('.gallery-nav-prev').onclick = function(e) { e.stopPropagation(); setIdx(idx-1); };
+        wrap.querySelector('.gallery-nav-next').onclick = function(e) { e.stopPropagation(); setIdx(idx+1); };
+
+        // Touch swipe
+        var tx = 0;
+        wrap.addEventListener('touchstart', function(e) { tx = e.touches[0].clientX; }, {passive:true});
+        wrap.addEventListener('touchend', function(e) {
+          var dx = e.changedTouches[0].clientX - tx;
+          if (Math.abs(dx) > 40) setIdx(dx < 0 ? idx+1 : idx-1);
+        }, {passive:true});
+      });
+    }
+    document.addEventListener('DOMContentLoaded', initGalleries);
+  })();
+  </script>
+
 </body>
 </html>

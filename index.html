@@ -131,6 +131,58 @@
     .page-card a.link-arrow { font-family: var(--font-label); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--cognac); }
     .page-card a.link-arrow::after { content: ' →'; }
   </style>
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.reiningsaddles.com/#website",
+      "url": "https://www.reiningsaddles.com/",
+      "name": "ReiningSaddles.com",
+      "description": "The internet's most complete authority on reining saddles \u2014 history, buying guides, certified used saddles, and new Superior Saddlery saddles.",
+      "publisher": {
+        "@id": "https://www.reiningsaddles.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.reiningsaddles.com/saddle-matchmaker.html?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.reiningsaddles.com/#organization",
+      "name": "ReiningSaddles.com",
+      "url": "https://www.reiningsaddles.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.reiningsaddles.com/images/saddles/9O4A7795.png"
+      },
+      "description": "ReiningSaddles.com is your complete guide to reining saddles \u2014 history, parts, how they differ from other western saddles, and where to buy certified used and new reining saddles.",
+      "sameAs": [],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "url": "https://www.reiningsaddles.com/contact.html"
+      },
+      "areaServed": "Worldwide",
+      "knowsAbout": [
+        "Reining Saddles",
+        "NRHA",
+        "Cow Horse Saddles",
+        "Western Saddles",
+        "Superior Saddlery",
+        "Certified Used Saddles"
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 

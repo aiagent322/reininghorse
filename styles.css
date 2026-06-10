@@ -471,3 +471,18 @@ a:hover { color: var(--gold); }
 .mm-cta h3{font-family:var(--font-display);font-size:1.3rem;color:var(--parchment,#F5EDD8);margin-bottom:10px}
 .mm-cta p{font-size:.9rem;color:var(--hay,#C9A96E);line-height:1.7;max-width:440px;margin:0 auto 20px}
 .mm-cta-btns{display:flex;flex-direction:column;gap:10px;align-items:center}
+
+/* ── FOCUS STYLES (accessibility) ── */
+:focus-visible {
+  outline: 2px solid var(--cognac);
+  outline-offset: 3px;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--cognac);
+  outline-offset: 3px;
+  border-radius: 2px;
+}

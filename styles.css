@@ -42,6 +42,16 @@ a:hover { color: var(--gold); }
 
 /* ── Utility ── */
 .container { width: 100%; padding: 0 16px; }
+
+/* ── 480px — large phones ── */
+@media (min-width: 480px) {
+  .section-title { font-size: 2rem; }
+  .section { padding: 20px 0; }
+  .card-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .page-hero { padding: 14px 20px 12px; }
+  .page-hero p { font-size: 1.05rem; }
+}
 @media (min-width: 640px)  { .container { padding: 0 24px; } }
 @media (min-width: 1024px) { .container { max-width: 1140px; margin: 0 auto; padding: 0 32px; } }
 

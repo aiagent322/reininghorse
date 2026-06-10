@@ -33,6 +33,8 @@ body {
   background: var(--cream);
   color: var(--charcoal);
   overflow-x: hidden;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 img { max-width: 100%; display: block; }
 a { color: var(--cognac); text-decoration: none; transition: color .2s; }

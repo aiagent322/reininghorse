@@ -28,7 +28,7 @@
 html {min-width:320px; scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
-  font-size:16px;
+  font-size:18px;
   line-height: 1.75;
   background: var(--cream);
   color: var(--charcoal);
@@ -381,7 +381,7 @@ a:hover { color: var(--gold); }
   border-top: 1px solid rgba(255,255,255,.06);
   padding-top: 20px;
   display: flex; flex-direction: column; gap: 8px;
-  font-size: .8rem; text-align: center;
+  font-size:.9rem; text-align: center;
 }
 @media (min-width: 640px) {
   .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; text-align: left; }
@@ -479,7 +479,7 @@ a:hover { color: var(--gold); }
 .mm-type{font-family:var(--font-label);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border:1px solid;margin-bottom:6px;display:inline-block}
 .mm-type.used{color:var(--cognac);border-color:var(--cognac)}
 .mm-type.new{color:var(--gold);border-color:var(--gold)}
-.mm-title{font-family:var(--font-display);font-size:clamp(.88rem,2.5vw,1.05rem);color:var(--dark-saddle);line-height:1.3;margin-bottom:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mm-title{font-family:var(--font-display);font-size:clamp(.9rem,2.5vw,1.05rem);color:var(--dark-saddle);line-height:1.3;margin-bottom:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .mm-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:7px}
 .mm-tag{font-family:var(--font-label);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mid-brown,#6B4226);border:1px solid rgba(61,31,10,.18);padding:2px 7px}
 .mm-prow{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}

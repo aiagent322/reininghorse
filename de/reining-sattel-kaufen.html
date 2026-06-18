@@ -139,7 +139,7 @@
       <li><a href="/new-saddles.html">Neue Sättel</a></li>
       <li><a href="#anfrage" class="nav-cta">Anfrage senden</a></li>
     </ul>
-    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    <button class="hamburger" id="hamburger" aria-expanded="false" aria-label="Open navigation" type="button"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -322,7 +322,7 @@
 <script>
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('navLinks');
-  if(hamburger) hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  if(hamburger) hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); hamburger.setAttribute('aria-expanded', navLinks.classList.contains('open')); });
 </script>
 </body>
 </html>

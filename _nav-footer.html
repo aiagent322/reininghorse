@@ -99,7 +99,7 @@
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('navLinks');
   if (hamburger) {
-    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); hamburger.setAttribute('aria-expanded', navLinks.classList.contains('open')); });
     hamburger.addEventListener('keydown', e => {
     var expanded = hamburger.getAttribute("aria-expanded") === "true";
     hamburger.setAttribute("aria-expanded", !expanded); if (e.key === 'Enter' || e.key === ' ') navLinks.classList.toggle('open'); });

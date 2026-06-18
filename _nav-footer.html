@@ -100,7 +100,9 @@
   const navLinks = document.getElementById('navLinks');
   if (hamburger) {
     hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-    hamburger.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') navLinks.classList.toggle('open'); });
+    hamburger.addEventListener('keydown', e => {
+    var expanded = hamburger.getAttribute("aria-expanded") === "true";
+    hamburger.setAttribute("aria-expanded", !expanded); if (e.key === 'Enter' || e.key === ' ') navLinks.classList.toggle('open'); });
   }
   // Active nav link
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';

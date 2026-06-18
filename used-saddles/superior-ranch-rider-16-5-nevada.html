@@ -302,7 +302,7 @@ function setMain(src, el) {
 <script>
   var h = document.getElementById('hamburger');
   var n = document.getElementById('navLinks');
-  if (h) h.addEventListener('click', function() { n.classList.toggle('open'); });
+  if (h) h.addEventListener('click', function() { n.classList.toggle('open'); h.setAttribute('aria-expanded', n.classList.contains('open')); });
 </script>
 </body>
 </html>

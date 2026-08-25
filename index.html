@@ -15,11 +15,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Reining Saddles — The Authority on NRHA Reining & Cow Horse...</title>
-  <meta name="description" content="ReiningSaddles.com is your complete guide to reining saddles — history, parts, how they differ from cow horse saddles, plus new saddles from Andy...">
+  <title>Reining Saddles for Sale | New & Used Reining Saddles</title>
+  <meta name="description" content="Shop new Superior Saddlery reining saddles and quality used reining saddles from leading makers. Browse current inventory and find the right saddle at ReiningSaddles.com.">
   <meta name="keywords" content="reining saddles, NRHA saddles, reining saddle history, reined cow horse saddle, western performance saddles, buy reining saddle, Superior Saddles Andreas Maschke, David Solum saddles">
-  <meta property="og:title" content="ReiningSaddles.com — NRHA Reining Saddle Authority">
-  <meta property="og:description" content="The internet's most complete resource for reining saddles. Learn, compare, and buy from trusted sponsors.">
+  <meta property="og:title" content="Reining Saddles for Sale | New & Used Reining Saddles">
+  <meta property="og:description" content="Shop new Superior Saddlery reining saddles and quality used reining saddles from leading makers. Browse current inventory and find the right saddle at ReiningSaddles.com.">
   <meta property="og:url" content="https://www.reiningsaddles.com/">
 <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.reiningsaddles.com/images/saddles/9O4A7795.png">
@@ -29,119 +29,154 @@
 <link rel="alternate" hreflang="de" href="https://reiningsaddles.com/de/reining-sattel-kaufen.html">
 <link rel="alternate" hreflang="fr" href="https://reiningsaddles.com/fr/selle-reining-acheter.html">
 <link rel="alternate" hreflang="en" href="https://reiningsaddles.com/">
+
+  <!-- ============================================================
+       HOMEPAGE-SCOPED OVERRIDES — tight, mobile-first, inventory-led
+       Replaces the previous home-hero / feature-strip / intro / pages-grid
+       block entirely. Nothing here touches styles.css or any other page.
+       ============================================================ -->
   <style>
-    /* HOME HERO — mobile first */
-    .home-hero {
+    /* Kill sticky on this page only (site-wide nav still sticky elsewhere) */
+    .site-nav { position: relative; top: auto; }
+
+    /* SHORT CENTERED HERO — wordmark only, no min-height, never full screen */
+    .tight-hero {
       background: var(--dark-saddle);
       background-image:
         radial-gradient(ellipse at 30% 60%, rgba(139,69,19,.5) 0%, transparent 55%),
-        radial-gradient(ellipse at 80% 20%, rgba(184,134,11,.2) 0%, transparent 50%),
-        repeating-linear-gradient(45deg, transparent, transparent 6px, rgba(255,255,255,.015) 6px, rgba(255,255,255,.015) 7px);
-      min-height: 70vh;
-      display: flex; align-items: center;
-      position: relative; overflow: hidden;
-      padding: clamp(28px,5vw,72px) 0 56px;
+        radial-gradient(ellipse at 80% 20%, rgba(184,134,11,.2) 0%, transparent 50%);
+      padding: 20px 0 16px;
+      text-align: center;
     }
-    .hero-content { position: relative; z-index: 2; }
-    .hero-eyebrow {
-      font-family: var(--font-label);
-      font-size:12px; letter-spacing: .22em; text-transform: uppercase;
-      color: var(--gold-light); margin-bottom: 20px;
-    }
-    .hero-title {
+    .hero-wordmark {
       font-family: var(--font-display);
-      font-size: clamp(2.4rem, 8vw, 5.5rem);
+      font-weight: 800;
+      font-size: clamp(1.7rem, 7vw, 2.6rem);
+      letter-spacing: .01em;
       color: var(--parchment);
-      line-height: 1.05; margin-bottom: 20px;
+      line-height: 1.1;
+      margin: 0;
     }
-    .hero-title em { color: var(--gold-light); font-style: italic; display: block; }
-    .hero-body {overflow-x:hidden; font-size: 1rem; color: var(--tan); line-height: 1.75; margin-bottom: 32px; }
-    @media (min-width: 640px) { .hero-body {overflow-x:hidden; font-size: 1.1rem; } }
-    .hero-actions { display: flex; flex-direction: column; gap: 12px; }
-    @media (min-width: 480px) { .hero-actions { flex-direction: row; flex-wrap: wrap; } }
-    .hero-actions .btn { width: 100%; text-align: center; }
-    @media (min-width: 480px) { .hero-actions .btn { width: auto; } }
-    .hero-deco { display: none; }
-    @media (min-width: 1024px) {
-      .home-hero { min-height: 88vh; padding: 100px 0; }
-      .hero-content { max-width: 680px; }
-      .hero-deco {
-        display: block;
-        position: absolute; right: 0; top: 0; bottom: 0; width: 42%;
-        background: linear-gradient(135deg, rgba(139,69,19,.15) 0%, rgba(61,31,10,.6) 100%);
-        clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);
+    .hero-wordmark .accent { color: var(--gold-light); }
+    .hero-tagline {
+      font-family: var(--font-label);
+      font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
+      color: var(--tan);
+      margin-top: 8px;
+    }
+    .hero-sponsors {
+      font-family: var(--font-label);
+      font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+      color: rgba(245,237,216,.68);
+      margin-top: 10px;
+    }
+
+    /* ===== COMPACT MOBILE/TABLET NAV — two tight rows, no drawer, no sticky ===== */
+    @media (max-width: 1023px) {
+      .hamburger { display: none !important; }
+      .nav-inner {
+        flex-wrap: wrap;
+        height: auto;
+        padding-top: 7px;
+        padding-bottom: 5px;
       }
-    }
-    .hero-deco-text {
-      display: none;
-    }
-    @media (min-width: 1024px) {
-      .hero-deco-text {
-        display: block;
-        position: absolute; right: 5%; top: 50%; transform: translateY(-50%);
-        font-family: var(--font-display);
-        font-size: clamp(6rem, 10vw, 10rem);
-        color: rgba(200,169,125,.06);
-        line-height: 1; text-align: right;
-        pointer-events: none; user-select: none;
+      .nav-links {
+        display: flex !important;
+        position: static;
+        order: 3;
+        flex-basis: 100%;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        background: none;
+        border: none;
+        padding: 5px 0 0;
+        gap: 3px 5px;
       }
+      .nav-links a {
+        padding: 4px 8px;
+        border-left: none;
+        font-size: 10px;
+        letter-spacing: .06em;
+      }
+      .nav-links a:hover, .nav-links a.active { border-left-color: transparent; }
+      .nav-cta { margin: 0; padding: 4px 10px !important; }
     }
-    /* FEATURE STRIP */
-    .feature-strip { background: var(--cognac); padding: 20px 0; }
-    .strip-inner {
+
+    /* TIGHT PREVIEW GRID — shared by New + Used sections */
+    .pv-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
     }
-    @media (min-width: 640px) { .strip-inner { grid-template-columns: repeat(4, 1fr); } }
-    .strip-item {
-      text-align: center; padding: 14px 12px;
-      border-right: 1px solid rgba(255,255,255,.15);
-      border-bottom: 1px solid rgba(255,255,255,.1);
+    @media (min-width: 640px)  { .pv-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; } }
+    @media (min-width: 1024px) { .pv-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
+
+    .pv-card {
+      background: var(--white);
+      border: 1px solid rgba(139,69,19,.15);
+      border-top: 3px solid var(--cognac);
+      display: flex; flex-direction: column;
+      overflow: hidden;
+      transition: box-shadow .2s, transform .2s;
     }
-    @media (min-width: 640px) { .strip-item { border-bottom: none; padding: 18px 16px; } }
-    .strip-item:nth-child(2n) { border-right: none; }
-    @media (min-width: 640px) { .strip-item:nth-child(2n) { border-right: 1px solid rgba(255,255,255,.15); } }
-    @media (min-width: 640px) { .strip-item:last-child { border-right: none; } }
-    .strip-num { font-family: var(--font-display); font-size: 1.8rem; color: var(--white); font-weight: 800; }
-    @media (min-width: 640px) { .strip-num { font-size: 2.2rem; } }
-    .strip-label { font-family: var(--font-label); font-size:12px; letter-spacing: .12em; text-transform: uppercase; color: #fff; font-weight: 700; margin-top: 4px; }
-    /* INTRO */
-    .intro-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
-    @media (min-width: 1024px) { .intro-grid { grid-template-columns: 3fr 2fr; gap: 64px; align-items: center; } }
-    .intro-pull {
-      font-family: var(--font-display);
-      font-size: 1.2rem; color: var(--cognac); font-style: italic;
-      border-left: 3px solid var(--gold); padding-left: 20px;
-      margin: 24px 0; line-height: 1.5;
+    .pv-card:hover { box-shadow: 0 6px 24px rgba(61,31,10,.12); transform: translateY(-2px); }
+
+    /* FIX: aspect-ratio box with height:100% + cover — no letterboxing, no dead space */
+    .pv-img-wrap { aspect-ratio: 3/4; overflow: hidden; background: var(--parchment); }
+    .pv-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    /* .contain variant: correct choice for isolated PNG product renders (new-saddle cards) */
+    .pv-img-wrap.contain { display: flex; align-items: center; justify-content: center; }
+    .pv-img-wrap.contain img { object-fit: contain; padding: 8px; }
+
+    .pv-body { padding: 10px 10px 12px; display: flex; flex-direction: column; flex: 1; }
+    @media (min-width: 640px) { .pv-body { padding: 12px 12px 14px; } }
+
+    .pv-maker { font-family: var(--font-label); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+    /* FIX: no flex:1 on the name — natural height, doesn't push footer elements around */
+    .pv-name { font-family: var(--font-display); font-size: .85rem; color: var(--dark-saddle); line-height: 1.3; margin-bottom: 6px; }
+    @media (min-width: 640px) { .pv-name { font-size: .95rem; } }
+    /* New-saddle cards have no maker line or price line, so the name reads lighter than
+       used-card names by comparison — nudged up to match visual strength. */
+    .pv-name-new { font-size: .92rem; font-weight: 600; }
+    @media (min-width: 640px) { .pv-name-new { font-size: 1.02rem; } }
+
+    /* FIX: specs are now real tight chips (background + padding), no emoji */
+    .pv-specs { display: flex; flex-direction: column; gap: 3px; margin-bottom: 8px; }
+    .pv-spec {
+      display: inline-block;
+      font-family: var(--font-label);
+      font-size: 10px; letter-spacing: .03em;
+      color: var(--warm-gray);
+      background: var(--parchment);
+      padding: 2px 6px;
+      line-height: 1.4;
     }
-    @media (min-width: 640px) { .intro-pull { font-size: 1.35rem; } }
-    .aside-box { background: var(--dark-saddle); padding: 24px 20px; border-top: 4px solid var(--gold); }
-    @media (min-width: 640px) { .aside-box { padding: 32px 28px; } }
-    .aside-box h3 { font-family: var(--font-display); color: var(--parchment); margin-bottom: 14px; font-size: 1.1rem; }
-    .aside-box ul { list-style: none; }
-    .aside-box li { border-bottom: 1px solid rgba(255,255,255,.08); padding: 9px 0; }
-    .aside-box a { color: var(--tan); font-size: .9rem; display: flex; align-items: center; gap: 8px; }
-    .aside-box a:hover { color: var(--gold-light); }
-    /* SPONSORS */
-    .sponsors-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-    @media (min-width: 1024px) { .sponsors-grid { grid-template-columns: 1fr 1fr; gap: 28px; } }
-    /* PAGES GRID */
-    .pages-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
-    @media (min-width: 640px) { .pages-grid { grid-template-columns: 1fr 1fr; gap: 18px; } }
-    @media (min-width: 1024px) { .pages-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
-    .page-card {
-      background: var(--white); border: 1px solid rgba(139,69,19,.12);
-      padding: 22px 18px 20px; border-bottom: 4px solid var(--cognac);
-      transition: all .25s;
+
+    .pv-price { font-family: var(--font-display); font-weight: 700; color: var(--cognac); font-size: 1rem; margin-bottom: 8px; }
+
+    /* FIX: margin-top:auto (not flex:1 on the title) bottom-aligns the CTA across a row */
+    .pv-cta {
+      margin-top: auto;
+      display: block; width: 100%; text-align: center;
+      font-family: var(--font-label); font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+      padding: 8px 6px;
+      background: var(--dark-saddle); color: var(--parchment);
+      text-decoration: none;
+      transition: background .2s;
     }
-    @media (min-width: 640px) { .page-card { padding: 26px 22px 22px; } }
-    .page-card:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(61,31,10,.1); }
-    .page-card .icon { font-size: 1.6rem; margin-bottom: 10px; }
-    .page-card h3 { font-family: var(--font-display); font-size: 1.05rem; color: var(--dark-saddle); margin-bottom: 7px; }
-    .page-card p { font-size: .9rem; color: var(--warm-gray); line-height: 1.6; margin-bottom: 14px; }
-    .page-card a.link-arrow { font-family: var(--font-label); font-size:12px; letter-spacing: .12em; text-transform: uppercase; color: var(--cognac); }
-    .page-card a.link-arrow::after { content: ' →'; }
+    .pv-cta:hover { background: var(--cognac); color: var(--white); }
+
+    .pv-viewall { text-align: center; margin-top: 20px; }
+
+    /* Tighter vertical rhythm around the New/Used headings only (the only two
+       .section-label/.section-title/.divider instances on this page). Grid
+       spacing itself (.pv-grid, .pv-viewall) is untouched. */
+    .section-label { margin-bottom: 6px; }
+    .section-title { margin-bottom: 8px; }
+    .divider { margin: 10px 0 14px; }
+    @media (min-width: 640px) { .divider { margin: 12px 0 16px; } }
   </style>
 
   <script type="application/ld+json">
@@ -153,7 +188,7 @@
       "@id": "https://www.reiningsaddles.com/#website",
       "url": "https://www.reiningsaddles.com/",
       "name": "ReiningSaddles.com",
-      "description": "The internet's most complete authority on reining saddles \u2014 history, buying guides, certified used saddles, and new Superior Saddlery saddles.",
+      "description": "Shop new Superior Saddlery reining saddles and quality used reining saddles from leading makers at ReiningSaddles.com.",
       "publisher": {
         "@id": "https://www.reiningsaddles.com/#organization"
       },
@@ -175,7 +210,7 @@
         "@type": "ImageObject",
         "url": "https://www.reiningsaddles.com/images/saddles/9O4A7795.png"
       },
-      "description": "ReiningSaddles.com is your complete guide to reining saddles \u2014 history, parts, how they differ from other western saddles, and where to buy certified used and new reining saddles.",
+      "description": "ReiningSaddles.com connects buyers with new Superior Saddlery reining saddles and quality used reining saddles from leading makers.",
       "sameAs": [],
       "contactPoint": {
         "@type": "ContactPoint",
@@ -201,6 +236,16 @@
 </head>
 <body>
 
+<!-- HERO — short, centered, no full-screen. First element on the page. -->
+<section class="tight-hero" aria-label="Hero">
+  <div class="container">
+    <h1 class="hero-wordmark">Reining <span class="accent">Saddles</span></h1>
+    <p class="hero-tagline">New &bull; Used &bull; Custom</p>
+    <p class="hero-sponsors">Superior Saddlery &middot; Certified Used Saddles</p>
+  </div>
+</section>
+
+<!-- MAIN NAV — directly under the hero, not sticky on this page -->
 <nav class="site-nav" role="navigation">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Reining<span>Saddles</span>.com</a>
@@ -218,141 +263,177 @@
   </div>
 </nav>
 
-<div class="sponsor-bar">
-  <span class="sponsor-bar-label">Official Sponsors</span>
-  <a href="new-saddles.html" class="sponsor-name"><img src="images/endorsers/Superior-Logo.png" alt="Superior Saddlery" style="height:20px;width:auto;vertical-align:middle;margin-right:5px" width="auto" height="20" loading="eager">Superior Saddles by Andreas Maschke</a>
-  <span class="sponsor-pipe">|</span>
-  <a href="used-saddles.html" class="sponsor-name"><img src="images/certified-used-saddles-logo-sm.jpg" alt="Certified Used Saddles" style="height:20px;width:auto;vertical-align:middle;margin-right:5px;border-radius:50%" width="auto" height="20" loading="eager">Certified Used Saddles by David Solum</a>
-</div>
-
-<!-- HERO -->
-<section class="home-hero" aria-label="Hero" style="padding:32px 0 36px;min-height:unset">
-  <div class="container">
-    <div class="hero-content">
-      <p class="hero-body" style="font-family:var(--font-display);font-size:1rem;color:#fff;font-weight:700;line-height:1.25;margin-bottom:20px;max-width:620px">The leading online resource for NRHA reining saddles — sponsored by Superior Saddlery and Certified Used Saddles. View their inventory here online.</p>
-      <div class="hero-actions">
-        <a href="buying-guide.html" class="btn btn-solid" style="background:#9B7D2A;border-color:#9B7D2A;color:#fff;font-weight:600">Saddle Buying Guide</a>
-        <a href="used-saddles.html" class="btn btn-solid" style="background:#8B4513;border-color:#8B4513;color:#fff;font-weight:600">Shop Certified Used</a>
-        <a href="saddle-matchmaker.html" class="btn btn-solid" style="background:rgba(255,255,255,.15);border:none;color:#fff;font-weight:600">Find My Saddle<br>Match Maker ↓</a>
-        <a href="contact.html" class="btn btn-solid" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);color:#fff;font-weight:600">✉ Contact David</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PAGE NAV STRIP -->
-<style>
-  .pnav-inner{display:flex;flex-direction:column;width:100%;max-width:1200px;margin:0 auto}
-  .pnav-inner a{font-family:var(--font-label);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,237,216,.75);padding:13px 20px;border-bottom:1px solid rgba(255,255,255,.05);transition:all .2s;text-decoration:none;white-space:nowrap}
-  .pnav-inner a.pnav-cta{background:#8B4513;color:#fff;font-weight:700;border-bottom:none}
-  @media(min-width:640px){
-    .pnav-inner{flex-direction:row;flex-wrap:wrap}
-    .pnav-inner a{border-bottom:none;border-right:1px solid rgba(255,255,255,.07)}
-  }
-</style>
-<nav style="background:#3D1F0A;border-bottom:2px solid #8B4513" aria-label="Page navigation">
-  <div class="pnav-inner">
-    <a href="buying-guide.html">Buying Guide</a>
-    <a href="history.html">History</a>
-    <a href="parts-of-the-saddle.html">Parts of a Saddle</a>
-    <a href="reining-vs-cow-horse.html">Reining vs Cow Horse</a>
-    <a href="endorsers/index.html">Champion Endorsers</a>
-    <a href="faq.html">FAQ</a>
-    <a href="saddle-matchmaker.html">Matchmaker</a>
-    <a href="european-reining-saddle-guide.html">&#127466;&#127482; European Buyers</a>
-    <a href="used-saddles.html" class="pnav-cta">Shop Used Saddles</a>
-  </div>
-</nav>
-
-<!-- FEATURE STRIP -->
-<div class="feature-strip">
-  <div class="container">
-    <div class="strip-inner">
-      <div class="strip-item">
-        <div class="strip-num">150+</div>
-        <div class="strip-label">Years of History</div>
-      </div>
-      <div class="strip-item">
-        <div class="strip-num">8</div>
-        <div class="strip-label">In-Depth Guides</div>
-      </div>
-      <div class="strip-item">
-        <div class="strip-num">2</div>
-        <div class="strip-label">Trusted Sponsors</div>
-      </div>
-      <div class="strip-item">
-        <div class="strip-num">NRHA</div>
-        <div class="strip-label">Competition Focus</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- INTRO SECTION -->
+<!-- NEW REINING SADDLES -->
 <section class="section">
   <div class="container">
-    <div class="intro-grid">
-      <div>
-        <p class="section-label">What We Cover</p>
-        <h2 class="section-title">Your Complete Guide to Reining Saddles</h2>
-        <div class="divider"></div>
-        <p>The reining saddle is one of the most specialized pieces of tack in the western horse world. Designed specifically to allow a rider's seat to stay deep and quiet while a horse executes demanding maneuvers — sliding stops, 360° spins, rundowns, and rollbacks — these saddles represent the pinnacle of western saddle engineering.</p>
-        <blockquote class="intro-pull">"A great reining saddle disappears beneath the rider — it puts you in the horse, not on it."</blockquote>
-        <p>At ReiningSaddles.com, we've built the most comprehensive online resource dedicated to the reining saddle — from its roots in the California vaquero tradition to the modern cutting-edge designs used by NRHA futurity champions. Whether you're shopping for your first reining saddle or upgrading to a custom build, we've got you covered.</p>
-        <br>
-        <a href="buying-guide.html" class="btn btn-solid">Start With Our Buying Guide</a>
+    <p class="section-label">Shop New</p>
+    <h2 class="section-title">New Reining Saddles</h2>
+    <div class="divider"></div>
+    <div class="pv-grid">
+      <div class="pv-card">
+        <div class="pv-img-wrap contain"><img src="images/saddles/GS18.png" alt="AF Lady Reiner — Superior Saddlery by Andreas Maschke" loading="lazy" width="320" height="320"></div>
+        <div class="pv-body">
+          <div class="pv-name pv-name-new">AF Lady Reiner</div>
+          <div class="pv-specs"><span class="pv-spec">Custom Build Available</span></div>
+          <a href="https://superior-saddlery.com/product/af-lady-reiner/" target="_blank" rel="noopener" class="pv-cta">View on Superior-Saddlery.com →</a>
+        </div>
       </div>
-      <div>
-        <div class="aside-box">
-          <h3>📚 Quick Navigation</h3>
-          <ul>
-            <li><a href="history.html">→ History of the Reining Saddle</a></li>
-            <li><a href="parts-of-the-saddle.html">→ All 18 Parts Explained</a></li>
-            <li><a href="reining-vs-cow-horse.html">→ Reining vs. Cow Horse Saddles</a></li>
-            <li><a href="new-saddles.html">→ New Saddles — Superior by Andreas Maschke</a></li>
-            <li><a href="used-saddles.html">→ Certified Used — David Solum</a></li>
-            <li><a href="buying-guide.html">→ Complete Buying Guide</a></li>
-            <li><a href="faq.html">→ NRHA Saddle FAQ</a></li>
-          </ul>
+      <div class="pv-card">
+        <div class="pv-img-wrap contain"><img src="images/saddles/Harper-Conner.png" alt="AF Reiner — Superior Saddlery by Andreas Maschke" loading="lazy" width="320" height="320"></div>
+        <div class="pv-body">
+          <div class="pv-name pv-name-new">AF Reiner</div>
+          <div class="pv-specs"><span class="pv-spec">Custom Build Available</span></div>
+          <a href="https://superior-saddlery.com/product/af-reiner/" target="_blank" rel="noopener" class="pv-cta">View on Superior-Saddlery.com →</a>
+        </div>
+      </div>
+      <div class="pv-card">
+        <div class="pv-img-wrap contain"><img src="images/saddles/Morris-Kulmer.png" alt="AF-Reining Saddle — Superior Saddlery by Andreas Maschke" loading="lazy" width="320" height="320"></div>
+        <div class="pv-body">
+          <div class="pv-name pv-name-new">AF-Reining Saddle</div>
+          <div class="pv-specs"><span class="pv-spec">Custom Build Available</span></div>
+          <a href="https://superior-saddlery.com/product/reiner/" target="_blank" rel="noopener" class="pv-cta">View on Superior-Saddlery.com →</a>
+        </div>
+      </div>
+      <div class="pv-card">
+        <div class="pv-img-wrap contain"><img src="images/saddles/SS-Ranch-Cutter-Full-Tooled-b.png" alt="Billy Williams Reiner — Superior Saddlery by Andreas Maschke" loading="lazy" width="320" height="320"></div>
+        <div class="pv-body">
+          <div class="pv-name pv-name-new">Billy Williams Reiner</div>
+          <div class="pv-specs"><span class="pv-spec">Glass Encased Wood Tree</span><span class="pv-spec">Seat Sizes 15.5”-17”</span></div>
+          <a href="https://superior-saddlery.com/product/billy-williams-reiner/" target="_blank" rel="noopener" class="pv-cta">View on Superior-Saddlery.com →</a>
+        </div>
+      </div>
+      <div class="pv-card">
+        <div class="pv-img-wrap contain"><img src="images/saddles/Cade-McCutcheon-2-1.png" alt="Cade McCutcheon Reiner — Superior Saddlery by Andreas Maschke" loading="lazy" width="320" height="320"></div>
+        <div class="pv-body">
+          <div class="pv-name pv-name-new">Cade McCutcheon Reiner</div>
+          <div class="pv-specs"><span class="pv-spec">Glass Encased Wood Tree</span><span class="pv-spec">Seat Sizes 15”-16.5”</span></div>
+          <a href="https://superior-saddlery.com/product/cade-mccutcheon-reiner/" target="_blank" rel="noopener" class="pv-cta">View on Superior-Saddlery.com →</a>
+        </div>
+      </div>
+      <div class="pv-card">
+        <div class="pv-img-wrap contain"><img src="images/saddles/Cade-McCutcheon-2022.png" alt="Cade McCutcheon Show — Superior Saddlery by Andreas Maschke" loading="lazy" width="320" height="320"></div>
+        <div class="pv-body">
+          <div class="pv-name pv-name-new">Cade McCutcheon Show</div>
+          <div class="pv-specs"><span class="pv-spec">Custom Build Available</span></div>
+          <a href="https://superior-saddlery.com/product/cade-mccutcheon-show/" target="_blank" rel="noopener" class="pv-cta">View on Superior-Saddlery.com →</a>
+        </div>
+      </div>
+      <div class="pv-card">
+        <div class="pv-img-wrap contain"><img src="images/saddles/Carlee-McCutcheon.png" alt="Carlee McCutcheon Reiner — Superior Saddlery by Andreas Maschke" loading="lazy" width="320" height="320"></div>
+        <div class="pv-body">
+          <div class="pv-name pv-name-new">Carlee McCutcheon Reiner</div>
+          <div class="pv-specs"><span class="pv-spec">Custom Build Available</span></div>
+          <a href="https://superior-saddlery.com/product/carlee-mccutcheon-reiner/" target="_blank" rel="noopener" class="pv-cta">View on Superior-Saddlery.com →</a>
+        </div>
+      </div>
+      <div class="pv-card">
+        <div class="pv-img-wrap contain"><img src="images/saddles/CD-dyed-BG-edges-1.png" alt="Casey Deary Reiner — Superior Saddlery by Andreas Maschke" loading="lazy" width="320" height="320"></div>
+        <div class="pv-body">
+          <div class="pv-name pv-name-new">Casey Deary Reiner</div>
+          <div class="pv-specs"><span class="pv-spec">Glass Encased Wood Tree</span><span class="pv-spec">Seat Sizes 15”-16.5”</span></div>
+          <a href="https://superior-saddlery.com/product/casey-deary-reiner/" target="_blank" rel="noopener" class="pv-cta">View on Superior-Saddlery.com →</a>
         </div>
       </div>
     </div>
+    <div class="pv-viewall"><a href="new-saddles.html" class="btn btn-solid">View All New Saddles →</a></div>
   </div>
 </section>
 
-<!-- SPONSORS SECTION -->
-<section class="section section-dark">
-  <div class="container">
-    <p class="section-label">Find Your Match</p>
-    <h2 class="section-title">Not Sure Which Saddle is Right?</h2>
-    <div class="divider"></div>
-    <p style="color:var(--hay,#C9A96E);font-size:1rem;line-height:1.8;margin-bottom:20px;">Answer 5 questions about your seat size, budget, discipline, and maker preferences. The Saddle Matchmaker scores all 103 new and certified used saddles against your criteria and ranks your best matches &#8212; with a full explanation of why each one fits.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;">
-      <span style="font-family:var(--font-label);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--hay,#C9A96E);">&#10003; 40 certified used saddles</span>
-      <span style="font-family:var(--font-label);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--hay,#C9A96E);">&#10003; 63 new Superior Saddlery models</span>
-      <span style="font-family:var(--font-label);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--hay,#C9A96E);">&#10003; Scored by seat, price, maker &amp; silver</span>
-    </div>
-    <a href="saddle-matchmaker.html" class="btn btn-solid" style="background:var(--gold,#9B7D2A);border-color:var(--gold,#9B7D2A);font-size:12px;">Find My Saddle &#8594;</a>
-  </div>
-</section>
-
+<!-- USED REINING SADDLES -->
 <section class="section section-alt">
   <div class="container">
-    <p class="section-label">Trusted Sponsors</p>
-    <h2 class="section-title">Shop From the Best in the Business</h2>
+    <p class="section-label">Shop Used</p>
+    <h2 class="section-title">Used Reining Saddles</h2>
     <div class="divider"></div>
-    <div class="sponsors-grid">
-      <div class="sponsor-block">
-        <div class="sponsor-badge" style="background:transparent;display:flex;align-items:center;justify-content:center;width:80px;height:80px;flex-shrink:0">
-          <a href="https://superior-saddlery.com" target="_blank" rel="noopener"><img src="images/endorsers/Superior-Logo.png" alt="Superior Saddlery" style="width:80px;height:auto;display:block" width="auto" height="20" loading="lazy"></a>
-        </div>
-        <div>
-          <div class="sponsor-tag">Official Sponsor — New Saddles</div>
-          <h3>Superior Saddles by Andreas Maschke</h3>
-          <p>Andreas Maschke has been building world-class reining and cow horse saddles for elite competitors for over two decades. Superior Saddles are hand-crafted, competition-proven, and trusted by NRHA Open riders at the highest levels.</p>
-          <a href="new-saddles.html" class="btn btn-solid">View Superior Saddles →</a>
+    <div class="pv-grid">
+      <div class="pv-card">
+        <div class="pv-img-wrap"><img src="images/used-saddles/donn-leson-tvg-full-left.jpg" alt="Donn Leson TVG — Donn Leson Saddles" loading="lazy" width="320" height="320"></div>
+        <div class="pv-body">
+          <div class="pv-maker">Donn Leson Saddles</div>
+          <div class="pv-name">Donn Leson TVG</div>
+          <div class="pv-specs"><span class="pv-spec">Good Used</span><span class="pv-spec">Reining</span></div>
+          <div class="pv-price">$6,999</div>
+          <a href="used-saddles.html#inventory" class="pv-cta">Inquire →</a>
         </div>
       </div>
+      <div class="pv-card">
+        <div class="pv-img-wrap"><img src="images/used-saddles/mr-reiner-superior-15-5-full-left.jpg" alt="MR Reiner — Handtooled Basketweave &amp; Flowers — Superior Saddlery" loading="lazy" width="320" height="320"></div>
+        <div class="pv-body">
+          <div class="pv-maker">Superior Saddlery</div>
+          <div class="pv-name">MR Reiner — Handtooled Basketweave &amp; Flowers</div>
+          <div class="pv-specs"><span class="pv-spec">15½" Chocolate Seat</span><span class="pv-spec">Sterling Silver Corner Plates</span></div>
+          <div class="pv-price">$6,495</div>
+          <a href="used-saddles.html#inventory" class="pv-cta">Inquire →</a>
+        </div>
+      </div>
+      <div class="pv-card">
+        <div class="pv-img-wrap"><img src="images/used-saddles/bob-avila-bobs-custom-16-full-right.jpg" alt="Bob Avila Show Saddle — Bob&#x27;s Custom Saddle" loading="lazy" width="320" height="320"></div>
+        <div class="pv-body">
+          <div class="pv-maker">Bob's Custom Saddle</div>
+          <div class="pv-name">Bob Avila Show Saddle</div>
+          <div class="pv-specs"><span class="pv-spec">16" Seat · 16½" Fenders</span><span class="pv-spec">Model B17-120M</span></div>
+          <div class="pv-price">$5,995</div>
+          <a href="used-saddles.html#inventory" class="pv-cta">Inquire →</a>
+        </div>
+      </div>
+      <div class="pv-card">
+        <div class="pv-img-wrap"><img src="images/used-saddles/bob-avila-bobs-custom-16-b-full-left.jpg" alt="Bob Avila B17-120M — Full Silver Overlays — Bob&#x27;s Custom Saddle" loading="lazy" width="320" height="320"></div>
+        <div class="pv-body">
+          <div class="pv-maker">Bob's Custom Saddle</div>
+          <div class="pv-name">Bob Avila B17-120M — Full Silver Overlays</div>
+          <div class="pv-specs"><span class="pv-spec">16" Seat / 16½" Fenders</span><span class="pv-spec">Full Engraved Silver Skirt Overlays</span></div>
+          <div class="pv-price">$5,995</div>
+          <a href="used-saddles.html#inventory" class="pv-cta">Inquire →</a>
+        </div>
+      </div>
+      <div class="pv-card">
+        <div class="pv-img-wrap"><img src="images/used-saddles/bobs-custom-16-basketweave-silver-full-left.jpg" alt="16&quot; Basketweave &amp; Floral — Oxidized Silver — Bob&#x27;s Custom Saddle" loading="lazy" width="320" height="320"></div>
+        <div class="pv-body">
+          <div class="pv-maker">Bob's Custom Saddle</div>
+          <div class="pv-name">16" Basketweave &amp; Floral — Oxidized Silver</div>
+          <div class="pv-specs"><span class="pv-spec">16" Seat</span><span class="pv-spec">Sterling Silver Conchos &amp; Corner Plates</span></div>
+          <div class="pv-price">$5,995</div>
+          <a href="used-saddles.html#inventory" class="pv-cta">Inquire →</a>
+        </div>
+      </div>
+      <div class="pv-card">
+        <div class="pv-img-wrap"><img src="images/used-saddles/bobs-custom-16-tan-sterling-full-left.jpg" alt="16&quot; Tan Leather — Bright Sterling Silver — Bob&#x27;s Custom Saddle" loading="lazy" width="320" height="320"></div>
+        <div class="pv-body">
+          <div class="pv-maker">Bob's Custom Saddle</div>
+          <div class="pv-name">16" Tan Leather — Bright Sterling Silver</div>
+          <div class="pv-specs"><span class="pv-spec">16" Seat</span><span class="pv-spec">Sterling Silver Corner Plates &amp; Floral</span></div>
+          <div class="pv-price">$5,995</div>
+          <a href="used-saddles.html#inventory" class="pv-cta">Inquire →</a>
+        </div>
+      </div>
+      <div class="pv-card">
+        <div class="pv-img-wrap"><img src="images/used-saddles/bob-avila-bobs-custom-16-c-full-left.jpg" alt="Bob Avila — Silver Swell Cap &amp; Full Silver Package — Bob&#x27;s Custom Saddle" loading="lazy" width="320" height="320"></div>
+        <div class="pv-body">
+          <div class="pv-maker">Bob's Custom Saddle</div>
+          <div class="pv-name">Bob Avila — Silver Swell Cap &amp; Full Silver Package</div>
+          <div class="pv-specs"><span class="pv-spec">16" Seat</span><span class="pv-spec">Engraved Silver Swell Cap</span></div>
+          <div class="pv-price">$5,995</div>
+          <a href="used-saddles.html#inventory" class="pv-cta">Inquire →</a>
+        </div>
+      </div>
+      <div class="pv-card">
+        <div class="pv-img-wrap"><img src="images/used-saddles/donn-leson-tvb-386-16-full-left.jpg" alt="TVB #386 — Grants Pass, OR — Donn Leson Saddles" loading="lazy" width="320" height="320"></div>
+        <div class="pv-body">
+          <div class="pv-maker">Donn Leson Saddles</div>
+          <div class="pv-name">TVB #386 — Grants Pass, OR</div>
+          <div class="pv-specs"><span class="pv-spec">16" Seat</span><span class="pv-spec">Sterling Silver Conchos &amp; Rear Dees</span></div>
+          <div class="pv-price">$6,495</div>
+          <a href="used-saddles.html#inventory" class="pv-cta">Inquire →</a>
+        </div>
+      </div>
+    </div>
+    <div class="pv-viewall"><a href="used-saddles.html" class="btn btn-solid">View All Used Saddles →</a></div>
+  </div>
+</section>
+
+<!-- DAVID SOLUM CONTACT TREATMENT — kept exactly as it was on the live homepage -->
+<section class="section">
+  <div class="container">
       <div class="sponsor-block">
         <div class="sponsor-badge" style="background:transparent;display:flex;align-items:center;justify-content:center;width:80px;height:80px;flex-shrink:0">
           <a href="https://certifiedusedsaddles.com" target="_blank" rel="noopener"><img src="images/certified-used-saddles-logo.jpg" alt="Certified Used Saddles by David Solum" style="width:80px;height:auto;display:block;border-radius:50%;background:var(--parchment);padding:4px;border:1px solid rgba(139,69,19,.2)" width="80" height="auto" loading="lazy"></a>
@@ -360,80 +441,9 @@
         <div>
           <div class="sponsor-tag">Official Sponsor — Certified Used Saddles</div>
           <h3>Certified Used Saddles by David Solum</h3>
-          <p>David Solum brings decades of saddle expertise and deep NRHA community connections to offer a curated marketplace of certified pre-owned reining saddles. Every saddle is personally inspected and stands behind a quality guarantee.</p>
+          <p>David Solum brings decades of saddle expertise and deep NRHA community connections to offer a curated marketplace of certified pre-owned reining saddles. Every saddle is personally inspected and backed by a quality guarantee.</p>
           <a href="used-saddles.html" class="btn">Browse Certified Used →</a>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SITE PAGES -->
-<section class="section">
-  <div class="container">
-    <p class="section-label">Explore the Guide</p>
-    <h2 class="section-title">Everything You Need to Know</h2>
-    <div class="divider"></div>
-    <div class="pages-grid">
-      <div class="page-card">
-        <div class="icon">📜</div>
-        <h3>History of the Reining Saddle</h3>
-        <p>Trace the evolution from Spanish vaquero roots through ranch working saddles to today's lightweight competition rigs.</p>
-        <a href="history.html" class="link-arrow">Read the History</a>
-      </div>
-      <div class="page-card">
-        <div class="icon">🔍</div>
-        <h3>Parts of the Reining Saddle</h3>
-        <p>An illustrated breakdown of every component — tree, seat, skirts, rigging, cantle, swells, fenders, and more.</p>
-        <a href="parts-of-the-saddle.html" class="link-arrow">Explore Saddle Anatomy</a>
-      </div>
-      <div class="page-card">
-        <div class="icon">⚖️</div>
-        <h3>Reining vs. Reined Cow Horse</h3>
-        <p>These saddles look similar — but the differences matter. Learn why cow horse saddles are built differently.</p>
-        <a href="reining-vs-cow-horse.html" class="link-arrow">See the Differences</a>
-      </div>
-      <div class="page-card">
-        <div class="icon">✨</div>
-        <h3>New Reining Saddles</h3>
-        <p>Current models from Superior Saddles by Andreas Maschke — custom builds, competition cuts, and full tooling options.</p>
-        <a href="new-saddles.html" class="link-arrow">Shop New Saddles</a>
-      </div>
-      <div class="page-card">
-        <div class="icon"><img src="images/certified-used-saddles-logo-sm.jpg" alt="Certified Used Saddles" style="height:36px;width:auto;border-radius:50%" width="auto" height="20" loading="lazy"></div>
-        <h3>Certified Used Saddles</h3>
-        <p>David Solum's personally inspected inventory of pre-owned reining saddles — quality names at honest prices.</p>
-        <a href="used-saddles.html" class="link-arrow">Browse Used Saddles</a>
-      </div>
-      <div class="page-card">
-        <div class="icon">🎯</div>
-        <h3>Reining Saddle Buying Guide</h3>
-        <p>Tree width, seat size, rigging position, skirt shape — everything to evaluate before you spend your money.</p>
-        <a href="buying-guide.html" class="link-arrow">Read the Guide</a>
-      </div>
-      <div class="page-card">
-        <div class="icon">❓</div>
-        <h3>FAQ — NRHA Saddle Rules</h3>
-        <p>Can you use a cutting saddle in reining? What does NRHA allow? Common questions answered by the rules.</p>
-        <a href="faq.html" class="link-arrow">See All FAQs</a>
-      </div>
-      <div class="page-card">
-        <div class="icon">&#127466;&#127482;</div>
-        <h3>European Reining Saddle Guide</h3>
-        <p>Buying a reining saddle in Europe? Understand import costs, Euro-market makers, and how to work with U.S. sponsors from abroad.</p>
-        <a href="european-reining-saddle-guide.html" class="link-arrow">European Buyers Guide</a>
-      </div>
-      <div class="page-card">
-        <div class="icon">&#127465;&#127466;</div>
-        <h3>Reining Sattel Kaufen (Deutsch)</h3>
-        <p>Der deutschsprachige Leitfaden für den Kauf von Reining-Sätteln — Beratung, Größen und Sponsoren.</p>
-        <a href="de/reining-sattel-kaufen.html" class="link-arrow">Zur deutschen Seite</a>
-      </div>
-      <div class="page-card">
-        <div class="icon">&#127467;&#127479;</div>
-        <h3>Selle Reining Acheter (Français)</h3>
-        <p>Guide francophone pour l'achat d'une selle de reining — conseils, tailles et sponsors de confiance.</p>
-        <a href="fr/selle-reining-acheter.html" class="link-arrow">Voir la page française</a>
       </div>
   </div>
 </section>

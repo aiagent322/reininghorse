@@ -1,0 +1,39 @@
+name: Deploy to Cloudflare Pages
+
+# reininghorse is the canonical source repo for reiningsaddles.com.
+# The live domain is served by the Cloudflare Pages project named
+# "reiningsaddles" (reached via proxied DNS CNAME to
+# reiningsaddles.pages.dev), NOT by the "reininghorse" project.
+# That is why --project-name below is deliberately "reiningsaddles".
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: pages-deploy-reiningsaddles
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Wrangler
+        run: npm install -g wrangler
+
+      - name: Deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: wrangler pages deploy . --project-name=reiningsaddles --branch=main --commit-dirty=true
+
+      - name: Purge Cloudflare Cache
+        run: |
+          curl -s -X POST "https://api.cloudflare.com/client/v4/zones/41701eae83c427a2eb10dbc325890fad/purge_cache" \
+            -H "Authorization: Bearer ${{ secrets.CLOUDFLARE_PURGE_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"purge_everything":true}'

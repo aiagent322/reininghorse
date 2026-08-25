@@ -125,6 +125,18 @@
     .gallery-dot.active { background: #fff; }
     @media (min-width: 640px) { .listing-img-wrap img.gallery-main { height: 280px; } }
 
+    /* INVENTORY FILTER BAR */
+    .filter-bar{background:var(--white);border:1px solid rgba(93,58,26,.15);border-top:3px solid var(--cognac);padding:16px 20px;margin-bottom:24px}
+    .filter-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+    .filter-row:last-child{margin-bottom:0}
+    .filter-label{font-family:var(--font-label);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--warm-gray);width:70px;flex-shrink:0}
+    .chip{font-family:var(--font-label);font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border:1px solid rgba(93,58,26,.25);color:var(--warm-gray);cursor:pointer;background:transparent;transition:all .18s;white-space:nowrap;min-height:36px}
+    .chip:hover{border-color:var(--cognac);color:var(--cognac)}
+    .chip.active{background:var(--cognac);color:var(--white);border-color:var(--cognac)}
+    .filter-count{font-family:var(--font-label);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-left:auto;white-space:nowrap}
+    .no-results{display:none;text-align:center;padding:48px 20px;font-family:var(--font-display);font-size:1.1rem;color:var(--warm-gray)}
+    .no-results.show{display:block}
+
   </style>
   <meta property="og:type" content="website">
   <meta property="og:title" content="Certified Used Reining Saddles — David Solum | ReiningSaddles.com">
@@ -200,9 +212,52 @@
     <div class="divider"></div>
     <p class="section-intro">All saddles personally inspected and certified by David Solum. Inventory moves quickly — contact David to hold a saddle or arrange viewing. Prices listed are sale prices.</p>
 
+    <div class="filter-bar">
+      <div class="filter-row">
+        <span class="filter-label">Discipline</span>
+        <button class="chip active" data-filter="disc" data-val="any" onclick="setFilter(this,'disc')">Any</button>
+        <button class="chip" data-filter="disc" data-val="Reining" onclick="setFilter(this,'disc')">Reining</button>
+        <button class="chip" data-filter="disc" data-val="Cutting" onclick="setFilter(this,'disc')">Cutting</button>
+        <button class="chip" data-filter="disc" data-val="Cow Horse" onclick="setFilter(this,'disc')">Cow Horse</button>
+        <button class="chip" data-filter="disc" data-val="Ranch" onclick="setFilter(this,'disc')">Ranch</button>
+        <span class="filter-count" id="filterCount">42 saddles</span>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">Price</span>
+        <button class="chip active" data-filter="price" data-min="0" data-max="999999" onclick="setFilter(this,'price')">Any</button>
+        <button class="chip" data-filter="price" data-min="0" data-max="1999" onclick="setFilter(this,'price')">Under $2k</button>
+        <button class="chip" data-filter="price" data-min="2000" data-max="3999" onclick="setFilter(this,'price')">$2k &ndash; $4k</button>
+        <button class="chip" data-filter="price" data-min="4000" data-max="5999" onclick="setFilter(this,'price')">$4k &ndash; $6k</button>
+        <button class="chip" data-filter="price" data-min="6000" data-max="999999" onclick="setFilter(this,'price')">$6k+</button>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">Seat</span>
+        <button class="chip active" data-filter="seat" data-val="any" onclick="setFilter(this,'seat')">Any</button>
+        <button class="chip" data-filter="seat" data-val="15" onclick="setFilter(this,'seat')">15&quot;</button>
+        <button class="chip" data-filter="seat" data-val="15.5" onclick="setFilter(this,'seat')">15.5&quot;</button>
+        <button class="chip" data-filter="seat" data-val="16" onclick="setFilter(this,'seat')">16&quot;</button>
+        <button class="chip" data-filter="seat" data-val="16.5" onclick="setFilter(this,'seat')">16.5&quot;</button>
+        <button class="chip" data-filter="seat" data-val="17" onclick="setFilter(this,'seat')">17&quot;</button>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">Maker</span>
+        <button class="chip active" data-filter="maker" data-val="any" onclick="setFilter(this,'maker')">Any</button>
+        <button class="chip" data-filter="maker" data-val="Superior" onclick="setFilter(this,'maker')">Superior Saddlery</button>
+        <button class="chip" data-filter="maker" data-val="Bob's Custom" onclick="setFilter(this,'maker')">Bob's Custom</button>
+        <button class="chip" data-filter="maker" data-val="Kyle Tack" onclick="setFilter(this,'maker')">Kyle Tack</button>
+        <button class="chip" data-filter="maker" data-val="Donn Leson" onclick="setFilter(this,'maker')">Donn Leson</button>
+        <button class="chip" data-filter="maker" data-val="Martin" onclick="setFilter(this,'maker')">Martin Saddlery</button>
+        <button class="chip" data-filter="maker" data-val="Rios Bros" onclick="setFilter(this,'maker')">Rios Bros.</button>
+        <button class="chip" data-filter="maker" data-val="Roohide" onclick="setFilter(this,'maker')">Roohide</button>
+        <button class="chip" data-filter="maker" data-val="Calvin Allen" onclick="setFilter(this,'maker')">Calvin Allen</button>
+        <button class="chip" data-filter="maker" data-val="SRS" onclick="setFilter(this,'maker')">SRS</button>
+        <button class="chip" data-filter="maker" data-val="Teddy Johnson" onclick="setFilter(this,'maker')">Teddy Johnson</button>
+      </div>
+    </div>
+
     <div class="inventory-grid">
 <!-- AUTO-ADDED:donn-leson-tvg -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="6999" data-seat="" data-maker="Don Lesson">
         <div class="listing-img-wrap" data-imgs='[&quot;images/used-saddles/donn-leson-tvg-full-left.jpg&quot;,&quot;images/used-saddles/donn-leson-tvg-full-right.jpg&quot;,&quot;images/used-saddles/donn-leson-tvg-seat-top.jpg&quot;,&quot;images/used-saddles/donn-leson-tvg-cantle-detail.jpg&quot;,&quot;images/used-saddles/donn-leson-tvg-horn-swell.jpg&quot;]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -223,7 +278,7 @@
 <!-- /AUTO-ADDED:donn-leson-tvg -->
 
 <!-- AUTO-ADDED:deluxe-ranch-rider -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Ranch" data-price="1495" data-seat="16" data-maker="Rios Bros Custom Saddles of Phoenix">
         <div class="listing-img-wrap" data-imgs='[&quot;images/used-saddles/deluxe-ranch-rider-full-left.jpg&quot;,&quot;images/used-saddles/deluxe-ranch-rider-full-right.jpg&quot;,&quot;images/used-saddles/deluxe-ranch-rider-seat-top.jpg&quot;]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -245,7 +300,7 @@
 
 
       <!-- 1: MR Reiner Superior — TOP LISTING $6,495 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="6495" data-seat="15.5" data-maker="Superior">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/mr-reiner-superior-15-5-full-left.jpg", "images/used-saddles/mr-reiner-superior-15-5-full-right.jpg", "images/used-saddles/mr-reiner-superior-15-5-cantle-rear.jpg", "images/used-saddles/mr-reiner-superior-15-5-cantle-silver-close.jpg", "images/used-saddles/mr-reiner-superior-15-5-skirt-silver-detail.jpg", "images/used-saddles/mr-reiner-superior-15-5-seat-top.jpg", "images/used-saddles/mr-reiner-superior-15-5-right-side.jpg", "images/used-saddles/mr-reiner-superior-15-5-horn-swell-left.jpg", "images/used-saddles/mr-reiner-superior-15-5-horn-swell-right.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -267,7 +322,7 @@
       </div>
 
       <!-- 2: Bob Avila by Bob's Custom $5,995 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="5995" data-seat="16" data-maker="Bob's Custom">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/bob-avila-bobs-custom-16-full-right.jpg", "images/used-saddles/bob-avila-bobs-custom-16-full-left.jpg", "images/used-saddles/bob-avila-bobs-custom-16-cantle-rear.jpg", "images/used-saddles/bob-avila-bobs-custom-16-cantle-right-silver.jpg", "images/used-saddles/bob-avila-bobs-custom-16-right-side.jpg", "images/used-saddles/bob-avila-bobs-custom-16-left-side.jpg", "images/used-saddles/bob-avila-bobs-custom-16-horn-swell-left.jpg", "images/used-saddles/bob-avila-bobs-custom-16-horn-swell-right.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -288,7 +343,7 @@
       </div>
 
       <!-- 3: Bob Avila B17-120M Silver Overlays — $5,995 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="5995" data-seat="16" data-maker="Bob's Custom">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/bob-avila-bobs-custom-16-b-full-left.jpg", "images/used-saddles/bob-avila-bobs-custom-16-b-full-right.jpg", "images/used-saddles/bob-avila-bobs-custom-16-b-seat-top-left.jpg", "images/used-saddles/bob-avila-bobs-custom-16-b-seat-top-right.jpg", "images/used-saddles/bob-avila-bobs-custom-16-b-cantle-rear.jpg", "images/used-saddles/bob-avila-bobs-custom-16-b-cantle-right-silver.jpg", "images/used-saddles/bob-avila-bobs-custom-16-b-skirt-silver-detail.jpg", "images/used-saddles/bob-avila-bobs-custom-16-b-horn-swell-left.jpg", "images/used-saddles/bob-avila-bobs-custom-16-b-horn-swell-right.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -309,7 +364,7 @@
       </div>
 
       <!-- 4: Bob's Custom 16" Basketweave Silver — $5,995 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="5995" data-seat="16" data-maker="Bob's Custom">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/bobs-custom-16-basketweave-silver-full-left.jpg", "images/used-saddles/bobs-custom-16-basketweave-silver-full-right.jpg", "images/used-saddles/bobs-custom-16-basketweave-silver-seat-top-left.jpg", "images/used-saddles/bobs-custom-16-basketweave-silver-seat-top-right.jpg", "images/used-saddles/bobs-custom-16-basketweave-silver-cantle-skirt-detail.jpg", "images/used-saddles/bobs-custom-16-basketweave-silver-cantle-right-detail.jpg", "images/used-saddles/bobs-custom-16-basketweave-silver-skirt-silver-close.jpg", "images/used-saddles/bobs-custom-16-basketweave-silver-horn-swell-right.jpg", "images/used-saddles/bobs-custom-16-basketweave-silver-horn-badge.jpg", "images/used-saddles/bobs-custom-16-basketweave-silver-cantle-rear.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -330,7 +385,7 @@
       </div>
 
       <!-- 5: Bob's Custom 16" Tan Leather Sterling Silver — $5,995 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="5995" data-seat="16" data-maker="Bob's Custom">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/bobs-custom-16-tan-sterling-full-left.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-full-right-a.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-full-right-b.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-seat-top-left.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-seat-top-right.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-cantle-rear.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-cantle-skirt-detail.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-skirt-silver-right.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-skirt-silver-detail.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-skirt-corner-close.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-horn-badge-left.jpg", "images/used-saddles/bobs-custom-16-tan-sterling-horn-swell-right.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -351,7 +406,7 @@
       </div>
 
       <!-- 6: Bob Avila Silver Swell Cap — $5,995 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="5995" data-seat="16" data-maker="Bob's Custom">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/bob-avila-bobs-custom-16-c-full-left.jpg", "images/used-saddles/bob-avila-bobs-custom-16-c-full-right.jpg", "images/used-saddles/bob-avila-bobs-custom-16-c-left-side.jpg", "images/used-saddles/bob-avila-bobs-custom-16-c-seat-top-left.jpg", "images/used-saddles/bob-avila-bobs-custom-16-c-cantle-rear.jpg", "images/used-saddles/bob-avila-bobs-custom-16-c-cantle-right-silver.jpg", "images/used-saddles/bob-avila-bobs-custom-16-c-skirt-silver-detail.jpg", "images/used-saddles/bob-avila-bobs-custom-16-c-horn-swell-left.jpg", "images/used-saddles/bob-avila-bobs-custom-16-c-horn-swell-right.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -372,7 +427,7 @@
       </div>
 
       <!-- 6: Donn Leson TVB #386 — $6,495 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="6495" data-seat="16" data-maker="Donn Leson">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/donn-leson-tvb-386-16-full-left.jpg", "images/used-saddles/donn-leson-tvb-386-16-full-right.jpg", "images/used-saddles/donn-leson-tvb-386-16-seat-top-left.jpg", "images/used-saddles/donn-leson-tvb-386-16-seat-top-right.jpg", "images/used-saddles/donn-leson-tvb-386-16-cantle-rear.jpg", "images/used-saddles/donn-leson-tvb-386-16-badge-close.jpg", "images/used-saddles/donn-leson-tvb-386-16-cantle-left-detail.jpg", "images/used-saddles/donn-leson-tvb-386-16-skirt-concho-detail.jpg", "images/used-saddles/donn-leson-tvb-386-16-horn-swell-left.jpg", "images/used-saddles/donn-leson-tvb-386-16-horn-swell-right.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -393,7 +448,7 @@
       </div>
 
       <!-- 4: Craig Schmersal Reiner Superior $4,995 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="4995" data-seat="16" data-maker="Superior">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/craig-schmersal-reiner-superior-16.jpg", "images/used-saddles/craig-schmersal-superior-16-full.jpg", "images/used-saddles/craig-schmersal-superior-16-seat-top.jpg", "images/used-saddles/craig-schmersal-superior-16-right-skirt.jpg", "images/used-saddles/craig-schmersal-superior-16-dee-detail.jpg", "images/used-saddles/craig-schmersal-superior-16-horn-swell.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -415,7 +470,7 @@
 
       
       <!-- Casey Deary Reiner Superior 16" $5,995 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="5995" data-seat="16" data-maker="Superior">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/casey-deary-superior-16-main.jpg", "images/used-saddles/casey-deary-superior-16-full-left.jpg", "images/used-saddles/casey-deary-superior-16-seat-top.jpg", "images/used-saddles/casey-deary-superior-16-seat-front.jpg", "images/used-saddles/casey-deary-superior-16-right-seat.jpg", "images/used-saddles/casey-deary-superior-16-horn-seat.jpg", "images/used-saddles/casey-deary-superior-16-right-skirt.jpg", "images/used-saddles/casey-deary-superior-16-cantle-right.jpg", "images/used-saddles/casey-deary-superior-16-cantle-brand.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -436,7 +491,7 @@
       </div>
 
       <!-- 4: Superior Reiner w/ $4,995 tag (FB image 3) -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="4995" data-seat="" data-maker="Superior">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/superior-reiner-4995-tag.jpg"]'>
           
           
@@ -457,7 +512,7 @@
       </div>
 
       <!-- 5: Lady Cowhorse Bob's Custom Brand New $4,995 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Cow Horse" data-price="4995" data-seat="15.5" data-maker="Bob's Custom">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/lady-cowhorse-bobs-custom-15-5-full-left.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-full-right.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-right-side.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-seat-top.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-seat-top-right.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-cantle-skirt-left.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-skirt-concho-detail.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-horn-swell-left.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-horn-swell-right.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -478,7 +533,7 @@
       </div>
 
       <!-- 6: Bob's Custom KR Lady Reiner 15.5" Bison — $4,995 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="4995" data-seat="15.5" data-maker="Bob's Custom">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/bobs-custom-kr-lady-reiner-15-5-full-left.jpg", "images/used-saddles/bobs-custom-kr-lady-reiner-15-5-full-right.jpg", "images/used-saddles/bobs-custom-kr-lady-reiner-15-5-seat-top-left.jpg", "images/used-saddles/bobs-custom-kr-lady-reiner-15-5-seat-top-right.jpg", "images/used-saddles/bobs-custom-kr-lady-reiner-15-5-cantle-skirt-left.jpg", "images/used-saddles/bobs-custom-kr-lady-reiner-15-5-cantle-skirt-right.jpg", "images/used-saddles/bobs-custom-kr-lady-reiner-15-5-horn-swell-left.jpg", "images/used-saddles/bobs-custom-kr-lady-reiner-15-5-horn-badge-right.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -499,7 +554,7 @@
       </div>
 
       <!-- 7: Kyle Tack 16" Like New $3,995 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="3995" data-seat="16" data-maker="Kyle Tack">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/kyle-tack-reiner-16-like-new.jpg"]'>
           
           
@@ -520,7 +575,7 @@
       </div>
 
       <!-- 7: Kyle Tack 16" Sterling Silver Conchos $3,995 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="3995" data-seat="16" data-maker="Kyle Tack">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/kyle-tack-reiner-16-silver-conchos-main.jpg", "images/used-saddles/kyle-tack-reiner-16-silver-conchos-cantle-right.jpg", "images/used-saddles/kyle-tack-reiner-16-silver-conchos-front-left.jpg", "images/used-saddles/kyle-tack-reiner-16-silver-conchos-right-side.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -541,7 +596,7 @@
       </div>
 
       <!-- 8: Kyle Tack 16" $3,995 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="3995" data-seat="16" data-maker="Kyle Tack">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/kyle-tack-reiner-16.jpg"]'>
           
           
@@ -563,7 +618,7 @@
 
       
       <!-- Kyle Tack Reiner 16" Mint $3,995 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="3995" data-seat="16" data-maker="Kyle Tack">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/kyle-tack-reiner-16-mint-main.jpg", "images/used-saddles/kyle-tack-reiner-16-mint-full-left.jpg", "images/used-saddles/kyle-tack-reiner-16-mint-full-right.jpg", "images/used-saddles/kyle-tack-reiner-16-mint-seat-top.jpg", "images/used-saddles/kyle-tack-reiner-16-mint-cantle-right.jpg", "images/used-saddles/kyle-tack-reiner-16-mint-right-skirt.jpg", "images/used-saddles/kyle-tack-reiner-16-mint-horn-swell.jpg", "images/used-saddles/kyle-tack-reiner-16-mint-left-badge.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -584,7 +639,7 @@
       </div>
 
       <!-- 8: Kyle Tack 15.5" $3,995 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="3995" data-seat="15.5" data-maker="Kyle Tack">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/kyle-tack-reiner-15.5.jpg", "images/used-saddles/kyle-tack-reiner-15.5-detail-seat.jpg", "images/used-saddles/kyle-tack-reiner-15.5-detail-left.jpg", "images/used-saddles/kyle-tack-reiner-15.5-detail-right.jpg", "images/used-saddles/kyle-tack-reiner-15.5-detail-cantle.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -605,7 +660,7 @@
       </div>
 
       <!-- 9: Superior Schmersal black seat silver corners (FB 2) -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="0" data-seat="" data-maker="Superior">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/superior-schmersal-black-seat-silver.jpg"]'>
           
           
@@ -626,7 +681,7 @@
       </div>
 
       <!-- 10: Jason Vanlandingham Reiner Superior — $2,995 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="2995" data-seat="16" data-maker="Superior">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/jason-vanlandingham-reiner-superior-16-full-left.jpg", "images/used-saddles/jason-vanlandingham-reiner-superior-16-full-right.jpg", "images/used-saddles/jason-vanlandingham-reiner-superior-16-seat-top-left.jpg", "images/used-saddles/jason-vanlandingham-reiner-superior-16-seat-top-right.jpg", "images/used-saddles/jason-vanlandingham-reiner-superior-16-cantle-right.jpg", "images/used-saddles/jason-vanlandingham-reiner-superior-16-cantle-skirt-right.jpg", "images/used-saddles/jason-vanlandingham-reiner-superior-16-horn-swell-right.jpg", "images/used-saddles/jason-vanlandingham-reiner-superior-16-horn-badge-left.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -647,7 +702,7 @@
       </div>
 
       <!-- 11: Equine Oasis Tim Bauer 17" $2,995 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="2995" data-seat="17" data-maker="Tim Bauer">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/equine-oasis-tim-bauer-17-main.jpg", "images/used-saddles/equine-oasis-tim-bauer-17-full-left.jpg", "images/used-saddles/equine-oasis-tim-bauer-17-full-right-a.jpg", "images/used-saddles/equine-oasis-tim-bauer-17-seat-left.jpg", "images/used-saddles/equine-oasis-tim-bauer-17-seat-right.jpg", "images/used-saddles/equine-oasis-tim-bauer-17-horn-left.jpg", "images/used-saddles/equine-oasis-tim-bauer-17-cantle-left.jpg", "images/used-saddles/equine-oasis-tim-bauer-17-cantle-right.jpg", "images/used-saddles/equine-oasis-tim-bauer-17-brand-stamp.jpg", "images/used-saddles/equine-oasis-tim-bauer-17-full-right-b.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -668,7 +723,7 @@
       </div>
 
       <!-- 11: Mandy McCutcheon Reiner Superior $2,995 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="2995" data-seat="16" data-maker="Superior">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/mandy-mccutcheon-superior-16-main.jpg", "images/used-saddles/mandy-mccutcheon-superior-16-full-left.jpg", "images/used-saddles/mandy-mccutcheon-superior-16-horn-badge.jpg", "images/used-saddles/mandy-mccutcheon-superior-16-cantle-concho.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -689,7 +744,7 @@
       </div>
 
       <!-- 12: Andreas Maschke Reiner 15.5" $2,495 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="2495" data-seat="15.5" data-maker="Andrea Maschke">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/andrea-maschke-reiner-15.5.jpg"]'>
           
           
@@ -710,7 +765,7 @@
       </div>
 
       <!-- 13: Brown Reiner Silver Conchos (FB 4) -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="0" data-seat="" data-maker="Unknown">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/brown-reiner-silver-conchos-dees.jpg"]'>
           
           
@@ -731,7 +786,7 @@
       </div>
 
       <!-- 14: Bob's Custom 15" B14-867M $1,795 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="1795" data-seat="15" data-maker="Bob's Custom">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/bobs-custom-15-b14-867m.jpg"]'>
           
           
@@ -752,7 +807,7 @@
       </div>
 
       <!-- 15: Roughout Reiner Two-Tone Black (FB 1) -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="0" data-seat="" data-maker="Unknown">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/roughout-reiner-two-tone-black.jpg"]'>
           
           
@@ -774,7 +829,7 @@
 
       
       <!-- SRS Ranch Saddle 16" $1,495 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Ranch" data-price="1495" data-seat="16" data-maker="SRS">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/srs-ranch-saddle-16-main.jpg", "images/used-saddles/srs-ranch-saddle-16-seat-top.jpg", "images/used-saddles/srs-ranch-saddle-16-seat-front.jpg", "images/used-saddles/srs-ranch-saddle-16-seat-left.jpg", "images/used-saddles/srs-ranch-saddle-16-seat-right.jpg", "images/used-saddles/srs-ranch-saddle-16-left-full.jpg", "images/used-saddles/srs-ranch-saddle-16-horn-detail.jpg", "images/used-saddles/srs-ranch-saddle-16-cantle-skirt.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -796,7 +851,7 @@
 
       
       <!-- Teddy Johnson Cutter 16" Full Floral $1,195 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Cutting" data-price="30000" data-seat="16" data-maker="Teddy Johnson">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/teddy-johnson-cutter-16-seat-top.jpg", "images/used-saddles/teddy-johnson-cutter-16-full-right.jpg", "images/used-saddles/teddy-johnson-cutter-16-full-left.jpg", "images/used-saddles/teddy-johnson-cutter-16-horn-left.jpg", "images/used-saddles/teddy-johnson-cutter-16-horn-right.jpg", "images/used-saddles/teddy-johnson-cutter-16-cantle-rear.jpg", "images/used-saddles/teddy-johnson-cutter-16-cantle-left.jpg", "images/used-saddles/teddy-johnson-cutter-16-right-skirt.jpg", "images/used-saddles/teddy-johnson-cutter-16-brand-stamp.jpg", "images/used-saddles/teddy-johnson-cutter-16-woolskin.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -817,7 +872,7 @@
       </div>
 
       <!-- 16: Teddy Johnson Cutter 16" $1,195 -->
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Cutting" data-price="1195" data-seat="16" data-maker="Teddy Johnson">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/teddy-johnson-cutter-16.jpg"]'>
           
           
@@ -837,7 +892,7 @@
       </div>
 
 
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="7995" data-seat="16" data-maker="Donn Leson">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/donn-leson-reinmaker-16-full-offside.jpg", "images/used-saddles/donn-leson-reinmaker-16-full-nearside.jpg", "images/used-saddles/donn-leson-reinmaker-16-skirt-stamp.jpg", "images/used-saddles/donn-leson-reinmaker-16-horn-detail.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -857,7 +912,7 @@
         </div>
       </div>
 
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Ranch" data-price="5495" data-seat="16.5" data-maker="Superior">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/superior-ranch-rider-deluxe-16-5-full-offside.jpg", "images/used-saddles/superior-ranch-rider-deluxe-16-5-full-nearside.jpg", "images/used-saddles/superior-ranch-rider-deluxe-16-5-seat-top.jpg", "images/used-saddles/superior-ranch-rider-deluxe-16-5-horn.jpg", "images/used-saddles/superior-ranch-rider-deluxe-16-5-cantle.jpg", "images/used-saddles/superior-ranch-rider-deluxe-16-5-skirt-detail.jpg", "images/used-saddles/superior-ranch-rider-deluxe-16-5-tag.jpg", "images/used-saddles/superior-ranch-rider-deluxe-16-5-offside-skirt.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -877,7 +932,7 @@
         </div>
       </div>
 
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="4995" data-seat="15.5" data-maker="Martin Saddlery">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/trevor-dare-martin-saddlery-15-5-full-offside.jpg", "images/used-saddles/trevor-dare-martin-saddlery-15-5-full-nearside.jpg", "images/used-saddles/trevor-dare-martin-saddlery-15-5-cantle-silver.jpg", "images/used-saddles/trevor-dare-martin-saddlery-15-5-horn-silver.jpg", "images/used-saddles/trevor-dare-martin-saddlery-15-5-offside-skirt.jpg", "images/used-saddles/trevor-dare-martin-saddlery-15-5-nearside-skirt.jpg", "images/used-saddles/trevor-dare-martin-saddlery-15-5-skirt-silver-detail.jpg", "images/used-saddles/trevor-dare-martin-saddlery-15-5-tag.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -897,7 +952,7 @@
         </div>
       </div>
 
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Cow Horse" data-price="4995" data-seat="15.5" data-maker="Bob's Custom">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/lady-cowhorse-bobs-custom-15-5-b-full-offside.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-b-full-nearside.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-b-seat-top.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-b-horn.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-b-cantle.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-b-skirt-detail.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-b-offside-skirt.jpg", "images/used-saddles/lady-cowhorse-bobs-custom-15-5-b-nearside-skirt.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -918,7 +973,7 @@
         </div>
       </div>
 
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="2995" data-seat="17" data-maker="Bob's Custom">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/bob-avila-bobs-custom-17-full-offside.jpg", "images/used-saddles/bob-avila-bobs-custom-17-full-nearside.jpg", "images/used-saddles/bob-avila-bobs-custom-17-seat-top.jpg", "images/used-saddles/bob-avila-bobs-custom-17-horn-detail.jpg", "images/used-saddles/bob-avila-bobs-custom-17-cantle.jpg", "images/used-saddles/bob-avila-bobs-custom-17-skirt-stamp.jpg", "images/used-saddles/bob-avila-bobs-custom-17-fender.jpg", "images/used-saddles/bob-avila-bobs-custom-17-offside-skirt.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -938,7 +993,7 @@
         </div>
       </div>
 
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="2995" data-seat="17" data-maker="Roohide">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/roohide-reiner-17-full-offside.jpg", "images/used-saddles/roohide-reiner-17-horn.jpg", "images/used-saddles/roohide-reiner-17-skirt-detail.jpg", "images/used-saddles/roohide-reiner-17-serial-stamp.jpg", "images/used-saddles/roohide-reiner-17-tree-stamp.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -958,7 +1013,7 @@
         </div>
       </div>
 
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="1995" data-seat="16" data-maker="Bob's Custom">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/bob-avila-bobs-custom-16-d-full-offside.jpg", "images/used-saddles/bob-avila-bobs-custom-16-d-horn-silver.jpg", "images/used-saddles/bob-avila-bobs-custom-16-d-cantle-silver.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -978,7 +1033,7 @@
         </div>
       </div>
 
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Cutting" data-price="1995" data-seat="15.5" data-maker="Calvin Allen">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/calvin-allen-ranch-cutter-15-5-full-offside.jpg", "images/used-saddles/calvin-allen-ranch-cutter-15-5-full-nearside.jpg", "images/used-saddles/calvin-allen-ranch-cutter-15-5-seat-top.jpg", "images/used-saddles/calvin-allen-ranch-cutter-15-5-horn.jpg", "images/used-saddles/calvin-allen-ranch-cutter-15-5-stamp.jpg", "images/used-saddles/calvin-allen-ranch-cutter-15-5-nearside-skirt.jpg", "images/used-saddles/calvin-allen-ranch-cutter-15-5-cantle.jpg", "images/used-saddles/calvin-allen-ranch-cutter-15-5-offside-skirt.jpg", "images/used-saddles/calvin-allen-ranch-cutter-15-5-fender.jpg", "images/used-saddles/calvin-allen-ranch-cutter-15-5-gullet.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -999,7 +1054,7 @@
         </div>
       </div>
 
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Ranch" data-price="300" data-seat="15.5" data-maker="Rios Bros">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/rios-bros-roper-15-5-full-offside.jpg", "images/used-saddles/rios-bros-roper-15-5-full-nearside.jpg", "images/used-saddles/rios-bros-roper-15-5-seat-top.jpg", "images/used-saddles/rios-bros-roper-15-5-seat-stitching.jpg", "images/used-saddles/rios-bros-roper-15-5-cantle-seat.jpg", "images/used-saddles/rios-bros-roper-15-5-horn.jpg", "images/used-saddles/rios-bros-roper-15-5-skirt-silver.jpg", "images/used-saddles/rios-bros-roper-15-5-cantle-detail.jpg", "images/used-saddles/rios-bros-roper-15-5-nearside-skirt.jpg", "images/used-saddles/rios-bros-roper-15-5-offside.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -1019,7 +1074,7 @@
         </div>
       </div>
 
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="5995" data-seat="16" data-maker="Pinnacle / A. Maschke">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/af-reiner-pinnacle-saddlery-16-full-offside.jpg", "images/used-saddles/af-reiner-pinnacle-saddlery-16-full-nearside.jpg", "images/used-saddles/af-reiner-pinnacle-saddlery-16-seat-top.jpg", "images/used-saddles/af-reiner-pinnacle-saddlery-16-silver-skirt.jpg", "images/used-saddles/af-reiner-pinnacle-saddlery-16-horn-silver.jpg", "images/used-saddles/af-reiner-pinnacle-saddlery-16-cantle-silver.jpg", "images/used-saddles/af-reiner-pinnacle-saddlery-16-stamp.jpg", "images/used-saddles/af-reiner-pinnacle-saddlery-16-nearside-silver.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -1039,7 +1094,7 @@
         </div>
       </div>
 
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Ranch" data-price="5495" data-seat="16.5" data-maker="Superior">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/superior-ranch-rider-16-5-nevada-full-offside.jpg", "images/used-saddles/superior-ranch-rider-16-5-nevada-full-nearside.jpg", "images/used-saddles/superior-ranch-rider-16-5-nevada-seat-top.jpg", "images/used-saddles/superior-ranch-rider-16-5-nevada-horn.jpg", "images/used-saddles/superior-ranch-rider-16-5-nevada-cantle.jpg", "images/used-saddles/superior-ranch-rider-16-5-nevada-skirt-detail.jpg", "images/used-saddles/superior-ranch-rider-16-5-nevada-offside.jpg", "images/used-saddles/superior-ranch-rider-16-5-nevada-horn-detail.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -1060,7 +1115,7 @@
         </div>
       </div>
 
-      <div class="listing-card">
+      <div class="listing-card" data-disc="Reining" data-price="2495" data-seat="16" data-maker="Bob's Custom">
         <div class="listing-img-wrap" data-imgs='["images/used-saddles/bobs-custom-16-b16-1455m-full-offside.jpg", "images/used-saddles/bobs-custom-16-b16-1455m-full-nearside.jpg", "images/used-saddles/bobs-custom-16-b16-1455m-seat-top.jpg", "images/used-saddles/bobs-custom-16-b16-1455m-horn.jpg", "images/used-saddles/bobs-custom-16-b16-1455m-cantle.jpg", "images/used-saddles/bobs-custom-16-b16-1455m-skirt-detail.jpg", "images/used-saddles/bobs-custom-16-b16-1455m-offside.jpg", "images/used-saddles/bobs-custom-16-b16-1455m-stamp.jpg", "images/used-saddles/bobs-custom-16-b16-1455m-serial-stamp.jpg"]'>
           <button class="gallery-nav gallery-nav-prev" aria-label="Previous">&#8249;</button>
           <button class="gallery-nav gallery-nav-next" aria-label="Next">&#8250;</button>
@@ -1081,6 +1136,7 @@
         </div>
       </div>
     </div>
+    <div class="no-results" id="noResults">No saddles match your filters. <a href="/contact.html" style="color:var(--cognac);">Contact David directly &rarr;</a></div>
   </div>
 </section>
 
@@ -1256,6 +1312,48 @@
     }
     document.addEventListener('DOMContentLoaded', initGalleries);
   })();
+
+  // INVENTORY FILTER BAR
+  var filters = {disc:'any', price:{min:0,max:999999}, seat:'any', maker:'any'};
+
+  function setFilter(btn, type) {
+    document.querySelectorAll('[data-filter="'+type+'"]').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    if(type==='price'){
+      filters.price = {min:parseInt(btn.dataset.min), max:parseInt(btn.dataset.max)};
+    } else {
+      filters[type] = btn.dataset.val;
+    }
+    applyFilters();
+  }
+
+  function makerMatch(cardMaker, chipVal) {
+    var norm = function(s){ return (s||'').toLowerCase().replace(/\./g,'').replace(/\s+/g,' ').trim(); };
+    var c = norm(cardMaker), f = norm(chipVal);
+    if (c === f) return true;
+    return c.indexOf(f) === 0 && (c.length === f.length || c.charAt(f.length) === ' ');
+  }
+
+  function applyFilters() {
+    var cards = document.querySelectorAll('.listing-card');
+    var count = 0;
+    cards.forEach(function(card) {
+      var price = parseInt(card.dataset.price)||0;
+      var seat = card.dataset.seat||'';
+      var maker = card.dataset.maker||'';
+      var disc = card.dataset.disc||'';
+      var show = true;
+      if(filters.disc !== 'any' && disc !== filters.disc) show = false;
+      if(price < filters.price.min || price > filters.price.max) show = false;
+      if(filters.seat !== 'any' && parseFloat(seat) !== parseFloat(filters.seat)) show = false;
+      if(filters.maker !== 'any' && !makerMatch(maker, filters.maker)) show = false;
+      card.style.display = show ? '' : 'none';
+      if(show) count++;
+    });
+    document.getElementById('filterCount').textContent = count + ' saddle' + (count===1?'':'s');
+    document.getElementById('noResults').classList.toggle('show', count===0);
+  }
+  document.addEventListener('DOMContentLoaded', applyFilters);
   </script>
 
 </body>

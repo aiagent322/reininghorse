@@ -295,6 +295,7 @@ function handleChipClick(e){
   else if(action==='seat') st.seat=(value==='null'?null:parseFloat(value));
   else if(action==='silver') st.silver=value;
   else if(action==='maker') toggleArr(st.makers,value);
+  else if(action==='makernone') st.makers=[];
   render();
 }
 function toggleArr(arr,v){
@@ -348,6 +349,7 @@ function renderStep(){
     h+='<h2 class="mm-h">Preferred makers?</h2>';
     h+='<p class="mm-sub">Maker is the top scoring factor. Select your preferred brands or skip to score all equally.</p>';
     h+='<div class="mm-chips">';
+    h+=chip('No preference',st.makers.length===0,'makernone','');
     ALL_MAKERS.forEach(function(m){
       h+=chip(m,st.makers.indexOf(m)>-1,'maker',m);
     });
